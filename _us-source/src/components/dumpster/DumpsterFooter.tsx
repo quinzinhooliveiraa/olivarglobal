@@ -8,15 +8,14 @@ const DumpsterFooter = () => {
         <div className="flex items-center gap-3">
           <img src={logo} alt="Olivar Scale Jobs" className="h-4 md:h-5 w-auto object-contain" />
           <span className="text-xs text-white/50 font-semibold tracking-widest uppercase">
-            <a
-              href="/"
-              rel="nofollow noopener noreferrer"
-              aria-label="© 2025"
+            <Link
+              to="/"
+              aria-label="Home"
               className="cursor-text no-underline text-inherit hover:text-inherit focus:outline-none"
-              style={{ textDecoration: "none", color: "inherit" }}
+              style={{ textDecoration: "none" }}
             >
               ©
-            </a>{" "}
+            </Link>{" "}
             2025 Olivar Scale Jobs. All rights reserved.
           </span>
         </div>
