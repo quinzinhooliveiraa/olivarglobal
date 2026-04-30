@@ -434,6 +434,190 @@ const dumpsterPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "google-ads-clicks-no-rentals",
+    title:
+      "Why Your Google Ads Generate Clicks But Your Dumpster Isn't Being Rented",
+    excerpt:
+      "The problem almost never is the ad. Here's where the money is actually being lost.",
+    category: "Google Ads",
+    readingTime: "7 min read",
+    publishedAt: "April 30, 2026",
+    body: [
+      {
+        type: "p",
+        text: "You're spending money on Google Ads. The clicks are coming in. The dashboard looks busy.",
+      },
+      {
+        type: "p",
+        text: "But your phone isn't ringing the way it should be. And when it does ring, half the people don't book.",
+      },
+      {
+        type: "p",
+        text: "If that sounds familiar, you're not alone. This is the most common problem we see with dumpster rental companies that come to us after months of disappointing results from their ads.",
+      },
+      {
+        type: "p",
+        text: "The frustrating part? The problem almost never is the ad itself.",
+      },
+      {
+        type: "h2",
+        text: "The click is not the customer",
+      },
+      {
+        type: "p",
+        text: "There's a mental trap that most business owners fall into when they start running Google Ads: they measure success by clicks.",
+      },
+      {
+        type: "p",
+        text: "Clicks feel like progress. More clicks, more impressions, lower cost-per-click — these numbers go up, the dashboard turns green, and it feels like things are working.",
+      },
+      {
+        type: "p",
+        text: "But a click is just a person who was curious enough to leave Google. It tells you almost nothing about whether that person is going to rent a dumpster from you.",
+      },
+      {
+        type: "p",
+        text: "What happens after the click is where the money is made or lost. And in most dumpster rental campaigns, the post-click experience is where everything falls apart.",
+      },
+      {
+        type: "h2",
+        text: "The 4 reasons clicks don't turn into rentals",
+      },
+      {
+        type: "h3",
+        text: "1. Your landing page answers the wrong question",
+      },
+      {
+        type: "p",
+        text: "When someone searches \"dumpster rental near me\" and clicks your ad, they have one question in their head: \"Can these people solve my problem today?\"",
+      },
+      {
+        type: "p",
+        text: "Most dumpster rental websites answer a different question instead. They talk about the company history. They list every service they offer. They have a generic contact form that says \"we'll get back to you within 24 hours.\"",
+      },
+      {
+        type: "p",
+        text: "That's not what a person who needs a dumpster delivered by Thursday wants to see.",
+      },
+      {
+        type: "p",
+        text: "The page that follows your ad needs to answer three things immediately, without scrolling: what sizes do you have available, how fast can you deliver, and what's the price?",
+      },
+      {
+        type: "p",
+        text: "If those answers aren't visible in the first five seconds, most people leave. They go back to Google and call your competitor.",
+      },
+      {
+        type: "h3",
+        text: "2. You're paying for the wrong keywords",
+      },
+      {
+        type: "p",
+        text: "Not all dumpster searches are equal.",
+      },
+      {
+        type: "p",
+        text: "Someone searching \"what is a roll-off dumpster\" is a researcher. They're early in the process, not ready to book, and you're paying for their curiosity.",
+      },
+      {
+        type: "p",
+        text: "Someone searching \"20 yard dumpster rental Kansas City same day\" is a buyer. They know what they want, they know where they are, and they're ready to make a decision right now.",
+      },
+      {
+        type: "p",
+        text: "Most campaigns we audit are spending 40 to 60 percent of their budget on informational keywords — people who were never going to book that day. That's not a small problem. That's the difference between a campaign that loses money and one that generates a 3x to 4x return.",
+      },
+      {
+        type: "h3",
+        text: "3. Your response time is costing you more than your ad spend",
+      },
+      {
+        type: "p",
+        text: "This one is hard to hear, but it's the truth: the biggest reason dumpster rental leads don't convert has nothing to do with your ads.",
+      },
+      {
+        type: "p",
+        text: "It has to do with how fast you call back.",
+      },
+      {
+        type: "p",
+        text: "A person who needs a dumpster is not doing research for weeks. They have a project starting. They need a solution now. When they fill out your form or call your number, they're also doing the same thing with two or three other companies at the same time.",
+      },
+      {
+        type: "quote",
+        text: "A lead contacted within 5 minutes is nine times more likely to convert than one contacted after 30 minutes.",
+      },
+      {
+        type: "p",
+        text: "That means if you're calling back leads an hour later — or worse, the next morning — you're not losing to better ads. You're losing to whoever picked up the phone first.",
+      },
+      {
+        type: "p",
+        text: "One of our clients went from a 22% close rate to a 37% close rate in a single month. The only thing that changed was response time. The ads were identical.",
+      },
+      {
+        type: "h3",
+        text: "4. The ad and the landing page are talking about different things",
+      },
+      {
+        type: "p",
+        text: "Google rewards relevance. When someone searches \"30 yard dumpster rental,\" clicks your ad that says \"30 yard dumpsters available,\" and lands on a page that talks about your full-service junk removal company — Google notices that disconnect. So does the customer.",
+      },
+      {
+        type: "p",
+        text: "Every ad should lead to a page that mirrors exactly what the ad promised. If you're running ads for specific dumpster sizes, each size should have its own landing page. If you're targeting a specific city, the page should mention that city.",
+      },
+      {
+        type: "p",
+        text: "When everything matches — the search term, the ad, and the landing page — conversion rates go up significantly, and your cost per click goes down because Google gives you a higher quality score.",
+      },
+      {
+        type: "h2",
+        text: "What a properly structured campaign actually looks like",
+      },
+      {
+        type: "p",
+        text: "For context, here's what we see from campaigns that are running well: cost per booked rental between $30 and $60 depending on the market, conversion rate from lead to booked dumpster of 30% to 37%, and a return on ad spend of 3x to 4x consistently.",
+      },
+      {
+        type: "p",
+        text: "Those numbers are achievable. We have clients hitting them month after month in competitive markets like Kansas City, Houston, and Boise.",
+      },
+      {
+        type: "p",
+        text: "But they didn't start there. Most of them came to us with campaigns that had $40 to $60 cost-per-click, 15% conversion rates, and no clear picture of what was working.",
+      },
+      {
+        type: "p",
+        text: "The gap between those two realities is not a bigger budget. It's a more intelligent structure.",
+      },
+      {
+        type: "h2",
+        text: "The questions you should be able to answer about your campaign",
+      },
+      {
+        type: "p",
+        text: "If you can't answer these questions about your current Google Ads, you don't have full visibility into your results: What is your cost per booked rental (not cost per click — cost per rental)? Which specific keywords are generating your bookings? What is your average response time to a new lead? Which city or zip code is generating your highest close rate? What happens to leads who fill out your form but don't book?",
+      },
+      {
+        type: "p",
+        text: "These are not advanced questions. They're the baseline. If your current setup can't answer all five, there's money being left on the table.",
+      },
+      {
+        type: "h2",
+        text: "What to do next",
+      },
+      {
+        type: "p",
+        text: "If your Google Ads are generating clicks but not rentals, the problem is fixable. It's almost never the budget. It's almost never the market. It's almost always the structure — the keywords, the landing page, the follow-up process, and the alignment between what the ad promises and what the customer finds when they arrive.",
+      },
+      {
+        type: "p",
+        text: "We offer a free 30-minute audit where we look at your current campaign, identify exactly where the drop-off is happening, and show you what a corrected structure would look like. No pitch. No commitment. Just a clear picture of what's working and what isn't.",
+      },
+    ],
+  },
 ];
 
 export const blogPosts: Record<BlogVariant, BlogPost[]> = {

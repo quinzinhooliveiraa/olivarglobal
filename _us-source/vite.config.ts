@@ -52,6 +52,7 @@ const BLOG_POST_SLUGS: Record<string, string[]> = {
     "book-50-dumpster-rentals-per-week",
     "pricing-dumpster-rentals-profitable-20-yard",
     "broker-leads-killing-dumpster-margins",
+    "google-ads-clicks-no-rentals",
   ],
 };
 
