@@ -28,6 +28,7 @@ const Footer = () => {
         </div>
         <div className="flex gap-5 text-xs text-white/70">
           <Link to="/privacy-policy" className="hover:text-white transition-colors whitespace-nowrap">Privacy Policy</Link>
+          <a href="tel:+12132141162" className="hover:text-white transition-colors whitespace-nowrap">(213) 214-1162</a>
           <a href="mailto:contact@olivarscalejobs.com" className="hover:text-white transition-colors whitespace-nowrap">Contact</a>
         </div>
       </div>

@@ -28,6 +28,7 @@ const DumpsterFooter = () => {
           </span>
         </div>
         <div className="flex gap-6 text-sm text-white/70">
+          <a href="tel:+12132141162" className="hover:text-[#15803d] transition-colors whitespace-nowrap">(213) 214-1162</a>
           <a href="mailto:contact@olivarscalejobs.com" className="hover:text-[#15803d] transition-colors whitespace-nowrap">Contact</a>
           <Link to="/privacy-policy" className="hover:text-[#15803d] transition-colors whitespace-nowrap">Privacy Policy</Link>
         </div>
