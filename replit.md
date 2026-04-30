@@ -39,6 +39,15 @@ This rebuilds into `us/` and recreates the SPA-fallback copies of `index.html` a
 - `_us-source/src/App.tsx` uses `<BrowserRouter basename="/us">` so the React Router paths resolve correctly under the `/us/` prefix.
 - The SPA-fallback plugin duplicates `us/index.html` into each route folder so direct visits to `/us/dumpster` or `/us/privacy-policy` work on a static server (no rewrite rules needed).
 
+## Secrecy / Geo-Isolation (US site)
+The US site must remain hidden from Brazilian audiences and search engines. Four layers protect this:
+1. **`robots.txt`** at project root disallows `/us/` for all crawlers.
+2. **`<meta name="robots" content="noindex, nofollow, ...">`** in `_us-source/index.html` — applied to every built US page.
+3. **Client-side geo-redirect** in `_us-source/index.html`: on page load, calls `https://ipapi.co/json/`; if country is `BR`, replaces location with `/`. Result is cached in `sessionStorage` so the check runs only once per session.
+4. **`rel="nofollow noopener noreferrer"`** on the hidden `©` link in the BR `index.html` footer — Google won't follow this link to discover `/us/`.
+
+Traffic to the US site should come exclusively from paid ads (Google/Meta Ads geo-targeted to the US), direct outreach, QR codes, or email signatures — not organic search.
+
 ## Deployment
 - **Target**: Static site
 - **Public directory**: `.` (project root) — both `index.html` (BR) and `us/` (built US site) ship together.
