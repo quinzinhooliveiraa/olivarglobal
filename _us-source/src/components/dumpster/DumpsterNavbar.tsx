@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/olivar-logo-nobg.png";
 
 const navLinks = [
@@ -23,13 +24,13 @@ const DumpsterNavbar = () => {
       style={{ background: "#0f2e23" }}
     >
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
-        <a href="#" className="flex items-center shrink-0">
+        <Link to="/" aria-label="Olivar Scale Jobs" className="flex items-center shrink-0">
           <img
             src={logo}
             alt="Olivar Scale Jobs"
             className="h-4 md:h-5 w-auto object-contain"
           />
-        </a>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => (
