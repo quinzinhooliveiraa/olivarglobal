@@ -1,0 +1,76 @@
+Aqui está o prompt pronto para colar no Replit Agent:
+
+---
+
+**Adicione uma seção de depoimentos (testimonials) ao site existente.**
+
+Crie uma seção chamada `#testimonials` com 4 cards de depoimentos de clientes reais. Insira no HTML principal do projeto, após a seção de resultados ou antes do footer.
+
+**Design:** Fundo levemente contrastante com o resto da página. Cards brancos com sombra suave, borda fina. Layout em grid responsivo: 2 colunas no desktop, 1 no mobile.
+
+**Cada card deve ter:**
+- Tag colorida com a cidade/estado do cliente (badge pequeno no topo)
+- Parágrafo de story telling (fonte menor, cor secundária)
+- Citação em destaque com borda esquerda colorida e fonte serif
+- Grid de 3 métricas (valor grande + label pequeno embaixo)
+- Rodapé com avatar de iniciais colorido + nome + empresa
+
+**Os 4 depoimentos são:**
+
+---
+
+**Card 1 — tag: "Kansas City, Missouri" (cor azul)**
+
+Story: James tinha duas empresas de locação de caçambas e o negócio estava crescendo, mas a geração de leads era imprevisível. Dependia de indicações e de anúncios no Facebook que ele mesmo tentava gerenciar. Em menos de 15 dias após contratar a Dumpster Flow, os primeiros clientes começaram a chegar pelo Google Ads. O resultado foi tão rápido que ele precisou pausar as campanhas — as caçambas acabaram antes do previsto.
+
+Citação: "Tive que pausar os anúncios porque minha frota inteira estava ocupada. Esse foi o melhor problema que já tive. Comprei um terceiro caminhão por causa disso."
+
+Métricas: `$11.750` receita em janeiro · `3.7x` retorno sobre o investimento · `35` caçambas alugadas no mês
+
+Autor: iniciais `JR` · James Reynolds · Proprietário · G2 Dumpster & Parker Roll-Off
+
+---
+
+**Card 2 — tag: "Houston, Texas" (cor verde/teal)**
+
+Story: Marcus tinha uma empresa de remoção de entulho há dois anos. Usava plataformas de leads compartilhados e a renda não era previsível. Com apenas $500 em anúncios no primeiro mês, ele fechou 10 serviços — uma taxa de conversão de 55%, muito acima da média do setor.
+
+Citação: "Comecei cético. Mas quando vi que mais da metade das ligações viravam serviço fechado, entendi que o problema nunca foi o lead — foi o processo para chegar até ele."
+
+Métricas: `55%` taxa de conversão · `3.9x` retorno sobre o investimento · `$500` investimento no 1º mês
+
+Autor: iniciais `MC` · Marcus Coleman · Proprietário · 55 Crew Junk Removal
+
+---
+
+**Card 3 — tag: "Boise, Idaho" (cor âmbar/laranja)**
+
+Story: Nicole tinha um diferencial claro no mercado: cobrava apenas pelo que o cliente usava, sem taxas escondidas. O problema era que quase ninguém sabia que ela existia. Já pagava por dois serviços de marketing sem resultado. Ao entrar com a Dumpster Flow, o primeiro lead chegou ainda na primeira semana.
+
+Citação: "A primeira ligação chegou antes do que eu esperava. O que me surpreendeu não foi a velocidade — foi saber exatamente de onde o cliente veio e quanto custou para trazê-lo."
+
+Métricas: `2x` retorno inicial · `7 dias` para o 1º lead chegar · `20%` taxa de fechamento inicial
+
+Autor: iniciais `NV` · Nicole Vasquez · Proprietária · Treasure Valley Disposal
+
+---
+
+**Card 4 — tag: "Califórnia" (cor roxa)**
+
+Story: Ryan começou ontem. As campanhas foram ao ar na segunda-feira. Na terça, o primeiro lead já tinha chegado — nome, telefone, endereço de entrega e data de retirada. Essa é a história mais curta porque ainda está sendo escrita.
+
+Citação: "Comecei ontem à noite. Essa manhã já tinha uma ligação. Não sei ainda o que vai acontecer, mas claramente algo está funcionando."
+
+Métricas: `<24h` para o 1º lead chegar · `1 dia` desde o lançamento · `Em andamento` história em andamento
+
+Autor: iniciais `RW` · Ryan Walker · Proprietário · Novo cliente · California
+
+---
+
+**Título da seção:** "O que nossos clientes dizem" com subtítulo "Resultados reais, histórias reais."
+
+**Responsividade obrigatória.** Use as mesmas variáveis CSS de cor e fonte já existentes no projeto para manter consistência visual. Não quebre o estilo atual do site.
+
+---
+
+Cole isso direto no chat do Replit Agent e ele vai implementar tudo. Se seu site usar React, adicione no final: *"O projeto usa React, crie como componente `Testimonials.jsx` e importe no `App.jsx`."*

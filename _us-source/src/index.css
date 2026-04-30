@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 150 30% 8%;
+
+    --card: 150 10% 97%;
+    --card-foreground: 150 30% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 8%;
+
+    --primary: 130 55% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 10% 95%;
+    --secondary-foreground: 150 30% 10%;
+
+    --muted: 150 8% 93%;
+    --muted-foreground: 150 10% 40%;
+
+    --accent: 130 60% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 10% 90%;
+    --input: 150 10% 90%;
+    --ring: 130 55% 35%;
+
+    --radius: 0.75rem;
+
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .bg-section-alt {
+    background: linear-gradient(135deg, hsl(130 60% 22%) 0%, hsl(130 55% 16%) 100%);
+  }
+
+  .green-card {
+    @apply bg-white rounded-2xl shadow-md;
+  }
+
+  .green-card:hover {
+    @apply shadow-lg;
+  }
+
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(130 55% 35%), hsl(130 65% 45%));
+  }
+
+  .glass-card {
+    @apply bg-card border border-border rounded-2xl;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-24 px-4;
+  }
+
+  .badge-glow {
+    box-shadow: 0 0 20px hsl(130 55% 35% / 0.15);
+  }
+}

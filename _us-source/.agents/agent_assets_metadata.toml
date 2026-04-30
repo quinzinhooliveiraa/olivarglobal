@@ -1,0 +1,31 @@
+uploads = []
+
+[[generated]]
+id = "BYfQx9YdZ12Fqr30mQzTQ"
+uri = "file://src/assets/moving-truck-cutout.png"
+type = "image"
+title = "white moving truck side view"
+
+[[generated]]
+id = "4wOlC18EYjfeUOfIT4J6k"
+uri = "file://src/assets/moving-truck-hero.png"
+type = "image"
+title = "moving truck hero cutout"
+
+[[outputs]]
+id = "xVTtjo5bxpTzQOYs13w0z"
+uri = "file://attached_assets/stock_images/hero_movers_truck.jpg"
+type = "image"
+title = "professional movers carrying boxes into a moving truck sunny day"
+
+[[outputs]]
+id = "r19bxVFcfzjOQCYHBaX3z"
+uri = "file://attached_assets/stock_images/team_movers.jpg"
+type = "image"
+title = "moving company workers team smiling in front of moving truck"
+
+[[outputs]]
+id = "EQp3bxj0IceYzTmmbMPSu"
+uri = "file://attached_assets/stock_images/moving_truck_street.jpg"
+type = "image"
+title = "moving truck on street residential neighborhood local move"
