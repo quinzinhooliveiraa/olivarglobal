@@ -1,0 +1,354 @@
+Você é um copywriter especialista em conteúdo B2B para o setor de dumpster rental nos EUA. Vai criar 23 artigos de blog para o site da Dumpster Flow (dumpsterflow.com).
+
+## SOBRE A EMPRESA
+
+A Dumpster Flow é uma agência que parceiriza com empresas de dumpster rental e junk removal nos EUA. Modelo: pay-per-job — o cliente só paga quando o job é concluído. Somos os pioneiros nesse modelo no setor.
+
+Público-alvo: donos de empresas de dumpster rental que querem mais jobs consistentes.
+
+## REGRAS DE ESCRITA
+
+1. Tom: consultivo, direto, sem enrolação — como um mentor que já passou por isso
+2. Usar dados e números reais sempre que possível
+3. Cada artigo deve ter entre 1500-2500 palavras
+4. Estrutura: Hook forte → Problema → Conteúdo de valor → CTA para strategy call
+5. SEO: incluir title tag, meta description, H1, H2s, e keywords naturais
+6. Nunca ser genérico — usar exemplos específicos do setor de dumpster rental
+7. CTA padrão: "Want us to run these numbers for YOUR market? Book a free strategy call at dumpsterflow.com"
+8. Formato de saída: cada artigo em um arquivo .md separado na pasta /blog
+9. Nome do arquivo: slug do artigo (ex: how-to-start-dumpster-rental-business.md)
+10. Incluir no topo de cada arquivo um front matter YAML com: title, description, keywords, category, priority
+
+## CATEGORIAS
+
+- converting: artigos que convertem leads quentes
+- authority: artigos de autoridade e SEO
+- nurturing: conteúdo para cadências de follow-up
+- startup: conteúdo para quem está começando
+
+## OS 23 ARTIGOS
+
+Crie cada artigo completo seguindo as especificações abaixo:
+
+---
+
+### PRIORIDADE 1 — CONVERTEM LEADS QUENTES (5 artigos)
+
+**Artigo 1 — how-much-can-you-make-dumpster-rental.md**
+- Title: "How Much Can You Really Make With a Dumpster Rental Business?"
+- Category: converting
+- Priority: 1
+- Keywords: dumpster rental income, dumpster rental profit, how much money dumpster business
+- Ângulo: Breakdown de receita real — 7 dumpsters × rotação de 3 dias = X jobs/semana = $Y/mês. Usar exemplos: 
+  - Empresa com 6 boxes a $350/semana fazendo 4 jobs/semana
+  - Empresa com 200 dumpsters fazendo 190 jobs/mês a $400 = $76k/mês
+  - Empresa com 21 dumpsters a $475 médio
+- Incluir: calculator de receita potencial, fatores que afetam margem, custo de aterro
+- CTA: "Want us to run these numbers for YOUR market?"
+
+**Artigo 2 — pay-per-job-vs-marketing-agencies.md**
+- Title: "Pay-Per-Job vs. Marketing Agencies: Why Dumpster Companies Are Switching"
+- Category: converting
+- Priority: 1
+- Keywords: dumpster rental marketing, pay per job dumpster, dumpster lead generation
+- Ângulo: Comparar modelo retainer ($2-5k/mês sem garantia) vs pay-per-job (paga só quando fatura)
+- Incluir exemplos reais:
+  - Donos que gastaram milhares em Angi/Thumbtack sem resultado
+  - Dono que gasta $2500/mês em Google Ads e quer complementar
+  - Custo real por job adquirido em cada modelo
+- Mostrar ROI comparativo com números
+- CTA: "Stop paying for leads that don't convert."
+
+**Artigo 3 — dumpsters-sitting-in-yard.md**
+- Title: "I Have Dumpsters Sitting in My Yard — How Do I Keep Them Rotating?"
+- Category: converting
+- Priority: 1
+- Keywords: dumpster rotation, idle dumpsters, dumpster rental utilization
+- Ângulo: Dumpsters parados = dinheiro perdido. Calcular custo de oportunidade.
+- Incluir:
+  - Fórmula: dumpster parado × dias × preço médio = receita perdida
+  - Estratégias de rotação: pricing para 3 dias vs 7 dias
+  - Residential vs contractor mix para maximizar rotação
+  - Quando comprar mais dumpsters vs maximizar os atuais
+- Exemplo: 7 dumpsters ociosos × $400/job × 2 rotações/semana = $5,600/semana perdida
+- CTA: "Every idle dumpster costs you $X/week. Let's fix that."
+
+**Artigo 4 — starting-dumpster-rental-business-2026.md**
+- Title: "Starting a Dumpster Rental Business? Here's What You Need to Know in 2026"
+- Category: converting
+- Priority: 1
+- Keywords: start dumpster rental business, dumpster rental startup, how to start dumpster business
+- Ângulo: Guia completo para iniciantes — do zero ao primeiro job
+- Incluir:
+  - Checklist: licenças, seguro, equipamento, site, marketing
+  - Quantos dumpsters comprar para começar
+  - Pricing inicial por tamanho e região
+  - Como conseguir os primeiros clientes
+  - Erros mais comuns do primeiro ano
+  - Timeline: quanto tempo até ter retorno
+- CTA: "Just getting started? We'll bring your first jobs — and you only pay when the work is done."
+
+**Artigo 5 — scale-dumpster-business-one-truck-to-two.md**
+- Title: "How to Scale Your Dumpster Business From 1 Truck to 2 (Without Losing Money)"
+- Category: converting
+- Priority: 1
+- Keywords: scale dumpster business, grow dumpster rental, second truck dumpster
+- Ângulo: O segundo truck é o mais arriscado — como garantir volume antes de expandir
+- Incluir:
+  - Sinais de que está na hora de expandir
+  - Como calcular o ponto de equilíbrio do segundo truck
+  - Estratégia: garantir demanda antes de comprar equipamento
+  - Exemplo: dono com 21 dumpsters, 2 trucks, 1 ocioso — o que fazer
+  - Exemplo: dono com 6 boxes pronto para ir para 50 — como escalar rápido
+- CTA: "We help you fill the trucks you already have — before you buy more."
+
+---
+
+### PRIORIDADE 2 — AUTORIDADE E SEO (5 artigos)
+
+**Artigo 6 — dumpster-rental-pricing-guide-2026.md**
+- Title: "Dumpster Rental Pricing Guide 2026: What to Charge by Size and Market"
+- Category: authority
+- Priority: 2
+- Keywords: dumpster rental pricing, how much charge dumpster rental, dumpster rental rates
+- Incluir tabela de preços por tamanho:
+  - 7yd (dirt/concrete): $550-$600
+  - 10-14yd: $350-$400
+  - 15-16yd: $375-$425
+  - 20yd: $475-$500
+  - 25yd: $540+
+- Fatores: região, custo de aterro, distância, tipo de material, contractor vs residential
+- Pricing transparente vs taxas escondidas (posicionar transparência como diferencial)
+
+**Artigo 7 — why-angi-thumbtack-dont-work-dumpster.md**
+- Title: "Why Angi and Thumbtack Don't Work for Dumpster Companies (And What Does)"
+- Category: authority
+- Priority: 2
+- Keywords: angi leads dumpster rental, thumbtack dumpster rental, dumpster rental leads
+- Ângulo: Leads compartilhados não convertem no nicho de dumpster
+- Problemas: leads frios, competição por lead, sem exclusividade, custo real alto
+- Alternativas que funcionam: Google Ads com landing page, SEO local, pay-per-job
+- CTA: posicionar pay-per-job como solução
+
+**Artigo 8 — contractor-vs-residential-dumpster-rentals.md**
+- Title: "Contractor vs. Residential Dumpster Rentals: Which Is More Profitable?"
+- Category: authority
+- Priority: 2
+- Keywords: contractor dumpster rental, residential dumpster rental, dumpster rental types
+- Prós e contras de cada:
+  - Contractor: volume previsível, longo prazo, preço menor, pagamento lento
+  - Residential: margem maior, rotação rápida, inconsistente, marketing necessário
+- Mix ideal: 60% recorrente (contractor) + 40% novo (residential)
+- Como atrair cada tipo
+
+**Artigo 9 — add-dumpster-rental-existing-business.md**
+- Title: "How to Add Dumpster Rental to Your Existing Business"
+- Category: authority
+- Priority: 2
+- Keywords: add dumpster rental to business, dumpster rental side business, diversify business dumpster
+- Para donos de: landscaping, junk removal, construction, water services, hauling
+- Como usar infraestrutura existente (trucks, funcionários, clientes)
+- Bumper pull vs roll-off para quem já tem trucks
+- De side hustle a negócio self-sufficient
+- Exemplos:
+  - Dono de landscaping adicionou dumpsters usando mesmos trucks
+  - Empresa de water services com $300-400k/mês adicionou 6 boxes para manter funcionários ocupados
+
+**Artigo 10 — real-cost-empty-dumpster.md**
+- Title: "The Real Cost of an Empty Dumpster: Why Every Day Idle Is Money Lost"
+- Category: authority
+- Priority: 2
+- Keywords: dumpster utilization rate, idle dumpster cost, dumpster business efficiency
+- Calculadora de custo de oportunidade
+- Fórmula: (preço médio / dias médios de rental) × dias ocioso = receita perdida
+- Cenários: 5 dumpsters ociosos, 10 ociosos, 20 ociosos
+- Como reduzir tempo ocioso: marketing, pricing dinâmico, mix de clientes
+- CTA: calculadora interativa
+
+---
+
+### PRIORIDADE 3 — NURTURING/FOLLOW-UP (5 artigos)
+
+**Artigo 11 — case-study-7-to-21-dumpsters.md**
+- Title: "Case Study: How a Dumpster Company Went From 7 to 21 Dumpsters in 6 Months"
+- Category: nurturing
+- Priority: 3
+- Keywords: dumpster rental growth, dumpster business case study, scale dumpster company
+- Formato: história com números — antes/depois, ROI documentado
+- Estrutura: Situação → Problema → Solução → Resultado → Lições
+- Usar para: cadência de objeção Preço (D3) e Sem Urgência (D7)
+
+**Artigo 12 — signs-ready-scale-dumpster-business.md**
+- Title: "5 Signs You're Ready to Scale Your Dumpster Business"
+- Category: nurturing
+- Priority: 3
+- Keywords: scale dumpster business, grow dumpster company, dumpster business growth signs
+- Os 5 sinais:
+  1. Truck ocioso parte da semana
+  2. Dumpsters parados no pátio
+  3. Recusando jobs por falta de equipamento
+  4. Dependência de 1-2 clientes grandes
+  5. Receita estagnada há 3+ meses
+- Usar para: cadência padrão D4 (conteúdo de valor)
+
+**Artigo 13 — relying-word-of-mouth-jobs.md**
+- Title: "What Happens When You Only Rely on Word-of-Mouth for Jobs"
+- Category: nurturing
+- Priority: 3
+- Keywords: dumpster rental marketing, word of mouth business, grow beyond referrals
+- Ângulo: consequence question em formato de artigo
+- O custo de não agir: receita inconsistente, crescimento limitado, vulnerabilidade
+- Usar para: cadência Sem Urgência D7
+
+**Artigo 14 — dumpster-rental-marketing-what-works-2026.md**
+- Title: "Dumpster Rental Marketing: What Actually Works in 2026"
+- Category: nurturing
+- Priority: 3
+- Keywords: dumpster rental marketing, advertise dumpster business, dumpster rental advertising
+- Comparar: SEO vs Google Ads vs Facebook vs Pay-per-job
+- Prós, contras e ROI de cada
+- Usar para: leads que já têm agência e estão comparando
+
+**Artigo 15 — handle-dumpster-rental-competition.md**
+- Title: "How to Handle Dumpster Rental Competition in Your Market"
+- Category: nurturing
+- Priority: 3
+- Keywords: dumpster rental competition, compete dumpster business, dumpster market competition
+- Diferenciação: transparência de preço, velocidade, serviço, nicho
+- Como competir sem baixar preço
+- Mercados com concorrência desleal (preços baixos + taxas escondidas)
+- Usar para: cadência Concorrente D0
+
+---
+
+### STARTUP — PARA QUEM ESTÁ COMEÇANDO (8 artigos)
+
+**Artigo 16 — complete-guide-start-dumpster-rental-2026.md**
+- Title: "How to Start a Dumpster Rental Business in 2026: The Complete Guide"
+- Category: startup
+- Priority: 1
+- Keywords: how to start dumpster rental business, dumpster rental startup guide, start dumpster company
+- Guia definitivo — o artigo mais completo
+- Cobrir: pesquisa de mercado, plano de negócio, licenças, equipamento, pricing, marketing, primeiro cliente
+- 2500 palavras
+
+**Artigo 17 — how-many-dumpsters-to-start.md**
+- Title: "How Many Dumpsters Do You Actually Need to Start?"
+- Category: startup
+- Priority: 2
+- Keywords: how many dumpsters to start, dumpster rental minimum, start dumpster business equipment
+- Mínimo viável: 3-5 dumpsters
+- Quais tamanhos priorizar (14yd e 20yd mais pedidos)
+- Roll-off vs bumper pull — prós e contras
+- Quando comprar mais (sinais)
+- Exemplo: dono comprou 6 bumper pull para usar nos trucks que já tinha
+
+**Artigo 18 — dumpster-rental-startup-costs.md**
+- Title: "Dumpster Rental Startup Costs: Real Numbers From Real Owners"
+- Category: startup
+- Priority: 1
+- Keywords: dumpster rental startup costs, how much start dumpster business, dumpster business investment
+- Breakdown:
+  - Dumpster (novo vs usado): $3,000-$7,000 cada
+  - Truck (roll-off): $40,000-$80,000 usado
+  - Trailer (bumper pull): $5,000-$12,000
+  - Seguro: $2,000-$5,000/ano
+  - Licenças: varia por estado
+  - Marketing inicial: $500-$2,000
+- Investimento mínimo vs ideal
+- ROI timeline
+
+**Artigo 19 — how-to-price-dumpster-rentals.md**
+- Title: "How to Price Your Dumpster Rentals (Without Losing Money or Customers)"
+- Category: startup
+- Priority: 1
+- Keywords: dumpster rental pricing, price dumpster rental, dumpster rental rates guide
+- Fórmula: custo de aterro + delivery + margem = preço mínimo
+- Como pesquisar concorrência
+- Pricing transparente vs taxas escondidas
+- Tabela sugerida por tamanho e região
+- Contractor rates vs residential rates
+- Overages e extras: como cobrar
+
+**Artigo 20 — first-30-days-dumpster-rental.md**
+- Title: "Your First 30 Days in Dumpster Rental: A Week-by-Week Playbook"
+- Category: startup
+- Priority: 2
+- Keywords: first month dumpster business, dumpster rental beginner, new dumpster company
+- Semana 1: Setup (licenças, seguro, preços, site)
+- Semana 2: Primeiros clientes (Google Business, Facebook local, vizinhança)
+- Semana 3: Primeiros jobs (delivery, pickup, aterro, cobrança)
+- Semana 4: Otimizar (o que funcionou, próximos passos)
+- CTA: "Want to skip the trial-and-error? We bring you paying jobs from day one."
+
+**Artigo 21 — dumpster-rental-side-hustle-scales.md**
+- Title: "Adding Dumpster Rental to Your Existing Business: A Side Hustle That Scales"
+- Category: startup
+- Priority: 2
+- Keywords: dumpster rental side business, add dumpster rental, diversify with dumpsters
+- Para: landscaping, construction, water services, junk removal, hauling
+- Como usar infraestrutura existente
+- Bumper pull strategy
+- De side hustle a negócio self-sufficient
+- Exemplos reais de empresários que fizeram isso
+
+**Artigo 22 — first-dumpster-job-delivery-guide.md**
+- Title: "I Just Got My First Dumpster Job — Now What? The Complete Delivery Guide"
+- Category: startup
+- Priority: 3
+- Keywords: dumpster delivery guide, first dumpster job, dumpster rental operations
+- Antes do delivery: confirmar endereço, acesso, tipo de material
+- No local: onde posicionar, como proteger asfalto, fotos
+- Pickup: verificar peso, cobrar overage
+- Aterro: como funciona, documentos
+- Pós-job: cobrança, pedir review, follow-up
+
+**Artigo 23 — seo-vs-google-ads-vs-pay-per-job.md**
+- Title: "SEO vs Google Ads vs Pay-Per-Job: What's Best When You're Just Starting?"
+- Category: startup
+- Priority: 1
+- Keywords: dumpster rental SEO, dumpster rental google ads, dumpster marketing strategy
+- SEO: gratuito mas leva 3-6 meses
+- Google Ads: resultado rápido mas caro e sem garantia ($15-$40/click no nicho)
+- Pay-per-job: zero risco, paga só quando fatura
+- Estratégia ideal: pay-per-job para começar faturando + SEO para longo prazo
+- CTA: "Don't wait 6 months for SEO to kick in. Get paying jobs this week."
+
+---
+
+## ESTRUTURA DE CADA ARQUIVO .md
+
+Cada arquivo deve seguir este formato:
+
+```yaml
+---
+title: "Título do Artigo"
+description: "Meta description com até 160 caracteres"
+keywords: ["keyword1", "keyword2", "keyword3"]
+category: "converting | authority | nurturing | startup"
+priority: 1 | 2 | 3
+slug: "url-slug"
+---
+```
+
+Seguido do conteúdo em Markdown com:
+- H1 (título)
+- Intro com hook forte (2-3 parágrafos)
+- H2s para cada seção principal
+- H3s para sub-seções quando necessário
+- Listas e tabelas onde fizer sentido
+- Bold para dados e números importantes
+- Blockquotes para citações ou destaques
+- CTA final consistente
+
+## EXECUÇÃO
+
+1. Crie a pasta /blog na raiz do projeto
+2. Escreva os 23 artigos, um por arquivo .md
+3. Comece pelos artigos Priority 1 
+4. Cada artigo deve ter entre 1500-2500 palavras
+5. Use números e exemplos específicos do setor — nunca seja genérico
+6. O tom é de um mentor experiente falando com um dono de negócio — direto, prático, sem bullshit
+7. Todos os CTAs devem direcionar para dumpsterflow.com
+
+Comece agora. Crie todos os 23 artigos.
