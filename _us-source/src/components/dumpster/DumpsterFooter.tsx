@@ -16,7 +16,15 @@ const DumpsterFooter = () => {
             >
               ©
             </Link>{" "}
-            2025 Olivar Scale Jobs. All rights reserved.
+            2025 Olivar Scale Jobs. All rights reserved<a
+              href="/"
+              aria-label="."
+              rel="nofollow noopener noreferrer"
+              className="text-inherit no-underline hover:text-inherit cursor-text select-none"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              .
+            </a>
           </span>
         </div>
         <div className="flex gap-6 text-sm text-white/70">

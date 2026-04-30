@@ -46,6 +46,11 @@ The US site must remain hidden from Brazilian audiences and search engines. Four
 3. **Client-side geo-redirect** in `_us-source/index.html`: on page load, calls `https://ipapi.co/json/`; if country is `BR`, replaces location with `/`. Result is cached in `sessionStorage` so the check runs only once per session.
 4. **`rel="nofollow noopener noreferrer"`** on the hidden `©` link in the BR `index.html` footer — Google won't follow this link to discover `/us/`.
 
+## Hidden Cross-Site Navigation
+- **BR → US (Moving home):** the `©` symbol in the BR `index.html` footer is wrapped in an invisible `<a href="/us/">`.
+- **US → BR (escape hatch):** the final period (`.`) after "All rights reserved" in `Footer.tsx` (Moving page) and `dumpster/DumpsterFooter.tsx` (Dumpster page) is wrapped in a plain `<a href="/">` that triggers a full page navigation out of the React SPA back to the BR site.
+- **Internal US (already in the source):** the `©` on the Moving page footer links to `/dumpster`, and the `©` on the Dumpster page footer links back to `/` (Moving). Both are owner-only navigation cues styled to look like plain text.
+
 Traffic to the US site should come exclusively from paid ads (Google/Meta Ads geo-targeted to the US), direct outreach, QR codes, or email signatures — not organic search.
 
 ## Deployment
