@@ -3,22 +3,28 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "fs";
 
-const ROUTE_META: Record<string, { title: string; description: string; url: string }> = {
+type RouteMeta = { title: string; description: string; url: string; image: string; imageAlt: string };
+
+const ROUTE_META: Record<string, RouteMeta> = {
   dumpster: {
     title: "Olivar Scale Jobs — 50-90+ Booked Dumpster Rentals Per Week",
     description:
       "Pay-per-rentals dumpster lead generation. Fill your calendar with 50-90+ more booked dumpster rentals per week in 30 days. Exclusive leads, no monthly fees.",
     url: "https://olivarglobalsales.com/us/dumpster",
+    image: "https://olivarglobalsales.com/us/og-dumpster.png",
+    imageAlt: "Olivar Scale Jobs — Booked Dumpster Rentals Per Week",
   },
   "privacy-policy": {
     title: "Privacy Policy — Olivar Scale Jobs",
     description:
       "Olivar Scale Jobs privacy policy. Learn how we collect, use, and protect your information.",
     url: "https://olivarglobalsales.com/us/privacy-policy",
+    image: "https://olivarglobalsales.com/us/og-privacy.png",
+    imageAlt: "Privacy Policy — Olivar Scale Jobs",
   },
 };
 
-function applyRouteMeta(html: string, meta: { title: string; description: string; url: string }) {
+function applyRouteMeta(html: string, meta: RouteMeta) {
   return html
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${meta.title}</title>`)
     .replace(
@@ -38,12 +44,24 @@ function applyRouteMeta(html: string, meta: { title: string; description: string
       `<meta property="og:url" content="${meta.url}" />`,
     )
     .replace(
+      /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i,
+      `<meta property="og:image" content="${meta.image}" />`,
+    )
+    .replace(
+      /<meta\s+property="og:image:alt"[^>]*>/i,
+      `<meta property="og:image:alt" content="${meta.imageAlt}" />`,
+    )
+    .replace(
       /<meta\s+name="twitter:title"[^>]*>/i,
       `<meta name="twitter:title" content="${meta.title}" />`,
     )
     .replace(
       /<meta\s+name="twitter:description"[^>]*>/i,
       `<meta name="twitter:description" content="${meta.description}" />`,
+    )
+    .replace(
+      /<meta\s+name="twitter:image"[^>]*>/i,
+      `<meta name="twitter:image" content="${meta.image}" />`,
     );
 }
 

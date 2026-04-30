@@ -47,12 +47,20 @@ The US site must remain hidden from Brazilian audiences and search engines. Four
 4. **`rel="nofollow noopener noreferrer"`** on the hidden `©` link in the BR `index.html` footer — Google won't follow this link to discover `/us/`.
 
 ## Per-Route Social Sharing Metadata
-Each US route has its own `<title>`, `description`, `og:title`, `og:description`, and `og:url` so that link previews on WhatsApp/Facebook/Twitter/LinkedIn show the correct content for the page being shared:
-- `/us/` → "Olivar Scale Jobs — Booked Moving Jobs On Demand" (set in `_us-source/index.html`)
-- `/us/dumpster` → "Olivar Scale Jobs — 50-90+ Booked Dumpster Rentals Per Week"
-- `/us/privacy-policy` → "Privacy Policy — Olivar Scale Jobs"
+Each US route has its own `<title>`, `description`, `og:title`, `og:description`, `og:url`, `og:image`, and `twitter:image` so that link previews on WhatsApp/Facebook/Twitter/LinkedIn show the correct content + branded preview image for the page being shared:
+- `/us/` → "Olivar Scale Jobs — Booked Moving Jobs On Demand" + `og-moving.png` (set in `_us-source/index.html`)
+- `/us/dumpster` → "Olivar Scale Jobs — 50-90+ Booked Dumpster Rentals Per Week" + `og-dumpster.png`
+- `/us/privacy-policy` → "Privacy Policy — Olivar Scale Jobs" + `og-privacy.png`
 
-The per-route metadata for `dumpster` and `privacy-policy` is injected at build time by the `spaFallbackPlugin` in `_us-source/vite.config.ts`. To change titles/descriptions for those routes, edit the `ROUTE_META` map at the top of that file and rebuild.
+The per-route metadata for `dumpster` and `privacy-policy` is injected at build time by the `spaFallbackPlugin` in `_us-source/vite.config.ts`. To change titles/descriptions/images for those routes, edit the `ROUTE_META` map at the top of that file and rebuild.
+
+### OG preview images (1200×630)
+Located in `_us-source/public/` and copied to `us/og-*.png` at build time:
+- `og-moving.png` — moving truck background + "Booked Moving Jobs On Demand" headline
+- `og-dumpster.png` — dumpster truck background + "Booked Dumpster Rentals Per Week" headline
+- `og-privacy.png` — generic background + "Privacy Policy" headline
+
+To regenerate them after editing the source backgrounds or copy: drop new `og-bg-moving.png` / `og-bg-dumpster.png` into `_us-source/public/`, then composite the text overlays via the `sharp` script (see chat history for the exact code, or recreate by loading background → resize cover 1200×630 right-anchored → overlay an SVG with a left-side dark green gradient + Inter-style headline + green eyebrow "OLIVAR SCALE JOBS" + subtitle + green underline accent).
 
 ## Hidden Cross-Site Navigation
 - **BR → US (Moving home):** the `©` symbol in the BR `index.html` footer is wrapped in an invisible `<a href="/us/">`.

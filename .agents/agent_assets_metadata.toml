@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "RfzKahjFNRGh_-TnuRXFf"
+uri = "file://_us-source/public/og-moving.png"
+type = "image"
+title = "og moving banner"
+
+[[generated]]
+id = "N7rXyBA2--1W5kPm661DX"
+uri = "file://_us-source/public/og-dumpster.png"
+type = "image"
+title = "og dumpster banner"
+
+[[generated]]
+id = "YXPXLDzZ5sFToZFdJjWgz"
+uri = "file://_us-source/public/og-bg-moving.png"
+type = "image"
+title = "moving truck bg"
+
+[[generated]]
+id = "D85qAddq5LTfxDVCJqoh2"
+uri = "file://_us-source/public/og-bg-dumpster.png"
+type = "image"
+title = "dumpster truck bg"
