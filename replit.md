@@ -41,10 +41,18 @@ This rebuilds into `us/` and recreates the SPA-fallback copies of `index.html` a
 
 ## Secrecy / Geo-Isolation (US site)
 The US site must remain hidden from Brazilian audiences and search engines. Four layers protect this:
-1. **`robots.txt`** at project root disallows `/us/` for all crawlers.
+1. **`robots.txt`** at project root disallows `/us/` for all crawlers, with explicit allows for social-media link-preview bots (Facebook, WhatsApp, Twitter, LinkedIn, Slack, Telegram, Discord) so shared links still render previews.
 2. **`<meta name="robots" content="noindex, nofollow, ...">`** in `_us-source/index.html` — applied to every built US page.
 3. **Client-side geo-redirect** in `_us-source/index.html`: on page load, calls `https://ipapi.co/json/`; if country is `BR`, replaces location with `/`. Result is cached in `sessionStorage` so the check runs only once per session.
 4. **`rel="nofollow noopener noreferrer"`** on the hidden `©` link in the BR `index.html` footer — Google won't follow this link to discover `/us/`.
+
+## Per-Route Social Sharing Metadata
+Each US route has its own `<title>`, `description`, `og:title`, `og:description`, and `og:url` so that link previews on WhatsApp/Facebook/Twitter/LinkedIn show the correct content for the page being shared:
+- `/us/` → "Olivar Scale Jobs — Booked Moving Jobs On Demand" (set in `_us-source/index.html`)
+- `/us/dumpster` → "Olivar Scale Jobs — 50-90+ Booked Dumpster Rentals Per Week"
+- `/us/privacy-policy` → "Privacy Policy — Olivar Scale Jobs"
+
+The per-route metadata for `dumpster` and `privacy-policy` is injected at build time by the `spaFallbackPlugin` in `_us-source/vite.config.ts`. To change titles/descriptions for those routes, edit the `ROUTE_META` map at the top of that file and rebuild.
 
 ## Hidden Cross-Site Navigation
 - **BR → US (Moving home):** the `©` symbol in the BR `index.html` footer is wrapped in an invisible `<a href="/us/">`.

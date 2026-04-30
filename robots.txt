@@ -1,3 +1,30 @@
+# Allow social media link previews to fetch /us/ pages so shared links
+# render proper title/description/image in WhatsApp, Facebook, Twitter, LinkedIn, etc.
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+# Block all other crawlers (Google, Bing, etc.) from /us/
 User-agent: *
 Disallow: /us/
 Disallow: /us
