@@ -19,8 +19,24 @@ This project hosts **two sites on the same domain**:
 ## Project Structure
 - `index.html` — BR landing page (single file with embedded CSS/JS)
 - `images/prova-social/` — BR social proof gallery
-- `us/` — **Built** US site (Vite output: `index.html`, `assets/`, `dumpster/index.html`, `privacy-policy/index.html`)
+- `blog/` — **BR blog** (static HTML/CSS, served at `/blog/`). `blog/index.html` is the index, each post lives in `blog/<slug>/index.html`, and shared styles live in `blog/_styles.css`.
+- `us/` — **Built** US site (Vite output: `index.html`, `assets/`, `dumpster/index.html`, `privacy-policy/index.html`, `blog/`, `dumpster/blog/`)
 - `_us-source/` — Source code for the US React app (not served as a site; underscore prefix keeps it out of the way)
+
+## Blog System
+Each landing page has its own blog section, all sharing the visual language of their parent LP:
+- **`/blog/`** (PT-BR) — static HTML, matches the BR landing page (Inter, white surface, green primary `#16a34a`).
+- **`/us/blog/`** (EN, Moving) — React route `BlogIndex` + `BlogPost` rendered with the moving `Navbar`/`Footer`.
+- **`/us/dumpster/blog/`** (EN, Dumpster) — same React components with `variant="dumpster"`, rendered with `DumpsterNavbar`/`DumpsterFooter`.
+
+React blog files live in `_us-source/src/`:
+- `data/blogPosts.ts` — typed posts grouped by `BlogVariant` (`moving` | `dumpster`).
+- `pages/BlogIndex.tsx` — variant-aware blog index (cards with category badge, excerpt, reading time, CTA).
+- `pages/BlogPost.tsx` — variant-aware single-post template (back link, h2/h3, paragraphs, pull quote, green CTA matching the site's existing button style).
+
+To add a post: append to the right array in `data/blogPosts.ts`, then add the slug to `BLOG_POST_SLUGS` in `_us-source/vite.config.ts` so the SPA-fallback plugin writes a static `index.html` for direct URL access. Then run `cd _us-source && npm run build`.
+
+To add a BR post: copy any folder under `blog/` to a new slug, edit the content, and add a card link in `blog/index.html`.
 
 ## Running the App
 - **Workflow**: `Start application`

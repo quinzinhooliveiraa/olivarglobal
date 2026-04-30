@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import Dumpster from "./pages/Dumpster.tsx";
+import BlogIndex from "./pages/BlogIndex.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
@@ -22,6 +24,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/dumpster" element={<Dumpster />} />
+          <Route path="/blog" element={<BlogIndex variant="moving" />} />
+          <Route path="/blog/:slug" element={<BlogPost variant="moving" />} />
+          <Route path="/dumpster/blog" element={<BlogIndex variant="dumpster" />} />
+          <Route path="/dumpster/blog/:slug" element={<BlogPost variant="dumpster" />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

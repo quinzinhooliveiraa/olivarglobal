@@ -22,6 +22,37 @@ const ROUTE_META: Record<string, RouteMeta> = {
     image: "https://olivarglobalsales.com/us/og-privacy.png",
     imageAlt: "Privacy Policy — Olivar Scale Jobs",
   },
+  blog: {
+    title: "Blog — Olivar Scale Jobs (Moving)",
+    description:
+      "Tactical playbooks on lead generation, sales, and operations for moving company owners.",
+    url: "https://olivarglobalsales.com/us/blog",
+    image: "https://olivarglobalsales.com/us/og-moving.png",
+    imageAlt: "Olivar Scale Jobs — Blog",
+  },
+  "dumpster/blog": {
+    title: "Blog — Olivar Scale Jobs (Dumpster)",
+    description:
+      "How the most profitable dumpster rental operators book more rentals, raise prices, and stop relying on broker leads.",
+    url: "https://olivarglobalsales.com/us/dumpster/blog",
+    image: "https://olivarglobalsales.com/us/og-dumpster.png",
+    imageAlt: "Olivar Scale Jobs — Dumpster Blog",
+  },
+};
+
+// Blog post slugs are written as SPA fallback so direct URLs resolve on a static server.
+// Per-post meta could be added later; the parent route meta is good enough for previews.
+const BLOG_POST_SLUGS: Record<string, string[]> = {
+  blog: [
+    "fill-moving-calendar-without-brokers",
+    "lead-gen-mistakes-killing-moving-companies",
+    "moving-leads-convert-below-10-percent",
+  ],
+  "dumpster/blog": [
+    "book-50-dumpster-rentals-per-week",
+    "pricing-dumpster-rentals-profitable-20-yard",
+    "broker-leads-killing-dumpster-margins",
+  ],
 };
 
 function applyRouteMeta(html: string, meta: RouteMeta) {
@@ -77,6 +108,21 @@ const spaFallbackPlugin = {
       fs.mkdirSync(dir, { recursive: true });
       const customized = applyRouteMeta(baseHtml, ROUTE_META[route]);
       fs.writeFileSync(path.join(dir, "index.html"), customized);
+    }
+    // Write SPA fallback index.html for each blog post slug so direct URLs work
+    // on a static server. Inherits the parent blog route's meta.
+    for (const parent of Object.keys(BLOG_POST_SLUGS)) {
+      const parentMeta = ROUTE_META[parent];
+      if (!parentMeta) continue;
+      for (const slug of BLOG_POST_SLUGS[parent]) {
+        const dir = path.join(outDir, parent, slug);
+        fs.mkdirSync(dir, { recursive: true });
+        const customized = applyRouteMeta(baseHtml, {
+          ...parentMeta,
+          url: `${parentMeta.url}/${slug}`,
+        });
+        fs.writeFileSync(path.join(dir, "index.html"), customized);
+      }
     }
   },
 };

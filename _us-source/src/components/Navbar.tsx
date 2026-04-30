@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import icon from "@/assets/olivar-icon-nobg.png";
 
 const navLinks = [
-  { label: "How It Works", href: "#method" },
-  { label: "Results", href: "#results" },
-  { label: "FAQ", href: "#faq" },
+  { label: "How It Works", href: "/#method", type: "anchor" as const },
+  { label: "Results", href: "/#results", type: "anchor" as const },
+  { label: "FAQ", href: "/#faq", type: "anchor" as const },
+  { label: "Blog", href: "/blog", type: "route" as const },
 ];
 
 const Navbar = () => {
@@ -17,25 +19,35 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
-        <a href="#" className="flex items-center gap-2.5">
+        <Link to="/" className="flex items-center gap-2.5">
           <img src={icon} alt="Olivar Scale Jobs" className="h-10 md:h-12" />
           <span className="text-white font-bold text-sm md:text-base leading-tight tracking-widest uppercase">
             Olivar Scale Jobs
           </span>
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.type === "route" ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+              >
+                {link.label}
+              </a>
+            ),
+          )}
           <a
-            href="#book"
+            href="/#book"
             className="bg-white text-primary px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/90 transition-all"
           >
             Apply Now
@@ -44,7 +56,7 @@ const Navbar = () => {
 
         <div className="flex md:hidden items-center">
           <a
-            href="#book"
+            href="/#book"
             className="bg-white text-primary px-4 py-2 rounded-lg text-xs font-semibold hover:bg-white/90 transition-all"
           >
             Apply Now

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <link rel="icon" type="image/png" href="/us/favicon.png" />
+    <script>
+      (function () {
+        try {
+          var KEY = "olv_geo_ok";
+          if (sessionStorage.getItem(KEY) === "1") return;
+          var ctrl = new AbortController();
+          var t = setTimeout(function () { ctrl.abort(); }, 2500);
+          fetch("https://ipapi.co/json/", { signal: ctrl.signal })
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (data) {
+              clearTimeout(t);
+              if (data && (data.country === "BR" || data.country_code === "BR")) {
+                window.location.replace("/");
+              } else {
+                sessionStorage.setItem(KEY, "1");
+              }
+            })
+            .catch(function () { clearTimeout(t); });
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>Blog — Olivar Scale Jobs (Dumpster)</title>
+    <meta name="description" content="How the most profitable dumpster rental operators book more rentals, raise prices, and stop relying on broker leads.">
+    <meta name="author" content="Olivar Scale Jobs" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://olivarglobalsales.com/us/dumpster/blog/broker-leads-killing-dumpster-margins" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Olivar Scale Jobs" />
+    <meta property="og:title" content="Blog — Olivar Scale Jobs (Dumpster)" />
+    <meta property="og:description" content="How the most profitable dumpster rental operators book more rentals, raise prices, and stop relying on broker leads." />
+    <meta property="og:image" content="https://olivarglobalsales.com/us/og-dumpster.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Olivar Scale Jobs — Dumpster Blog" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog — Olivar Scale Jobs (Dumpster)" />
+    <meta name="twitter:description" content="How the most profitable dumpster rental operators book more rentals, raise prices, and stop relying on broker leads." />
+    <meta name="twitter:image" content="https://olivarglobalsales.com/us/og-dumpster.png" />
+  <script type="module" crossorigin src="/us/assets/index-CFvnA_7T.js"></script>
+  <link rel="stylesheet" crossorigin href="/us/assets/index-CQeypnvr.css">
+</head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
