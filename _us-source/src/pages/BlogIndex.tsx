@@ -43,7 +43,6 @@ const CATEGORY_PHOTO: Record<string, string> = {
 const FALLBACK_PHOTO = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80";
 
 const PAGE_SIZE = 3;
-const ROTATE_MS = 4000;
 
 const BlogIndex = ({ variant }: BlogIndexProps) => {
   const posts = blogPosts[variant];
@@ -62,7 +61,6 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [page, setPage] = useState(0);
   const [dir, setDir] = useState(1);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const highlightsRef = useRef<HTMLElement>(null);
 
   const featuredPosts = useMemo(() => posts.filter((p) => p.featured), [posts]);
@@ -84,15 +82,6 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
   useEffect(() => {
     setPage(0);
   }, [activeCategory]);
-
-  useEffect(() => {
-    if (totalPages <= 1) return;
-    timerRef.current = setInterval(() => {
-      setDir(1);
-      setPage((p) => (p + 1) % totalPages);
-    }, ROTATE_MS);
-    return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, [totalPages, activeCategory]);
 
   const handleCategoryClick = (name: string) => {
     setActiveCategory((prev) => (prev === name ? null : name));
@@ -396,6 +385,22 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
                 />
               </div>
             )}
+
+            {/* View all articles */}
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={() => {
+                  setActiveCategory("__all__");
+                  setTimeout(() => {
+                    highlightsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }, 80);
+                }}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#0f2e23]/60 hover:text-[#15803d] transition-colors group"
+              >
+                View all articles
+                <span className="text-base transition-transform group-hover:translate-x-1">↓</span>
+              </button>
+            </div>
 
           </div>
         </section>
