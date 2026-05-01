@@ -209,8 +209,8 @@ var FOTOS = {
   "__all__":         "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=900&q=80"
 };
 
-var PAGE_SIZE = 3, ROTATE_MS = 4000;
-var cat = null, pg = 0, timer = null;
+var PAGE_SIZE = 3;
+var cat = null, pg = 0;
 var featured = POSTS.filter(function(p){ return p.featured; });
 
 function pool(){ return !cat ? featured : cat === "__all__" ? POSTS : POSTS.filter(function(p){ return p.category === cat; }); }
@@ -277,8 +277,6 @@ function renderHL(dir){
   });
   g.innerHTML=ch;
 
-  clearInterval(timer);
-  if(total>1) timer=setInterval(function(){ pg=(pg+1)%total; renderHL(1); }, ROTATE_MS);
 }
 
 function selCat(key){
