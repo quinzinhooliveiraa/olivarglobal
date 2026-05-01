@@ -1,6 +1,6 @@
-import { useState, useMemo, useRef } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DumpsterNavbar from "@/components/dumpster/DumpsterNavbar";
@@ -28,56 +28,13 @@ const VARIANT_COPY = {
   },
 } as const;
 
-/* ── Photos chosen to match each category's business context ── */
-const CATEGORY_PHOTO: Record<string, string> = {
-  /* Dumpster-relevant */
-  "Operations":
-    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80", // construction site workers
-  "Pricing":
-    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80", // calculator / finance
-  "Revenue":
-    "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=900&q=80", // growth chart
-  "Scaling":
-    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80", // blueprint / construction planning
-  "Strategy":
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80", // team whiteboard planning
-  "Marketing":
-    "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=900&q=80", // marketing creative
-  "Lead Generation":
-    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80", // outreach / office call
-  "Google Ads":
-    "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=900&q=80", // phone + digital screen
-  "Startup":
-    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80", // laptop / startup team
-  "Case Study":
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80", // data / analytics
-  /* Moving-relevant */
-  "Sales":
-    "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&q=80", // handshake / deal
-};
-
-const FALLBACK_PHOTO =
-  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80";
-
 const BlogIndex = ({ variant }: BlogIndexProps) => {
   const posts = blogPosts[variant];
   const copy = VARIANT_COPY[variant];
   const Nav = variant === "dumpster" ? DumpsterNavbar : Navbar;
   const Foot = variant === "dumpster" ? DumpsterFooter : Footer;
 
-  /* Categories with count */
-  const categories = useMemo(() => {
-    const map = new Map<string, number>();
-    for (const p of posts) {
-      map.set(p.category, (map.get(p.category) ?? 0) + 1);
-    }
-    return Array.from(map.entries())
-      .sort((a, b) => a[0].localeCompare(b[0]))
-      .map(([name, count]) => ({ name, count }));
-  }, [posts]);
-
-  /* Featured = first post of each category (one highlight per topic) */
-  const featured = useMemo(() => {
+  const highlighted = useMemo(() => {
     const seen = new Set<string>();
     return posts.filter((p) => {
       if (seen.has(p.category)) return false;
@@ -85,27 +42,6 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
       return true;
     });
   }, [posts]);
-
-  const [active, setActive] = useState<string>("All");
-  const articlesRef = useRef<HTMLElement>(null);
-
-  const handleCategoryClick = (name: string) => {
-    setActive(name);
-    setTimeout(() => {
-      articlesRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 60);
-  };
-
-  /* When "All" → show featured highlights; when filtered → show all in category */
-  const visible = useMemo(
-    () =>
-      active === "All"
-        ? featured
-        : posts.filter((p) => p.category === active),
-    [active, featured, posts],
-  );
-
-  const isFiltered = active !== "All";
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -153,197 +89,57 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
             >
               {copy.subtitle}
             </motion.p>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.35, delay: 0.18 }}
-              className="text-xs font-medium mt-3"
-              style={{ color: "rgba(255,255,255,0.28)" }}
-            >
-              {posts.length} articles · {categories.length} categories
-            </motion.p>
           </div>
         </section>
 
-        {/* ── 2. Category banners with photos ── */}
-        <section className="px-4 md:px-8 py-12 md:py-16 bg-[#f8f7f4]">
+        {/* ── 2. Highlights ── */}
+        <section className="px-4 md:px-8 py-12 md:py-16 bg-white">
           <div className="container mx-auto max-w-5xl">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#0f2e23]/35 mb-6">
-              Browse by topic
+
+            <p className="text-xs font-bold uppercase tracking-widest text-[#0f2e23]/35 mb-7">
+              Highlights
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-              {categories.map(({ name, count }, idx) => (
-                <motion.button
-                  key={name}
-                  initial={{ opacity: 0, y: 16 }}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
+              {highlighted.map((post, idx) => (
+                <motion.article
+                  key={post.slug}
+                  initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.32, delay: idx * 0.05 }}
-                  onClick={() => handleCategoryClick(name)}
-                  className="group relative overflow-hidden rounded-2xl text-left focus:outline-none"
-                  style={{ height: "200px" }}
+                  transition={{ duration: 0.26, delay: idx * 0.04 }}
+                  className="group flex flex-col bg-white border border-[#0f2e23]/10 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all"
                 >
-                  <img
-                    src={CATEGORY_PHOTO[name] ?? FALLBACK_PHOTO}
-                    alt={name}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div
-                    className="absolute inset-0 transition-opacity duration-300"
-                    style={{
-                      background:
-                        "linear-gradient(160deg, rgba(15,46,35,0.72) 0%, rgba(15,46,35,0.52) 100%)",
-                    }}
-                  />
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      background:
-                        "linear-gradient(160deg, rgba(15,46,35,0.9) 0%, rgba(15,46,35,0.75) 100%)",
-                    }}
-                  />
-                  <div className="relative h-full flex flex-col justify-end p-5 md:p-6">
-                    <p className="text-xl md:text-2xl font-extrabold text-white leading-tight mb-1">
-                      {name}
-                    </p>
-                    <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.5)" }}>
-                      {count} {count === 1 ? "article" : "articles"}
-                    </p>
-                    <span
-                      className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300"
-                      style={{ color: "#4ade80" }}
-                    >
-                      Read articles →
-                    </span>
-                  </div>
-                </motion.button>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── 3. Destaques / Articles ── */}
-        <section
-          ref={articlesRef}
-          className="px-4 md:px-8 py-12 md:py-16 bg-white scroll-mt-20"
-        >
-          <div className="container mx-auto max-w-5xl">
-
-            {/* Header row */}
-            <div className="flex items-center gap-3 mb-7 flex-wrap">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={active}
-                  initial={{ opacity: 0, y: 4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.18 }}
-                  className="text-xs font-bold uppercase tracking-widest text-[#0f2e23]/35 mr-1"
-                >
-                  {isFiltered ? `${active}` : "Destaques"}
-                </motion.span>
-              </AnimatePresence>
-
-              <button
-                onClick={() => setActive("All")}
-                className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border transition-all"
-                style={{
-                  background: !isFiltered ? "#0f2e23" : "transparent",
-                  color: !isFiltered ? "#fff" : "#0f2e23",
-                  borderColor: !isFiltered ? "#0f2e23" : "rgba(15,46,35,0.22)",
-                }}
-              >
-                Destaques
-                <span
-                  className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full"
-                  style={{
-                    background: !isFiltered
-                      ? "rgba(255,255,255,0.15)"
-                      : "rgba(15,46,35,0.08)",
-                  }}
-                >
-                  {featured.length}
-                </span>
-              </button>
-
-              {categories.map(({ name, count }) => (
-                <button
-                  key={name}
-                  onClick={() => setActive(name)}
-                  className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border transition-all"
-                  style={{
-                    background: active === name ? "#0f2e23" : "transparent",
-                    color: active === name ? "#fff" : "#0f2e23",
-                    borderColor:
-                      active === name ? "#0f2e23" : "rgba(15,46,35,0.22)",
-                  }}
-                >
-                  {name}
-                  <span
-                    className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full"
-                    style={{
-                      background:
-                        active === name
-                          ? "rgba(255,255,255,0.15)"
-                          : "rgba(15,46,35,0.08)",
-                    }}
-                  >
-                    {count}
+                  <span className="self-start text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 bg-[#15803d] text-white">
+                    {post.category}
                   </span>
-                </button>
+                  <h3 className="text-xl font-bold font-heading text-[#0f2e23] leading-snug mb-2">
+                    {post.title}
+                  </h3>
+                  <p
+                    className="text-sm text-[#0f2e23]/65 leading-relaxed mb-5 overflow-hidden"
+                    style={{
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                    }}
+                  >
+                    {post.excerpt}
+                  </p>
+                  <div className="mt-auto flex items-center justify-between gap-3">
+                    <span className="text-xs font-medium text-[#0f2e23]/40">
+                      {post.readingTime}
+                    </span>
+                    <Link
+                      to={`${copy.indexPath}/${post.slug}`}
+                      className="text-sm font-bold text-[#15803d] hover:text-[#0f2e23] transition-colors"
+                    >
+                      Read →
+                    </Link>
+                  </div>
+                </motion.article>
               ))}
             </div>
-
-            {/* Cards */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.2 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7"
-              >
-                {visible.map((post, idx) => (
-                  <motion.article
-                    key={post.slug}
-                    initial={{ opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.26, delay: idx * 0.04 }}
-                    className="group flex flex-col bg-white border border-[#0f2e23]/10 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all"
-                  >
-                    <span className="self-start text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 bg-[#15803d] text-white">
-                      {post.category}
-                    </span>
-                    <h3 className="text-xl font-bold font-heading text-[#0f2e23] leading-snug mb-2">
-                      {post.title}
-                    </h3>
-                    <p
-                      className="text-sm text-[#0f2e23]/65 leading-relaxed mb-5 overflow-hidden"
-                      style={{
-                        display: "-webkit-box",
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: "vertical",
-                      }}
-                    >
-                      {post.excerpt}
-                    </p>
-                    <div className="mt-auto flex items-center justify-between gap-3">
-                      <span className="text-xs font-medium text-[#0f2e23]/40">
-                        {post.readingTime}
-                      </span>
-                      <Link
-                        to={`${copy.indexPath}/${post.slug}`}
-                        className="text-sm font-bold text-[#15803d] hover:text-[#0f2e23] transition-colors"
-                      >
-                        Read →
-                      </Link>
-                    </div>
-                  </motion.article>
-                ))}
-              </motion.div>
-            </AnimatePresence>
 
           </div>
         </section>
