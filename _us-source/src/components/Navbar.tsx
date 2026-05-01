@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import icon from "@/assets/olivar-icon-nobg.png";
 
 const navLinks = [
-  { label: "How It Works", href: "/#method", type: "anchor" as const },
-  { label: "Results", href: "/#results", type: "anchor" as const },
-  { label: "FAQ", href: "/#faq", type: "anchor" as const },
-  { label: "Blog", href: "/blog", type: "route" as const },
+  { label: "How It Works", to: "/#method" },
+  { label: "Results", to: "/#results" },
+  { label: "FAQ", to: "/#faq" },
+  { label: "Blog", to: "/blog" },
 ];
 
 const Navbar = () => {
@@ -27,40 +27,30 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) =>
-            link.type === "route" ? (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="text-sm font-medium text-white/80 hover:text-white transition-colors"
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-white/80 hover:text-white transition-colors"
-              >
-                {link.label}
-              </a>
-            ),
-          )}
-          <a
-            href="/#book"
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            to="/#book"
             className="bg-white text-primary px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/90 transition-all"
           >
             Apply Now
-          </a>
+          </Link>
         </div>
 
         <div className="flex md:hidden items-center">
-          <a
-            href="/#book"
+          <Link
+            to="/#book"
             className="bg-white text-primary px-4 py-2 rounded-lg text-xs font-semibold hover:bg-white/90 transition-all"
           >
             Apply Now
-          </a>
+          </Link>
         </div>
       </div>
     </motion.nav>
