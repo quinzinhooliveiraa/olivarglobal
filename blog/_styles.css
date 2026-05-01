@@ -628,3 +628,34 @@ a { -webkit-tap-highlight-color: transparent; }
     padding: 14px 20px;
   }
 }
+
+/* ── Stat cards com contador animado ── */
+.og-stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px;
+  margin: 32px 0;
+}
+.og-stat-card {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+  padding: 20px 16px;
+  text-align: center;
+}
+.og-stat-number {
+  display: block;
+  font-size: 32px;
+  font-weight: 800;
+  color: #16a34a;
+  line-height: 1;
+  margin-bottom: 6px;
+  font-variant-numeric: tabular-nums;
+}
+.og-stat-label {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  line-height: 1.3;
+}
