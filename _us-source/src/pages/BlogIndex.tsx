@@ -67,10 +67,11 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
 
   const featuredPosts = useMemo(() => posts.filter((p) => p.featured), [posts]);
 
-  const highlightPool = useMemo(
-    () => (activeCategory ? posts.filter((p) => p.category === activeCategory) : featuredPosts),
-    [posts, featuredPosts, activeCategory],
-  );
+  const highlightPool = useMemo(() => {
+    if (!activeCategory) return featuredPosts;
+    if (activeCategory === "__all__") return posts;
+    return posts.filter((p) => p.category === activeCategory);
+  }, [posts, featuredPosts, activeCategory]);
 
   const totalPages = Math.ceil(highlightPool.length / PAGE_SIZE);
   const visiblePosts = highlightPool.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
@@ -161,6 +162,60 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
               Browse by topic
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              {/* All articles card */}
+              {(() => {
+                const isActive = activeCategory === "__all__";
+                return (
+                  <motion.button
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.32, delay: 0 }}
+                    onClick={() => handleCategoryClick("__all__")}
+                    className="group relative overflow-hidden rounded-2xl text-left focus:outline-none"
+                    style={{ height: "200px" }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=900&q=80"
+                      alt="All articles"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div
+                      className="absolute inset-0 transition-opacity duration-300"
+                      style={{
+                        background: isActive
+                          ? "linear-gradient(160deg, rgba(21,128,61,0.88) 0%, rgba(15,46,35,0.75) 100%)"
+                          : "linear-gradient(160deg, rgba(15,46,35,0.72) 0%, rgba(15,46,35,0.52) 100%)",
+                      }}
+                    />
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ background: "linear-gradient(160deg, rgba(15,46,35,0.9) 0%, rgba(15,46,35,0.75) 100%)" }}
+                    />
+                    {isActive && (
+                      <div className="absolute top-4 right-4 w-6 h-6 rounded-full bg-[#16a34a] flex items-center justify-center">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <path d="M2 6l3 3 5-5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                    )}
+                    <div className="relative h-full flex flex-col justify-end p-5 md:p-6">
+                      <p className="text-xl md:text-2xl font-extrabold text-white leading-tight mb-1">All Articles</p>
+                      <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.5)" }}>
+                        {posts.length} {posts.length === 1 ? "article" : "articles"}
+                      </p>
+                      <span
+                        className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300"
+                        style={{ color: "#4ade80" }}
+                      >
+                        {isActive ? "Showing ✓" : "Browse all →"}
+                      </span>
+                    </div>
+                  </motion.button>
+                );
+              })()}
+
               {categories.map(({ name, count }, idx) => {
                 const isActive = activeCategory === name;
                 return (
@@ -231,7 +286,7 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
             <div className="flex items-center justify-between mb-7 flex-wrap gap-3">
               <div className="flex items-center gap-3">
                 <p className="text-xs font-bold uppercase tracking-widest text-[#0f2e23]/35">
-                  {activeCategory ? activeCategory : "Highlights"}
+                  {!activeCategory ? "Highlights" : activeCategory === "__all__" ? "All Articles" : activeCategory}
                 </p>
                 {activeCategory && (
                   <button
@@ -239,7 +294,7 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
                     className="text-xs font-semibold px-3 py-1 rounded-full border transition-all"
                     style={{ color: "#0f2e23", borderColor: "rgba(15,46,35,0.2)" }}
                   >
-                    ✕ All
+                    ✕ Highlights
                   </button>
                 )}
               </div>
