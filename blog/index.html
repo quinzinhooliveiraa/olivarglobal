@@ -6,14 +6,12 @@
   <title>Blog Olivar Global Sales — Prospecção e Vendas para os EUA</title>
   <meta name="description" content="Conteúdo prático sobre prospecção B2B, SDRs, vendas internacionais e como construir um motor comercial que gera clientes nos EUA com consistência." />
   <meta name="author" content="Olivar Global Sales" />
-
   <meta property="og:title" content="Blog Olivar Global Sales — Prospecção e Vendas para os EUA" />
   <meta property="og:description" content="Conteúdo prático sobre prospecção B2B, SDRs e como construir um motor comercial que gera clientes nos EUA." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:url" content="https://olivarglobalsales.com/blog/" />
   <meta property="og:site_name" content="Olivar Global Sales" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -37,63 +35,124 @@
     </div>
   </header>
 
-  <section class="og-blog-hero">
-    <div class="og-blog-hero-inner">
-      <span class="og-blog-eyebrow">Blog Olivar Global Sales</span>
-      <h1 class="og-blog-h1">Conteúdo para quem vende para os EUA</h1>
-      <p class="og-blog-sub">
-        Estratégias práticas de prospecção, vendas e operação comercial para
-        agências e negócios brasileiros que querem construir um pipeline
-        previsível com clientes americanos.
-      </p>
+  <!-- BANNER -->
+  <section class="og-blog-banner">
+    <div class="og-blog-banner-dots" aria-hidden="true"></div>
+    <div class="og-blog-banner-inner">
+
+      <!-- Estado padrão (sem categoria selecionada) -->
+      <div id="banner-default" class="og-banner-state">
+        <span class="og-blog-eyebrow">Blog Olivar Global Sales</span>
+        <h1 class="og-blog-h1">Conteúdo para quem vende para os EUA</h1>
+        <p class="og-blog-sub">
+          Estratégias práticas de prospecção, vendas e operação comercial para
+          agências e negócios brasileiros que querem construir um pipeline
+          previsível com clientes americanos.
+        </p>
+        <p class="og-blog-meta-count">3 artigos · 3 categorias</p>
+      </div>
+
+      <!-- Estado com categoria selecionada -->
+      <div id="banner-category" class="og-banner-state og-hidden">
+        <button id="btn-back" class="og-back-cat" onclick="clearCategory()">← Todas as categorias</button>
+        <h1 class="og-blog-h1 og-h1-white" id="banner-cat-name"></h1>
+        <p class="og-blog-meta-count" id="banner-cat-count"></p>
+      </div>
+
     </div>
   </section>
 
-  <section class="og-blog-grid-wrap">
-    <div class="og-blog-grid">
+  <!-- CATEGORIAS COM FOTO -->
+  <section id="section-categories" class="og-cat-section">
+    <div class="og-cat-inner">
+      <p class="og-section-label">Navegue por tema</p>
+      <div class="og-cat-grid">
 
-      <a class="og-blog-card" href="/blog/como-vender-para-eua-sem-morar-la/">
-        <span class="og-blog-tag">Estratégia</span>
-        <h2 class="og-blog-card-title">Como vender para os EUA sem morar lá: o guia 2026 para agências brasileiras</h2>
-        <p class="og-blog-card-desc">
-          Você não precisa de um escritório em Miami para fechar contas
-          americanas. Precisa de um processo de prospecção, fuso, idioma e
-          oferta calibrados. Este é o playbook que estamos rodando hoje.
-        </p>
-        <div class="og-blog-card-foot">
-          <span class="og-blog-card-time">8 min de leitura</span>
-          <span class="og-blog-card-link">Ler artigo →</span>
-        </div>
-      </a>
+        <button class="og-cat-card" onclick="selectCategory('Estratégia')"
+          style="--cat-photo: url('https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=900&q=80')">
+          <div class="og-cat-overlay"></div>
+          <div class="og-cat-hover-overlay"></div>
+          <div class="og-cat-content">
+            <p class="og-cat-name">Estratégia</p>
+            <p class="og-cat-count">1 artigo</p>
+            <span class="og-cat-cta">Ler artigos →</span>
+          </div>
+        </button>
 
-      <a class="og-blog-card" href="/blog/cold-call-em-ingles-roteiro/">
-        <span class="og-blog-tag">Vendas</span>
-        <h2 class="og-blog-card-title">Cold call em inglês: o roteiro que abre portas em decision-makers americanos</h2>
-        <p class="og-blog-card-desc">
-          A diferença entre uma cold call que termina em três segundos e uma
-          que vira reunião não é o sotaque, é o que se diz nos primeiros oito
-          segundos. Aqui está o roteiro testado.
-        </p>
-        <div class="og-blog-card-foot">
-          <span class="og-blog-card-time">7 min de leitura</span>
-          <span class="og-blog-card-link">Ler artigo →</span>
-        </div>
-      </a>
+        <button class="og-cat-card" onclick="selectCategory('Vendas')"
+          style="--cat-photo: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&q=80')">
+          <div class="og-cat-overlay"></div>
+          <div class="og-cat-hover-overlay"></div>
+          <div class="og-cat-content">
+            <p class="og-cat-name">Vendas</p>
+            <p class="og-cat-count">1 artigo</p>
+            <span class="og-cat-cta">Ler artigos →</span>
+          </div>
+        </button>
 
-      <a class="og-blog-card" href="/blog/sdr-brasil-nao-converte-eua/">
-        <span class="og-blog-tag">SDR</span>
-        <h2 class="og-blog-card-title">Por que o seu time de SDR no Brasil não converte nos EUA (e como corrigir)</h2>
-        <p class="og-blog-card-desc">
-          Não é falta de inglês, e quase nunca é falta de esforço. É um
-          conjunto de hábitos, métricas e roteiros desenhados para um mercado
-          diferente do americano. Vamos destrinchar.
-        </p>
-        <div class="og-blog-card-foot">
-          <span class="og-blog-card-time">6 min de leitura</span>
-          <span class="og-blog-card-link">Ler artigo →</span>
-        </div>
-      </a>
+        <button class="og-cat-card" onclick="selectCategory('SDR')"
+          style="--cat-photo: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80')">
+          <div class="og-cat-overlay"></div>
+          <div class="og-cat-hover-overlay"></div>
+          <div class="og-cat-content">
+            <p class="og-cat-name">SDR</p>
+            <p class="og-cat-count">1 artigo</p>
+            <span class="og-cat-cta">Ler artigos →</span>
+          </div>
+        </button>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTIGOS (ocultos até selecionar categoria) -->
+  <section id="section-articles" class="og-articles-section og-hidden">
+    <div class="og-articles-inner">
+      <div class="og-blog-grid" id="articles-grid">
+
+        <a class="og-blog-card" data-category="Estratégia" href="/blog/como-vender-para-eua-sem-morar-la/">
+          <span class="og-blog-tag">Estratégia</span>
+          <h2 class="og-blog-card-title">Como vender para os EUA sem morar lá: o guia 2026 para agências brasileiras</h2>
+          <p class="og-blog-card-desc">
+            Você não precisa de um escritório em Miami para fechar contas
+            americanas. Precisa de um processo de prospecção, fuso, idioma e
+            oferta calibrados. Este é o playbook que estamos rodando hoje.
+          </p>
+          <div class="og-blog-card-foot">
+            <span class="og-blog-card-time">8 min de leitura</span>
+            <span class="og-blog-card-link">Ler artigo →</span>
+          </div>
+        </a>
+
+        <a class="og-blog-card" data-category="Vendas" href="/blog/cold-call-em-ingles-roteiro/">
+          <span class="og-blog-tag">Vendas</span>
+          <h2 class="og-blog-card-title">Cold call em inglês: o roteiro que abre portas em decision-makers americanos</h2>
+          <p class="og-blog-card-desc">
+            A diferença entre uma cold call que termina em três segundos e uma
+            que vira reunião não é o sotaque, é o que se diz nos primeiros oito
+            segundos. Aqui está o roteiro testado.
+          </p>
+          <div class="og-blog-card-foot">
+            <span class="og-blog-card-time">7 min de leitura</span>
+            <span class="og-blog-card-link">Ler artigo →</span>
+          </div>
+        </a>
+
+        <a class="og-blog-card" data-category="SDR" href="/blog/sdr-brasil-nao-converte-eua/">
+          <span class="og-blog-tag">SDR</span>
+          <h2 class="og-blog-card-title">Por que o seu time de SDR no Brasil não converte nos EUA (e como corrigir)</h2>
+          <p class="og-blog-card-desc">
+            Não é falta de inglês, e quase nunca é falta de esforço. É um
+            conjunto de hábitos, métricas e roteiros desenhados para um mercado
+            diferente do americano. Vamos destrinchar.
+          </p>
+          <div class="og-blog-card-foot">
+            <span class="og-blog-card-time">6 min de leitura</span>
+            <span class="og-blog-card-link">Ler artigo →</span>
+          </div>
+        </a>
+
+      </div>
     </div>
   </section>
 
@@ -106,6 +165,40 @@
       </nav>
     </div>
   </footer>
+
+  <script>
+    function selectCategory(name) {
+      // Banner
+      document.getElementById('banner-default').classList.add('og-hidden');
+      document.getElementById('banner-category').classList.remove('og-hidden');
+      document.getElementById('banner-cat-name').textContent = name;
+
+      // Filter cards
+      const cards = document.querySelectorAll('#articles-grid .og-blog-card');
+      let count = 0;
+      cards.forEach(function(card) {
+        if (card.dataset.category === name) {
+          card.style.display = 'flex';
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      document.getElementById('banner-cat-count').textContent =
+        count + (count === 1 ? ' artigo' : ' artigos');
+
+      // Show articles, hide categories
+      document.getElementById('section-categories').classList.add('og-hidden');
+      document.getElementById('section-articles').classList.remove('og-hidden');
+    }
+
+    function clearCategory() {
+      document.getElementById('banner-default').classList.remove('og-hidden');
+      document.getElementById('banner-category').classList.add('og-hidden');
+      document.getElementById('section-categories').classList.remove('og-hidden');
+      document.getElementById('section-articles').classList.add('og-hidden');
+    }
+  </script>
 
 </body>
 </html>
