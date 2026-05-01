@@ -31,4 +31,4 @@ Disallow: /us/dumpster/
 Disallow: /us/dumpster
 
 # Sitemap
-Sitemap: https://olivarglobalsales.com/sitemap.xml
+Sitemap: https://olivarglobal.com/sitemap.xml

@@ -8,7 +8,7 @@ import DumpsterNavbar from "@/components/dumpster/DumpsterNavbar";
 import DumpsterFooter from "@/components/dumpster/DumpsterFooter";
 import { blogPosts, type BlogVariant } from "@/data/blogPosts";
 
-const BASE_URL = "https://olivarglobalsales.com";
+const BASE_URL = "https://olivarglobal.com";
 
 const VARIANT_META_INDEX = {
   moving: {

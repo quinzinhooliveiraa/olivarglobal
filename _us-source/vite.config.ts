@@ -10,32 +10,32 @@ const ROUTE_META: Record<string, RouteMeta> = {
     title: "Olivar Scale Jobs — 50-90+ Booked Dumpster Rentals Per Week",
     description:
       "Pay-per-rentals dumpster lead generation. Fill your calendar with 50-90+ more booked dumpster rentals per week in 30 days. Exclusive leads, no monthly fees.",
-    url: "https://olivarglobalsales.com/us/dumpster",
-    image: "https://olivarglobalsales.com/us/og-dumpster.png",
+    url: "https://olivarglobal.com/us/dumpster",
+    image: "https://olivarglobal.com/us/og-dumpster.png",
     imageAlt: "Olivar Scale Jobs — Booked Dumpster Rentals Per Week",
   },
   "privacy-policy": {
     title: "Privacy Policy — Olivar Scale Jobs",
     description:
       "Olivar Scale Jobs privacy policy. Learn how we collect, use, and protect your information.",
-    url: "https://olivarglobalsales.com/us/privacy-policy",
-    image: "https://olivarglobalsales.com/us/og-privacy.png",
+    url: "https://olivarglobal.com/us/privacy-policy",
+    image: "https://olivarglobal.com/us/og-privacy.png",
     imageAlt: "Privacy Policy — Olivar Scale Jobs",
   },
   blog: {
     title: "Blog — Olivar Scale Jobs (Moving)",
     description:
       "Tactical playbooks on lead generation, sales, and operations for moving company owners.",
-    url: "https://olivarglobalsales.com/us/blog",
-    image: "https://olivarglobalsales.com/us/og-moving.png",
+    url: "https://olivarglobal.com/us/blog",
+    image: "https://olivarglobal.com/us/og-moving.png",
     imageAlt: "Olivar Scale Jobs — Blog",
   },
   "dumpster/blog": {
     title: "Blog — Olivar Scale Jobs (Dumpster)",
     description:
       "How the most profitable dumpster rental operators book more rentals, raise prices, and stop relying on broker leads.",
-    url: "https://olivarglobalsales.com/us/dumpster/blog",
-    image: "https://olivarglobalsales.com/us/og-dumpster.png",
+    url: "https://olivarglobal.com/us/dumpster/blog",
+    image: "https://olivarglobal.com/us/og-dumpster.png",
     imageAlt: "Olivar Scale Jobs — Dumpster Blog",
   },
 };
