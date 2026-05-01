@@ -1,11 +1,31 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DumpsterNavbar from "@/components/dumpster/DumpsterNavbar";
 import DumpsterFooter from "@/components/dumpster/DumpsterFooter";
 import { blogPosts, type BlogVariant } from "@/data/blogPosts";
+
+const BASE_URL = "https://olivarglobalsales.com";
+
+const VARIANT_META_INDEX = {
+  moving: {
+    title: "Blog — Olivar Scale Jobs | Insights for Moving Companies",
+    description:
+      "Tactical playbooks on lead generation, sales process, and operations for moving company owners.",
+    canonical: `${BASE_URL}/us/blog/`,
+    siteName: "Olivar Scale Jobs",
+  },
+  dumpster: {
+    title: "Blog — Olivar Scale Jobs | Insights for Dumpster Rental Operators",
+    description:
+      "How the most profitable dumpster rental operators book more jobs, raise prices, and stop relying on broker leads.",
+    canonical: `${BASE_URL}/us/dumpster/blog/`,
+    siteName: "Olivar Scale Jobs",
+  },
+} as const;
 
 interface BlogIndexProps {
   variant: BlogVariant;
@@ -49,6 +69,7 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
   const copy = VARIANT_COPY[variant];
   const Nav = variant === "dumpster" ? DumpsterNavbar : Navbar;
   const Foot = variant === "dumpster" ? DumpsterFooter : Footer;
+  const indexMeta = VARIANT_META_INDEX[variant];
 
   const categories = useMemo(() => {
     const map = new Map<string, number>();
@@ -98,6 +119,17 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      <Helmet>
+        <title>{indexMeta.title}</title>
+        <meta name="description" content={indexMeta.description} />
+        <link rel="canonical" href={indexMeta.canonical} />
+        <meta property="og:title" content={indexMeta.title} />
+        <meta property="og:description" content={indexMeta.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={indexMeta.canonical} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content={indexMeta.siteName} />
+      </Helmet>
       <Nav />
       <main className="flex-1">
 

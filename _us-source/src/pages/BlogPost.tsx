@@ -1,10 +1,34 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DumpsterNavbar from "@/components/dumpster/DumpsterNavbar";
 import DumpsterFooter from "@/components/dumpster/DumpsterFooter";
 import { getPost, type BlogVariant } from "@/data/blogPosts";
+
+const BASE_URL = "https://olivarglobalsales.com";
+
+const VARIANT_META = {
+  moving: {
+    blogPath: "/us/blog",
+    siteName: "Olivar Scale Jobs",
+    publisher: "Olivar Scale Jobs",
+    publisherUrl: `${BASE_URL}/us/`,
+  },
+  dumpster: {
+    blogPath: "/us/dumpster/blog",
+    siteName: "Olivar Scale Jobs",
+    publisher: "Olivar Scale Jobs",
+    publisherUrl: `${BASE_URL}/us/dumpster`,
+  },
+} as const;
+
+function toIsoDate(humanDate: string): string {
+  const d = new Date(humanDate);
+  if (isNaN(d.getTime())) return new Date().toISOString().split("T")[0];
+  return d.toISOString().split("T")[0];
+}
 
 interface BlogPostProps {
   variant: BlogVariant;
@@ -46,13 +70,54 @@ const BlogPost = ({ variant }: BlogPostProps) => {
 
   const Nav = variant === "dumpster" ? DumpsterNavbar : Navbar;
   const Foot = variant === "dumpster" ? DumpsterFooter : Footer;
+  const meta = VARIANT_META[variant];
 
   if (!post) {
     return <Navigate to={copy.indexPath} replace />;
   }
 
+  const canonicalUrl = `${BASE_URL}${meta.blogPath}/${post.slug}/`;
+  const isoDate = toIsoDate(post.publishedAt);
+  const articleSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: isoDate,
+    dateModified: isoDate,
+    author: { "@type": "Organization", name: meta.publisher, url: meta.publisherUrl },
+    publisher: { "@type": "Organization", name: meta.publisher, url: meta.publisherUrl },
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    articleSection: post.category,
+    inLanguage: "en-US",
+  });
+  const breadcrumbSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/us/` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE_URL}${meta.blogPath}/` },
+      { "@type": "ListItem", position: 3, name: post.title, item: canonicalUrl },
+    ],
+  });
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      <Helmet>
+        <title>{post.title} — {meta.siteName}</title>
+        <meta name="description" content={post.excerpt} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content={meta.siteName} />
+        <meta property="article:published_time" content={isoDate} />
+        <meta property="article:section" content={post.category} />
+        <script type="application/ld+json">{articleSchema}</script>
+        <script type="application/ld+json">{breadcrumbSchema}</script>
+      </Helmet>
       <Nav />
       <main className="flex-1 pt-24 md:pt-28">
         <div className="px-4 md:px-8">
