@@ -24,7 +24,11 @@ Allow: /
 User-agent: Discordbot
 Allow: /
 
-# Block all other crawlers (Google, Bing, etc.) from /us/
+# Google e Bing podem rastrear tudo exceto /us/dumpster/
 User-agent: *
-Disallow: /us/
-Disallow: /us
+Allow: /us/blog/
+Disallow: /us/dumpster/
+Disallow: /us/dumpster
+
+# Sitemap
+Sitemap: https://olivarglobalsales.com/sitemap.xml
