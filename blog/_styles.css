@@ -265,13 +265,66 @@ a { -webkit-tap-highlight-color: transparent; }
 }
 .og-cat-card:hover .og-cat-cta { opacity: 1; transform: translateY(0); }
 
-/* ---------- ARTICLES SECTION ---------- */
+/* ---------- ARTICLES / DESTAQUES SECTION ---------- */
 .og-articles-section {
   background: #ffffff;
   padding: 48px 20px 80px;
 }
 
 .og-articles-inner { max-width: 1120px; margin: 0 auto; }
+
+/* Filter bar */
+.og-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.og-filter-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(15,46,35,0.35);
+  margin-right: 4px;
+  min-width: 80px;
+}
+
+.og-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(15,46,35,0.22);
+  background: transparent;
+  color: #0f2e23;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.og-pill:hover { border-color: #0f2e23; }
+.og-pill-active {
+  background: #0f2e23;
+  color: #ffffff;
+  border-color: #0f2e23;
+}
+
+.og-pill-count {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(15,46,35,0.1);
+}
+.og-pill-active .og-pill-count {
+  background: rgba(255,255,255,0.15);
+}
 
 .og-blog-grid {
   display: grid;

@@ -28,33 +28,36 @@ const VARIANT_COPY = {
   },
 } as const;
 
+/* ── Photos chosen to match each category's business context ── */
 const CATEGORY_PHOTO: Record<string, string> = {
+  /* Dumpster-relevant */
+  "Operations":
+    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80", // construction site workers
+  "Pricing":
+    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80", // calculator / finance
+  "Revenue":
+    "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=900&q=80", // growth chart
+  "Scaling":
+    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80", // blueprint / construction planning
+  "Strategy":
+    "https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80", // team whiteboard planning
+  "Marketing":
+    "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=900&q=80", // marketing creative
   "Lead Generation":
-    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80",
+    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80", // outreach / office call
   "Google Ads":
-    "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=900&q=80",
-  Marketing:
-    "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=900&q=80",
-  Operations:
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80",
-  Pricing:
-    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80",
-  Revenue:
-    "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=900&q=80",
-  Scaling:
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80",
-  Startup:
-    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80",
-  Strategy:
-    "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=900&q=80",
+    "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=900&q=80", // phone + digital screen
+  "Startup":
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80", // laptop / startup team
   "Case Study":
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80",
-  Sales:
-    "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&q=80",
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80", // data / analytics
+  /* Moving-relevant */
+  "Sales":
+    "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&q=80", // handshake / deal
 };
 
 const FALLBACK_PHOTO =
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80";
+  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80";
 
 const BlogIndex = ({ variant }: BlogIndexProps) => {
   const posts = blogPosts[variant];
@@ -62,6 +65,7 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
   const Nav = variant === "dumpster" ? DumpsterNavbar : Navbar;
   const Foot = variant === "dumpster" ? DumpsterFooter : Footer;
 
+  /* Categories with count */
   const categories = useMemo(() => {
     const map = new Map<string, number>();
     for (const p of posts) {
@@ -70,6 +74,16 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
     return Array.from(map.entries())
       .sort((a, b) => a[0].localeCompare(b[0]))
       .map(([name, count]) => ({ name, count }));
+  }, [posts]);
+
+  /* Featured = first post of each category (one highlight per topic) */
+  const featured = useMemo(() => {
+    const seen = new Set<string>();
+    return posts.filter((p) => {
+      if (seen.has(p.category)) return false;
+      seen.add(p.category);
+      return true;
+    });
   }, [posts]);
 
   const [active, setActive] = useState<string>("All");
@@ -82,10 +96,16 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
     }, 60);
   };
 
+  /* When "All" → show featured highlights; when filtered → show all in category */
   const visible = useMemo(
-    () => (active === "All" ? posts : posts.filter((p) => p.category === active)),
-    [active, posts],
+    () =>
+      active === "All"
+        ? featured
+        : posts.filter((p) => p.category === active),
+    [active, featured, posts],
   );
+
+  const isFiltered = active !== "All";
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -212,31 +232,41 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
 
             {/* Header row */}
             <div className="flex items-center gap-3 mb-7 flex-wrap">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#0f2e23]/35 mr-1">
-                Articles
-              </span>
-              {/* All pill */}
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={active}
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.18 }}
+                  className="text-xs font-bold uppercase tracking-widest text-[#0f2e23]/35 mr-1"
+                >
+                  {isFiltered ? `${active}` : "Destaques"}
+                </motion.span>
+              </AnimatePresence>
+
               <button
                 onClick={() => setActive("All")}
                 className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border transition-all"
                 style={{
-                  background: active === "All" ? "#0f2e23" : "transparent",
-                  color: active === "All" ? "#fff" : "#0f2e23",
-                  borderColor: active === "All" ? "#0f2e23" : "rgba(15,46,35,0.22)",
+                  background: !isFiltered ? "#0f2e23" : "transparent",
+                  color: !isFiltered ? "#fff" : "#0f2e23",
+                  borderColor: !isFiltered ? "#0f2e23" : "rgba(15,46,35,0.22)",
                 }}
               >
-                All
+                Destaques
                 <span
                   className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full"
                   style={{
-                    background: active === "All" ? "rgba(255,255,255,0.15)" : "rgba(15,46,35,0.08)",
+                    background: !isFiltered
+                      ? "rgba(255,255,255,0.15)"
+                      : "rgba(15,46,35,0.08)",
                   }}
                 >
-                  {posts.length}
+                  {featured.length}
                 </span>
               </button>
 
-              {/* Category pills */}
               {categories.map(({ name, count }) => (
                 <button
                   key={name}
@@ -245,14 +275,18 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
                   style={{
                     background: active === name ? "#0f2e23" : "transparent",
                     color: active === name ? "#fff" : "#0f2e23",
-                    borderColor: active === name ? "#0f2e23" : "rgba(15,46,35,0.22)",
+                    borderColor:
+                      active === name ? "#0f2e23" : "rgba(15,46,35,0.22)",
                   }}
                 >
                   {name}
                   <span
                     className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full"
                     style={{
-                      background: active === name ? "rgba(255,255,255,0.15)" : "rgba(15,46,35,0.08)",
+                      background:
+                        active === name
+                          ? "rgba(255,255,255,0.15)"
+                          : "rgba(15,46,35,0.08)",
                     }}
                   >
                     {count}
@@ -310,6 +344,7 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
                 ))}
               </motion.div>
             </AnimatePresence>
+
           </div>
         </section>
 

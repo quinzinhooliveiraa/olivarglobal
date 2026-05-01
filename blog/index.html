@@ -40,7 +40,6 @@
     <div class="og-blog-banner-dots" aria-hidden="true"></div>
     <div class="og-blog-banner-inner">
 
-      <!-- Estado padrão (sem categoria selecionada) -->
       <div id="banner-default" class="og-banner-state">
         <span class="og-blog-eyebrow">Blog Olivar Global Sales</span>
         <h1 class="og-blog-h1">Conteúdo para quem vende para os EUA</h1>
@@ -52,10 +51,9 @@
         <p class="og-blog-meta-count">3 artigos · 3 categorias</p>
       </div>
 
-      <!-- Estado com categoria selecionada -->
       <div id="banner-category" class="og-banner-state og-hidden">
         <button id="btn-back" class="og-back-cat" onclick="clearCategory()">← Todas as categorias</button>
-        <h1 class="og-blog-h1 og-h1-white" id="banner-cat-name"></h1>
+        <h1 class="og-blog-h1" id="banner-cat-name"></h1>
         <p class="og-blog-meta-count" id="banner-cat-count"></p>
       </div>
 
@@ -69,7 +67,7 @@
       <div class="og-cat-grid">
 
         <button class="og-cat-card" onclick="selectCategory('Estratégia')"
-          style="--cat-photo: url('https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=900&q=80')">
+          style="--cat-photo: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80')">
           <div class="og-cat-overlay"></div>
           <div class="og-cat-hover-overlay"></div>
           <div class="og-cat-content">
@@ -105,9 +103,27 @@
     </div>
   </section>
 
-  <!-- ARTIGOS (ocultos até selecionar categoria) -->
-  <section id="section-articles" class="og-articles-section og-hidden">
+  <!-- DESTAQUES — sempre visível -->
+  <section id="section-articles" class="og-articles-section">
     <div class="og-articles-inner">
+
+      <!-- Filtros -->
+      <div class="og-filter-bar">
+        <span class="og-filter-label" id="filter-label">Destaques</span>
+        <button id="pill-all" class="og-pill og-pill-active" onclick="clearCategory()">
+          Destaques <span class="og-pill-count">3</span>
+        </button>
+        <button class="og-pill" data-cat="Estratégia" onclick="selectCategory('Estratégia')">
+          Estratégia <span class="og-pill-count">1</span>
+        </button>
+        <button class="og-pill" data-cat="Vendas" onclick="selectCategory('Vendas')">
+          Vendas <span class="og-pill-count">1</span>
+        </button>
+        <button class="og-pill" data-cat="SDR" onclick="selectCategory('SDR')">
+          SDR <span class="og-pill-count">1</span>
+        </button>
+      </div>
+
       <div class="og-blog-grid" id="articles-grid">
 
         <a class="og-blog-card" data-category="Estratégia" href="/blog/como-vender-para-eua-sem-morar-la/">
@@ -174,8 +190,8 @@
       document.getElementById('banner-cat-name').textContent = name;
 
       // Filter cards
-      const cards = document.querySelectorAll('#articles-grid .og-blog-card');
-      let count = 0;
+      var cards = document.querySelectorAll('#articles-grid .og-blog-card');
+      var count = 0;
       cards.forEach(function(card) {
         if (card.dataset.category === name) {
           card.style.display = 'flex';
@@ -187,16 +203,33 @@
       document.getElementById('banner-cat-count').textContent =
         count + (count === 1 ? ' artigo' : ' artigos');
 
-      // Show articles, hide categories
-      document.getElementById('section-categories').classList.add('og-hidden');
-      document.getElementById('section-articles').classList.remove('og-hidden');
+      // Filter label
+      document.getElementById('filter-label').textContent = name;
+
+      // Pills
+      document.querySelectorAll('.og-pill').forEach(function(p) { p.classList.remove('og-pill-active'); });
+      var target = document.querySelector('.og-pill[data-cat="' + name + '"]');
+      if (target) target.classList.add('og-pill-active');
+
+      // Scroll to destaques
+      setTimeout(function() {
+        document.getElementById('section-articles').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 60);
     }
 
     function clearCategory() {
       document.getElementById('banner-default').classList.remove('og-hidden');
       document.getElementById('banner-category').classList.add('og-hidden');
-      document.getElementById('section-categories').classList.remove('og-hidden');
-      document.getElementById('section-articles').classList.add('og-hidden');
+      document.getElementById('filter-label').textContent = 'Destaques';
+
+      // Show all cards
+      document.querySelectorAll('#articles-grid .og-blog-card').forEach(function(card) {
+        card.style.display = 'flex';
+      });
+
+      // Pills
+      document.querySelectorAll('.og-pill').forEach(function(p) { p.classList.remove('og-pill-active'); });
+      document.getElementById('pill-all').classList.add('og-pill-active');
     }
   </script>
 
