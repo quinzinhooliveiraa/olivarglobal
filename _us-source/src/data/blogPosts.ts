@@ -13,6 +13,7 @@ export type BlogPost = {
   category: string;
   readingTime: string;
   publishedAt: string;
+  featured?: boolean;
   body: BlogBlock[];
 };
 
@@ -25,6 +26,7 @@ const movingPosts: BlogPost[] = [
     category: "Lead Generation",
     readingTime: "7 min read",
     publishedAt: "April 22, 2026",
+    featured: true,
     body: [
       {
         type: "p",
@@ -107,6 +109,7 @@ const movingPosts: BlogPost[] = [
   {
     slug: "lead-gen-mistakes-killing-moving-companies",
     title: "The 5 Lead Gen Mistakes That Quietly Kill Moving Companies",
+    featured: true,
     excerpt:
       "Most moving companies do not lose deals to better competitors. They lose them to small, invisible mistakes in the way leads are captured, contacted, and closed. Here are the five worst offenders.",
     category: "Sales",
@@ -170,6 +173,7 @@ const movingPosts: BlogPost[] = [
   {
     slug: "moving-leads-convert-below-10-percent",
     title: "Why Most Moving Leads Convert Below 10 Percent and How to Fix It",
+    featured: true,
     excerpt:
       "A ten percent close rate is not a sales talent problem. It is a system problem. Here is what high performing moving companies do differently from the first ring to the signed contract.",
     category: "Operations",
@@ -252,6 +256,7 @@ const dumpsterPosts: BlogPost[] = [
   {
     slug: "book-50-dumpster-rentals-per-week",
     title: "How to Book 50+ Dumpster Rentals Per Week Without Burning Out on Ads",
+    featured: true,
     excerpt:
       "Booking fifty rentals a week is not about spending more on ads. It is about building a system where every dollar of ad spend produces a callable, exclusive lead inside an hour.",
     category: "Lead Generation",
@@ -378,6 +383,7 @@ const dumpsterPosts: BlogPost[] = [
   {
     slug: "broker-leads-killing-dumpster-margins",
     title: "Why Broker Leads Are Killing Your Dumpster Business Margins",
+    featured: true,
     excerpt:
       "Broker leads feel free until you measure what they actually cost. Here is how to read your own numbers and decide whether to cut them off completely or keep them as overflow.",
     category: "Strategy",
@@ -704,6 +710,7 @@ const dumpsterPosts: BlogPost[] = [
   {
     slug: "pay-per-job-vs-marketing-agencies",
     title: "Pay-Per-Job vs. Marketing Agencies: Why Dumpster Companies Are Switching",
+    featured: true,
     excerpt:
       "Retainers cost the same whether you book ten jobs or zero. Performance models flip that risk. Here is how to compare the two honestly and decide which fits your stage.",
     category: "Marketing",
@@ -1011,6 +1018,7 @@ const dumpsterPosts: BlogPost[] = [
   {
     slug: "dumpster-rental-pricing-guide-2026",
     title: "Dumpster Rental Pricing Guide 2026: What to Charge by Size and Market",
+    featured: true,
     excerpt:
       "A clear price-by-size table, the regional and material adjustments that move it, and how to position transparent pricing as a competitive advantage.",
     category: "Pricing",
@@ -1247,6 +1255,7 @@ const dumpsterPosts: BlogPost[] = [
   {
     slug: "real-cost-empty-dumpster",
     title: "The Real Cost of an Empty Dumpster: Why Every Day Idle Is Money Lost",
+    featured: true,
     excerpt:
       "Idle inventory is invisible until you put a number on it. Here is the formula, three real-world scenarios, and the levers that compress the leak fastest.",
     category: "Operations",
@@ -1305,6 +1314,7 @@ const dumpsterPosts: BlogPost[] = [
   {
     slug: "case-study-7-to-21-dumpsters",
     title: "Case Study: How a Dumpster Company Went From 7 to 21 Dumpsters in 6 Months",
+    featured: true,
     excerpt:
       "A documented six-month rebuild: the starting point, the three changes that moved the numbers, and the revenue and margin profile at the end. With the lessons that transfer to your operation.",
     category: "Case Study",

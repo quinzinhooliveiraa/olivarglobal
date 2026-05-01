@@ -42,7 +42,7 @@ const CATEGORY_PHOTO: Record<string, string> = {
 };
 const FALLBACK_PHOTO = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80";
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 3;
 const ROTATE_MS = 4000;
 
 const BlogIndex = ({ variant }: BlogIndexProps) => {
@@ -65,9 +65,11 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const highlightsRef = useRef<HTMLElement>(null);
 
+  const featuredPosts = useMemo(() => posts.filter((p) => p.featured), [posts]);
+
   const highlightPool = useMemo(
-    () => (activeCategory ? posts.filter((p) => p.category === activeCategory) : posts),
-    [posts, activeCategory],
+    () => (activeCategory ? posts.filter((p) => p.category === activeCategory) : featuredPosts),
+    [posts, featuredPosts, activeCategory],
   );
 
   const totalPages = Math.ceil(highlightPool.length / PAGE_SIZE);
