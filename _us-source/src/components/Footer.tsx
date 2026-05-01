@@ -8,15 +8,14 @@ const Footer = () => {
         <div className="flex items-center gap-2 whitespace-nowrap">
           <img src={icon} alt="Olivar Scale Jobs" className="h-9 w-auto shrink-0" />
           <span className="text-xs text-white/70">
-            <a
-              href="/us/dumpster"
+            <Link
+              to="/dumpster"
               aria-label="Owner access"
-              rel="nofollow noopener noreferrer"
               className="text-white/70 hover:text-white/70 cursor-text select-none"
               style={{ textDecoration: "none" }}
             >
               ©
-            </a>{" "}
+            </Link>{" "}
             2022 Olivar Scale Jobs. All rights reserved<a
               href="/"
               aria-label="."
