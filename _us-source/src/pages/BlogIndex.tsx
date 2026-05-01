@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
@@ -72,11 +72,19 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
       .map(([name, count]) => ({ name, count }));
   }, [posts]);
 
-  const [selected, setSelected] = useState<string | null>(null);
+  const [active, setActive] = useState<string>("All");
+  const articlesRef = useRef<HTMLElement>(null);
+
+  const handleCategoryClick = (name: string) => {
+    setActive(name);
+    setTimeout(() => {
+      articlesRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 60);
+  };
 
   const visible = useMemo(
-    () => (selected ? posts.filter((p) => p.category === selected) : []),
-    [selected, posts],
+    () => (active === "All" ? posts : posts.filter((p) => p.category === active)),
+    [active, posts],
   );
 
   return (
@@ -84,7 +92,7 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
       <Nav />
       <main className="flex-1">
 
-        {/* ── Banner ── */}
+        {/* ── 1. Blog banner ── */}
         <section
           className="pt-28 md:pt-36 pb-14 md:pb-20 px-4 md:px-8 relative overflow-hidden"
           style={{ background: "#0f2e23" }}
@@ -99,200 +107,212 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
             }}
           />
           <div className="container mx-auto max-w-5xl relative">
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35 }}
+              className="text-xs font-bold tracking-widest uppercase mb-3"
+              style={{ color: "#16a34a" }}
+            >
+              {copy.eyebrow}
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.05 }}
+              className="text-4xl md:text-6xl font-extrabold font-heading text-white leading-tight mb-4 max-w-3xl"
+            >
+              {copy.title}
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="text-base md:text-lg max-w-2xl leading-relaxed"
+              style={{ color: "rgba(255,255,255,0.55)" }}
+            >
+              {copy.subtitle}
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.35, delay: 0.18 }}
+              className="text-xs font-medium mt-3"
+              style={{ color: "rgba(255,255,255,0.28)" }}
+            >
+              {posts.length} articles · {categories.length} categories
+            </motion.p>
+          </div>
+        </section>
+
+        {/* ── 2. Category banners with photos ── */}
+        <section className="px-4 md:px-8 py-12 md:py-16 bg-[#f8f7f4]">
+          <div className="container mx-auto max-w-5xl">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#0f2e23]/35 mb-6">
+              Browse by topic
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              {categories.map(({ name, count }, idx) => (
+                <motion.button
+                  key={name}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.32, delay: idx * 0.05 }}
+                  onClick={() => handleCategoryClick(name)}
+                  className="group relative overflow-hidden rounded-2xl text-left focus:outline-none"
+                  style={{ height: "200px" }}
+                >
+                  <img
+                    src={CATEGORY_PHOTO[name] ?? FALLBACK_PHOTO}
+                    alt={name}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div
+                    className="absolute inset-0 transition-opacity duration-300"
+                    style={{
+                      background:
+                        "linear-gradient(160deg, rgba(15,46,35,0.72) 0%, rgba(15,46,35,0.52) 100%)",
+                    }}
+                  />
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{
+                      background:
+                        "linear-gradient(160deg, rgba(15,46,35,0.9) 0%, rgba(15,46,35,0.75) 100%)",
+                    }}
+                  />
+                  <div className="relative h-full flex flex-col justify-end p-5 md:p-6">
+                    <p className="text-xl md:text-2xl font-extrabold text-white leading-tight mb-1">
+                      {name}
+                    </p>
+                    <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.5)" }}>
+                      {count} {count === 1 ? "article" : "articles"}
+                    </p>
+                    <span
+                      className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300"
+                      style={{ color: "#4ade80" }}
+                    >
+                      Read articles →
+                    </span>
+                  </div>
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── 3. Destaques / Articles ── */}
+        <section
+          ref={articlesRef}
+          className="px-4 md:px-8 py-12 md:py-16 bg-white scroll-mt-20"
+        >
+          <div className="container mx-auto max-w-5xl">
+
+            {/* Header row */}
+            <div className="flex items-center gap-3 mb-7 flex-wrap">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#0f2e23]/35 mr-1">
+                Articles
+              </span>
+              {/* All pill */}
+              <button
+                onClick={() => setActive("All")}
+                className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border transition-all"
+                style={{
+                  background: active === "All" ? "#0f2e23" : "transparent",
+                  color: active === "All" ? "#fff" : "#0f2e23",
+                  borderColor: active === "All" ? "#0f2e23" : "rgba(15,46,35,0.22)",
+                }}
+              >
+                All
+                <span
+                  className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full"
+                  style={{
+                    background: active === "All" ? "rgba(255,255,255,0.15)" : "rgba(15,46,35,0.08)",
+                  }}
+                >
+                  {posts.length}
+                </span>
+              </button>
+
+              {/* Category pills */}
+              {categories.map(({ name, count }) => (
+                <button
+                  key={name}
+                  onClick={() => setActive(name)}
+                  className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border transition-all"
+                  style={{
+                    background: active === name ? "#0f2e23" : "transparent",
+                    color: active === name ? "#fff" : "#0f2e23",
+                    borderColor: active === name ? "#0f2e23" : "rgba(15,46,35,0.22)",
+                  }}
+                >
+                  {name}
+                  <span
+                    className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full"
+                    style={{
+                      background: active === name ? "rgba(255,255,255,0.15)" : "rgba(15,46,35,0.08)",
+                    }}
+                  >
+                    {count}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Cards */}
             <AnimatePresence mode="wait">
-              {selected === null ? (
-                <motion.div
-                  key="default"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <p
-                    className="text-xs font-bold tracking-widest uppercase mb-3"
-                    style={{ color: "#16a34a" }}
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.2 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7"
+              >
+                {visible.map((post, idx) => (
+                  <motion.article
+                    key={post.slug}
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.26, delay: idx * 0.04 }}
+                    className="group flex flex-col bg-white border border-[#0f2e23]/10 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all"
                   >
-                    {copy.eyebrow}
-                  </p>
-                  <h1 className="text-4xl md:text-6xl font-extrabold font-heading text-white leading-tight mb-4 max-w-3xl">
-                    {copy.title}
-                  </h1>
-                  <p
-                    className="text-base md:text-lg max-w-2xl leading-relaxed"
-                    style={{ color: "rgba(255,255,255,0.55)" }}
-                  >
-                    {copy.subtitle}
-                  </p>
-                  <p
-                    className="text-xs font-medium mt-3"
-                    style={{ color: "rgba(255,255,255,0.28)" }}
-                  >
-                    {posts.length} articles · {categories.length} categories
-                  </p>
-                </motion.div>
-              ) : (
-                <motion.div
-                  key={`cat-${selected}`}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.25 }}
-                >
-                  <button
-                    onClick={() => setSelected(null)}
-                    className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider mb-5 transition-colors"
-                    style={{ color: "rgba(255,255,255,0.45)" }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "rgba(255,255,255,0.9)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "rgba(255,255,255,0.45)")
-                    }
-                  >
-                    ← All categories
-                  </button>
-                  <h1 className="text-4xl md:text-5xl font-extrabold font-heading text-white leading-tight mb-2">
-                    {selected}
-                  </h1>
-                  <p
-                    className="text-sm font-medium"
-                    style={{ color: "rgba(255,255,255,0.4)" }}
-                  >
-                    {visible.length} {visible.length === 1 ? "article" : "articles"}
-                  </p>
-                </motion.div>
-              )}
+                    <span className="self-start text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 bg-[#15803d] text-white">
+                      {post.category}
+                    </span>
+                    <h3 className="text-xl font-bold font-heading text-[#0f2e23] leading-snug mb-2">
+                      {post.title}
+                    </h3>
+                    <p
+                      className="text-sm text-[#0f2e23]/65 leading-relaxed mb-5 overflow-hidden"
+                      style={{
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                      }}
+                    >
+                      {post.excerpt}
+                    </p>
+                    <div className="mt-auto flex items-center justify-between gap-3">
+                      <span className="text-xs font-medium text-[#0f2e23]/40">
+                        {post.readingTime}
+                      </span>
+                      <Link
+                        to={`${copy.indexPath}/${post.slug}`}
+                        className="text-sm font-bold text-[#15803d] hover:text-[#0f2e23] transition-colors"
+                      >
+                        Read →
+                      </Link>
+                    </div>
+                  </motion.article>
+                ))}
+              </motion.div>
             </AnimatePresence>
           </div>
         </section>
 
-        {/* ── Body ── */}
-        <AnimatePresence mode="wait">
-
-          {/* Category photo banners */}
-          {selected === null && (
-            <motion.section
-              key="categories"
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.28 }}
-              className="px-4 md:px-8 py-12 md:py-16 bg-[#f8f7f4]"
-            >
-              <div className="container mx-auto max-w-5xl">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#0f2e23]/35 mb-6">
-                  Browse by topic
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-                  {categories.map(({ name, count }, idx) => (
-                    <motion.button
-                      key={name}
-                      initial={{ opacity: 0, y: 16 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: idx * 0.06 }}
-                      onClick={() => setSelected(name)}
-                      className="group relative overflow-hidden rounded-2xl text-left focus:outline-none"
-                      style={{ height: "210px" }}
-                    >
-                      <img
-                        src={CATEGORY_PHOTO[name] ?? FALLBACK_PHOTO}
-                        alt={name}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                      <div
-                        className="absolute inset-0 transition-opacity duration-300"
-                        style={{
-                          background:
-                            "linear-gradient(160deg, rgba(15,46,35,0.72) 0%, rgba(15,46,35,0.52) 100%)",
-                        }}
-                      />
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{
-                          background:
-                            "linear-gradient(160deg, rgba(15,46,35,0.9) 0%, rgba(15,46,35,0.75) 100%)",
-                        }}
-                      />
-                      <div className="relative h-full flex flex-col justify-end p-5 md:p-6">
-                        <p className="text-xl md:text-2xl font-extrabold text-white leading-tight mb-1">
-                          {name}
-                        </p>
-                        <p
-                          className="text-xs font-semibold"
-                          style={{ color: "rgba(255,255,255,0.5)" }}
-                        >
-                          {count} {count === 1 ? "article" : "articles"}
-                        </p>
-                        <span
-                          className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300"
-                          style={{ color: "#4ade80" }}
-                        >
-                          Read articles →
-                        </span>
-                      </div>
-                    </motion.button>
-                  ))}
-                </div>
-              </div>
-            </motion.section>
-          )}
-
-          {/* Article cards for selected category */}
-          {selected !== null && (
-            <motion.section
-              key={`posts-${selected}`}
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.28 }}
-              className="px-4 md:px-8 py-12 md:py-16 bg-white"
-            >
-              <div className="container mx-auto max-w-5xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
-                  {visible.map((post, idx) => (
-                    <motion.article
-                      key={post.slug}
-                      initial={{ opacity: 0, y: 16 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.28, delay: idx * 0.05 }}
-                      className="group flex flex-col bg-white border border-[#0f2e23]/10 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all"
-                    >
-                      <span className="self-start text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 bg-[#15803d] text-white">
-                        {post.category}
-                      </span>
-                      <h3 className="text-xl font-bold font-heading text-[#0f2e23] leading-snug mb-2">
-                        {post.title}
-                      </h3>
-                      <p
-                        className="text-sm text-[#0f2e23]/65 leading-relaxed mb-5 overflow-hidden"
-                        style={{
-                          display: "-webkit-box",
-                          WebkitLineClamp: 2,
-                          WebkitBoxOrient: "vertical",
-                        }}
-                      >
-                        {post.excerpt}
-                      </p>
-                      <div className="mt-auto flex items-center justify-between gap-3">
-                        <span className="text-xs font-medium text-[#0f2e23]/40">
-                          {post.readingTime}
-                        </span>
-                        <Link
-                          to={`${copy.indexPath}/${post.slug}`}
-                          className="text-sm font-bold text-[#15803d] hover:text-[#0f2e23] transition-colors"
-                        >
-                          Read →
-                        </Link>
-                      </div>
-                    </motion.article>
-                  ))}
-                </div>
-              </div>
-            </motion.section>
-          )}
-
-        </AnimatePresence>
       </main>
       <Foot />
     </div>
