@@ -3,235 +3,300 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Blog Olivar Global Sales — Prospecção e Vendas para os EUA</title>
-  <meta name="description" content="Conteúdo prático sobre prospecção B2B, SDRs, vendas internacionais e como construir um motor comercial que gera clientes nos EUA com consistência." />
-  <meta name="author" content="Olivar Global Sales" />
-  <meta property="og:title" content="Blog Olivar Global Sales — Prospecção e Vendas para os EUA" />
-  <meta property="og:description" content="Conteúdo prático sobre prospecção B2B, SDRs e como construir um motor comercial que gera clientes nos EUA." />
+  <title>Blog — Olivar Global Sales | Estratégia Comercial e Vendas Internacionais</title>
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Playbooks táticos sobre prospecção B2B, SDR, processo de vendas e como fechar contratos em dólar e euro." />
+  <meta property="og:title" content="Blog — Olivar Global Sales" />
+  <meta property="og:description" content="Playbooks táticos sobre prospecção B2B, SDR, processo de vendas e como fechar contratos em dólar e euro." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:url" content="https://olivarglobalsales.com/blog/" />
   <meta property="og:site_name" content="Olivar Global Sales" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/blog/_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --g:#16a34a; --gH:#22c55e; --dk:#0f2e23; --dk2:#0a2418; --bg:#f8f7f4; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"Inter",system-ui,-apple-system,sans-serif;color:#111827;background:#fff}
+    ::-webkit-scrollbar{width:7px}
+    ::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:99px}
+    .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e5e7eb}
+    .nav-i{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:1200px;margin:0 auto;gap:16px}
+    .nav-logo{font-size:14px;font-weight:800;letter-spacing:.05em;color:var(--dk);text-decoration:none;white-space:nowrap}
+    .nav-logo em{color:var(--g);font-style:normal}
+    .nav-links{display:flex;align-items:center;gap:20px;font-size:13px}
+    .nav-links a{color:#4b5563;text-decoration:none;font-weight:500;transition:color .2s;white-space:nowrap}
+    .nav-links a:hover,.nav-links a.cur{color:var(--dk);font-weight:700}
+    .nav-cta{padding:9px 18px;border-radius:999px;background:#000;color:#fff!important;font-weight:700;font-size:13px;text-decoration:none;border:1px solid #000;white-space:nowrap}
+    @media(max-width:750px){.nav-links{display:none}}
+
+    /* BANNER */
+    .banner{background:var(--dk);padding:100px 20px 72px;position:relative;overflow:hidden}
+    .banner::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:28px 28px}
+    .banner-in{position:relative;max-width:1000px;margin:0 auto}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--g);margin-bottom:14px}
+    .banner h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-.03em;max-width:680px}
+    .banner p{font-size:16px;color:rgba(255,255,255,.55);max-width:540px;line-height:1.65}
+
+    /* CATEGORY SECTION */
+    .cats{background:var(--bg);padding:72px 20px}
+    .sec-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(15,46,35,.35);margin-bottom:24px}
+    .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media(max-width:680px){.cat-grid{grid-template-columns:1fr}}
+    @media(min-width:480px) and (max-width:680px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+    .cat-btn{position:relative;border-radius:18px;overflow:hidden;height:200px;cursor:pointer;border:none;background:none;text-align:left;width:100%}
+    .cat-btn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .cat-btn:hover img{transform:scale(1.05)}
+    .cat-ov{position:absolute;inset:0;background:linear-gradient(160deg,rgba(15,46,35,.72) 0%,rgba(15,46,35,.52) 100%);transition:background .3s}
+    .cat-btn.on .cat-ov{background:linear-gradient(160deg,rgba(21,128,61,.88) 0%,rgba(15,46,35,.75) 100%)}
+    .cat-btn:hover .cat-ov{background:linear-gradient(160deg,rgba(15,46,35,.9) 0%,rgba(15,46,35,.75) 100%)}
+    .cat-chk{display:none;position:absolute;top:14px;right:14px;width:24px;height:24px;border-radius:50%;background:var(--g);align-items:center;justify-content:center}
+    .cat-btn.on .cat-chk{display:flex}
+    .cat-body{position:absolute;bottom:0;left:0;right:0;padding:20px 22px}
+    .cat-name{font-size:20px;font-weight:800;color:#fff;margin-bottom:4px}
+    .cat-count{font-size:11px;font-weight:600;color:rgba(255,255,255,.5)}
+    .cat-cta2{margin-top:10px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#4ade80;opacity:0;transform:translateY(4px);transition:all .3s}
+    .cat-btn:hover .cat-cta2{opacity:1;transform:translateY(0)}
+
+    /* HIGHLIGHTS */
+    .hl{background:#fff;padding:72px 20px;scroll-margin-top:80px}
+    .hl-hdr{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+    .hl-left{display:flex;align-items:center;gap:12px}
+    .hl-lbl{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(15,46,35,.35)}
+    .hl-rst{font-size:11px;font-weight:600;padding:5px 12px;border-radius:999px;border:1px solid rgba(15,46,35,.2);background:none;color:var(--dk);cursor:pointer;transition:all .2s;display:none}
+    .hl-rst:hover{background:var(--dk);color:#fff;border-color:var(--dk)}
+    .hl-pag{display:flex;align-items:center;gap:8px}
+    .hl-arr{width:28px;height:28px;border-radius:50%;border:1px solid rgba(15,46,35,.22);background:none;color:var(--dk);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;line-height:1}
+    .hl-arr:hover{background:var(--dk);color:#fff;border-color:var(--dk)}
+    .hl-dots{display:flex;gap:6px;align-items:center}
+    .hl-dot{width:8px;height:8px;border-radius:50%;background:rgba(15,46,35,.18);border:none;cursor:pointer;transition:all .25s;padding:0}
+    .hl-dot.on{background:var(--dk);transform:scale(1.3)}
+
+    /* cards grid with slide animation */
+    .hl-vp{overflow:hidden}
+    .hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    @media(max-width:680px){.hl-grid{grid-template-columns:1fr}}
+    @media(min-width:480px) and (max-width:680px){.hl-grid{grid-template-columns:repeat(2,1fr)}}
+    .hl-grid.slide-in{animation:sli .28s ease both}
+    @keyframes sli{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+
+    .art{display:flex;flex-direction:column;border:1px solid rgba(15,46,35,.1);border-radius:18px;padding:24px;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:box-shadow .2s}
+    .art:hover{box-shadow:0 4px 16px rgba(0,0,0,.1)}
+    .art-badge{align-self:flex-start;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:4px 12px;border-radius:999px;background:#15803d;color:#fff;margin-bottom:14px}
+    .art-title{font-size:18px;font-weight:700;color:var(--dk);line-height:1.35;margin-bottom:8px}
+    .art-ex{font-size:13px;color:rgba(15,46,35,.65);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1;margin-bottom:20px}
+    .art-ft{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
+    .art-time{font-size:11px;color:rgba(15,46,35,.4);font-weight:500}
+    .art-link{font-size:13px;font-weight:700;color:#15803d;text-decoration:none;transition:color .2s}
+    .art-link:hover{color:var(--dk)}
+
+    /* progress */
+    .hl-prog{height:2px;background:rgba(15,46,35,.08);border-radius:99px;overflow:hidden;margin-top:28px}
+    .hl-fill{height:100%;background:var(--g);border-radius:99px;transition:width .4s ease}
+
+    /* FOOTER */
+    footer{background:#111827;padding:40px 20px 28px}
+    .ft-i{max-width:1000px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .ft-brand{font-size:14px;font-weight:800;color:#fff;letter-spacing:.04em}
+    .ft-nav{display:flex;gap:16px;flex-wrap:wrap}
+    .ft-nav a{font-size:13px;color:#9ca3af;text-decoration:none;transition:color .2s}
+    .ft-nav a:hover{color:#fff}
+    .ft-copy{text-align:center;font-size:13px;color:#6b7280;margin-top:20px;max-width:1000px;margin-left:auto;margin-right:auto}
+  </style>
 </head>
 <body>
 
-  <header class="og-header">
-    <div class="og-container og-header-inner">
-      <a class="og-brand" href="/">
-        <span>Olivar Global Sales</span>
-      </a>
-      <nav class="og-nav">
-        <a href="/#identificacao">Para quem é</a>
-        <a href="/#servicos">O que fazemos</a>
-        <a href="/blog/">Blog</a>
-        <a href="/#quem-somos">Quem somos</a>
-        <a href="/#prova-social">Resultados</a>
-        <a href="/#form" class="og-nav-cta">Agendar conversa</a>
-      </nav>
-    </div>
-  </header>
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-i">
+    <a href="/" class="nav-logo">OLIVAR <em>GLOBAL SALES</em></a>
+    <nav class="nav-links">
+      <a href="/#identificacao">Para quem é</a>
+      <a href="/#servicos">O que fazemos</a>
+      <a href="/#como-funciona">Como funciona</a>
+      <a href="/blog/" class="cur">Blog</a>
+      <a href="/#quem-somos">Quem somos</a>
+      <a href="/#parceiros">Parceiros</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#form" class="nav-cta">Agendar conversa</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- BANNER -->
-  <section class="og-blog-banner">
-    <div class="og-blog-banner-dots" aria-hidden="true"></div>
-    <div class="og-blog-banner-inner">
+<!-- BANNER -->
+<section class="banner">
+  <div class="banner-in">
+    <p class="eyebrow">Blog · Olivar Global Sales</p>
+    <h1>Insights para fechar mais contratos em dólar e euro</h1>
+    <p>Playbooks táticos sobre prospecção B2B, SDR, processo comercial e como escalar vendas internacionais com consistência.</p>
+  </div>
+</section>
 
-      <div id="banner-default" class="og-banner-state">
-        <span class="og-blog-eyebrow">Blog Olivar Global Sales</span>
-        <h1 class="og-blog-h1">Conteúdo para quem vende para os EUA</h1>
-        <p class="og-blog-sub">
-          Estratégias práticas de prospecção, vendas e operação comercial para
-          agências e negócios brasileiros que querem construir um pipeline
-          previsível com clientes americanos.
-        </p>
-        <p class="og-blog-meta-count">3 artigos · 3 categorias</p>
+<!-- CATEGORIAS COM FOTO -->
+<section class="cats">
+  <div class="wrap">
+    <p class="sec-label">Navegar por tema</p>
+    <div class="cat-grid" id="cat-grid"></div>
+  </div>
+</section>
+
+<!-- DESTAQUES -->
+<section class="hl" id="destaques">
+  <div class="wrap">
+    <div class="hl-hdr">
+      <div class="hl-left">
+        <span class="hl-lbl" id="hl-lbl">Destaques</span>
+        <button class="hl-rst" id="hl-rst" onclick="resetFiltro()">✕ Destaques</button>
       </div>
-
-      <div id="banner-category" class="og-banner-state og-hidden">
-        <button id="btn-back" class="og-back-cat" onclick="clearCategory()">← Todas as categorias</button>
-        <h1 class="og-blog-h1" id="banner-cat-name"></h1>
-        <p class="og-blog-meta-count" id="banner-cat-count"></p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CATEGORIAS COM FOTO -->
-  <section id="section-categories" class="og-cat-section">
-    <div class="og-cat-inner">
-      <p class="og-section-label">Navegue por tema</p>
-      <div class="og-cat-grid">
-
-        <button class="og-cat-card" onclick="selectCategory('Estratégia')"
-          style="--cat-photo: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80')">
-          <div class="og-cat-overlay"></div>
-          <div class="og-cat-hover-overlay"></div>
-          <div class="og-cat-content">
-            <p class="og-cat-name">Estratégia</p>
-            <p class="og-cat-count">1 artigo</p>
-            <span class="og-cat-cta">Ler artigos →</span>
-          </div>
-        </button>
-
-        <button class="og-cat-card" onclick="selectCategory('Vendas')"
-          style="--cat-photo: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&q=80')">
-          <div class="og-cat-overlay"></div>
-          <div class="og-cat-hover-overlay"></div>
-          <div class="og-cat-content">
-            <p class="og-cat-name">Vendas</p>
-            <p class="og-cat-count">1 artigo</p>
-            <span class="og-cat-cta">Ler artigos →</span>
-          </div>
-        </button>
-
-        <button class="og-cat-card" onclick="selectCategory('SDR')"
-          style="--cat-photo: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80')">
-          <div class="og-cat-overlay"></div>
-          <div class="og-cat-hover-overlay"></div>
-          <div class="og-cat-content">
-            <p class="og-cat-name">SDR</p>
-            <p class="og-cat-count">1 artigo</p>
-            <span class="og-cat-cta">Ler artigos →</span>
-          </div>
-        </button>
-
+      <div class="hl-pag" id="hl-pag" style="display:none">
+        <button class="hl-arr" onclick="navegar(-1)">&#8249;</button>
+        <div class="hl-dots" id="hl-dots"></div>
+        <button class="hl-arr" onclick="navegar(1)">&#8250;</button>
       </div>
     </div>
-  </section>
-
-  <!-- DESTAQUES — sempre visível -->
-  <section id="section-articles" class="og-articles-section">
-    <div class="og-articles-inner">
-
-      <!-- Filtros -->
-      <div class="og-filter-bar">
-        <span class="og-filter-label" id="filter-label">Destaques</span>
-        <button id="pill-all" class="og-pill og-pill-active" onclick="clearCategory()">
-          Destaques <span class="og-pill-count">3</span>
-        </button>
-        <button class="og-pill" data-cat="Estratégia" onclick="selectCategory('Estratégia')">
-          Estratégia <span class="og-pill-count">1</span>
-        </button>
-        <button class="og-pill" data-cat="Vendas" onclick="selectCategory('Vendas')">
-          Vendas <span class="og-pill-count">1</span>
-        </button>
-        <button class="og-pill" data-cat="SDR" onclick="selectCategory('SDR')">
-          SDR <span class="og-pill-count">1</span>
-        </button>
-      </div>
-
-      <div class="og-blog-grid" id="articles-grid">
-
-        <a class="og-blog-card" data-category="Estratégia" href="/blog/como-vender-para-eua-sem-morar-la/">
-          <span class="og-blog-tag">Estratégia</span>
-          <h2 class="og-blog-card-title">Como vender para os EUA sem morar lá: o guia 2026 para agências brasileiras</h2>
-          <p class="og-blog-card-desc">
-            Você não precisa de um escritório em Miami para fechar contas
-            americanas. Precisa de um processo de prospecção, fuso, idioma e
-            oferta calibrados. Este é o playbook que estamos rodando hoje.
-          </p>
-          <div class="og-blog-card-foot">
-            <span class="og-blog-card-time">8 min de leitura</span>
-            <span class="og-blog-card-link">Ler artigo →</span>
-          </div>
-        </a>
-
-        <a class="og-blog-card" data-category="Vendas" href="/blog/cold-call-em-ingles-roteiro/">
-          <span class="og-blog-tag">Vendas</span>
-          <h2 class="og-blog-card-title">Cold call em inglês: o roteiro que abre portas em decision-makers americanos</h2>
-          <p class="og-blog-card-desc">
-            A diferença entre uma cold call que termina em três segundos e uma
-            que vira reunião não é o sotaque, é o que se diz nos primeiros oito
-            segundos. Aqui está o roteiro testado.
-          </p>
-          <div class="og-blog-card-foot">
-            <span class="og-blog-card-time">7 min de leitura</span>
-            <span class="og-blog-card-link">Ler artigo →</span>
-          </div>
-        </a>
-
-        <a class="og-blog-card" data-category="SDR" href="/blog/sdr-brasil-nao-converte-eua/">
-          <span class="og-blog-tag">SDR</span>
-          <h2 class="og-blog-card-title">Por que o seu time de SDR no Brasil não converte nos EUA (e como corrigir)</h2>
-          <p class="og-blog-card-desc">
-            Não é falta de inglês, e quase nunca é falta de esforço. É um
-            conjunto de hábitos, métricas e roteiros desenhados para um mercado
-            diferente do americano. Vamos destrinchar.
-          </p>
-          <div class="og-blog-card-foot">
-            <span class="og-blog-card-time">6 min de leitura</span>
-            <span class="og-blog-card-link">Ler artigo →</span>
-          </div>
-        </a>
-
-      </div>
+    <div class="hl-vp">
+      <div class="hl-grid" id="hl-grid"></div>
     </div>
-  </section>
-
-  <footer class="og-footer">
-    <div class="og-footer-inner">
-      <div>© Olivar Global Sales — Todos os direitos reservados.</div>
-      <nav class="og-footer-nav">
-        <a href="/">Início</a>
-        <a href="/blog/">Blog</a>
-      </nav>
+    <div class="hl-prog" id="hl-prog" style="display:none">
+      <div class="hl-fill" id="hl-fill"></div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    function selectCategory(name) {
-      // Banner
-      document.getElementById('banner-default').classList.add('og-hidden');
-      document.getElementById('banner-category').classList.remove('og-hidden');
-      document.getElementById('banner-cat-name').textContent = name;
+<!-- FOOTER -->
+<footer>
+  <div class="ft-i">
+    <span class="ft-brand">OLIVAR GLOBAL SALES</span>
+    <nav class="ft-nav">
+      <a href="/">Início</a>
+      <a href="/#identificacao">Para quem é</a>
+      <a href="/#form">Como funciona</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#form">Agendar conversa</a>
+    </nav>
+  </div>
+  <p class="ft-copy"><a href="/us/" rel="nofollow noopener noreferrer" style="color:inherit;text-decoration:none;cursor:text;" aria-label="© 2025">©</a> 2025 Olivar Global Sales. Todos os direitos reservados.</p>
+</footer>
 
-      // Filter cards
-      var cards = document.querySelectorAll('#articles-grid .og-blog-card');
-      var count = 0;
-      cards.forEach(function(card) {
-        if (card.dataset.category === name) {
-          card.style.display = 'flex';
-          count++;
-        } else {
-          card.style.display = 'none';
-        }
-      });
-      document.getElementById('banner-cat-count').textContent =
-        count + (count === 1 ? ' artigo' : ' artigos');
+<script>
+var POSTS = [
+  { title:"Como montar um processo comercial para vender nos EUA", excerpt:"Sem um processo estruturado, cada vendedor inventa o próprio jeito — e os resultados ficam imprevisíveis. Veja o passo a passo para criar um funil replicável.", category:"Estratégia", readingTime:"7 min de leitura", featured:true, slug:"#" },
+  { title:"Por que a maioria das agências brasileiras falha na prospecção internacional", excerpt:"Não é falta de produto. É falta de processo. Os 4 erros que impedem agências de fechar clientes nos EUA e como corrigi-los.", category:"Prospecção", readingTime:"6 min de leitura", featured:true, slug:"#" },
+  { title:"A diferença entre SDR e Closer — e quando contratar cada um", excerpt:"Contratar um 'vendedor' genérico é o erro mais caro que uma empresa em crescimento comete. Entenda quando você precisa de cada perfil.", category:"SDR", readingTime:"5 min de leitura", featured:true, slug:"#" },
+  { title:"5 erros que matam a taxa de conversão de propostas", excerpt:"Proposta não é documento — é argumento. Os cinco erros que fazem o prospect desaparecer depois de receber o PDF e como virar esse jogo.", category:"Vendas", readingTime:"6 min de leitura", featured:true, slug:"#" },
+  { title:"Case: como uma agência triplicou receitas em dólar em 6 meses", excerpt:"Documentamos o processo completo de uma agência que saiu de $8k para $27k/mês em contratos americanos. O que mudou e o que funcionou.", category:"Casos de Sucesso", readingTime:"8 min de leitura", featured:true, slug:"#" },
+  { title:"Cold email que funciona: o template que gerou 47 respostas em 2 semanas", excerpt:"Um template é inútil sem contexto. A sequência completa — assunto, corpo, follow-up — com explicação de cada decisão de copywriting.", category:"Prospecção", readingTime:"5 min de leitura", featured:true, slug:"#" },
+  { title:"Quanto cobrar por SDR terceirizado? A conta que ninguém te mostra", excerpt:"CLT vs PJ vs serviço especializado: o custo real de cada modelo e quando cada opção faz sentido financeiro para a sua operação.", category:"SDR", readingTime:"6 min de leitura", featured:false, slug:"#" },
+  { title:"Playbook de follow-up: quantas tentativas antes de desistir de um lead?", excerpt:"A maioria desiste cedo demais. Os dados mostram que a maioria das respostas vem do 4.° ao 7.° contato — e como fazer cada tentativa valer.", category:"Vendas", readingTime:"5 min de leitura", featured:false, slug:"#" },
+  { title:"ICP para serviços: como definir o cliente ideal sem perder tempo com leads ruins", excerpt:"Um ICP vago vira prospecção aleatória. Como construir o perfil de cliente ideal com critérios objetivos que qualquer SDR consegue aplicar.", category:"Estratégia", readingTime:"6 min de leitura", featured:false, slug:"#" },
+  { title:"LinkedIn para prospecção B2B: o que funciona de verdade em 2026", excerpt:"InMail frio morreu. Descubra as abordagens que ainda geram conexões reais com tomadores de decisão americanos e europeus.", category:"Prospecção", readingTime:"7 min de leitura", featured:false, slug:"#" },
+  { title:"Como construir um dashboard de vendas que o time realmente usa", excerpt:"Dashboard cheio de métricas que ninguém entende não gerencia nada. Os 5 indicadores que importam e como apresentar de forma acionável.", category:"Operações", readingTime:"5 min de leitura", featured:false, slug:"#" },
+  { title:"Script de cold call: estrutura em 4 minutos que abre reuniões", excerpt:"Uma estrutura clara — abertura, gancho, qualificação, agendamento — que respeita o tempo do prospect e funciona mesmo para quem odeia ligar.", category:"Vendas", readingTime:"6 min de leitura", featured:false, slug:"#" }
+];
 
-      // Filter label
-      document.getElementById('filter-label').textContent = name;
+var FOTOS = {
+  "Estratégia":      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80",
+  "Vendas":          "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&q=80",
+  "SDR":             "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80",
+  "Prospecção":      "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=900&q=80",
+  "Operações":       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80",
+  "Casos de Sucesso":"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80",
+  "__all__":         "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=900&q=80"
+};
 
-      // Pills
-      document.querySelectorAll('.og-pill').forEach(function(p) { p.classList.remove('og-pill-active'); });
-      var target = document.querySelector('.og-pill[data-cat="' + name + '"]');
-      if (target) target.classList.add('og-pill-active');
+var PAGE_SIZE = 3, ROTATE_MS = 4000;
+var cat = null, pg = 0, timer = null;
+var featured = POSTS.filter(function(p){ return p.featured; });
 
-      // Scroll to destaques
-      setTimeout(function() {
-        document.getElementById('section-articles').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 60);
-    }
+function pool(){ return !cat ? featured : cat === "__all__" ? POSTS : POSTS.filter(function(p){ return p.category === cat; }); }
 
-    function clearCategory() {
-      document.getElementById('banner-default').classList.remove('og-hidden');
-      document.getElementById('banner-category').classList.add('og-hidden');
-      document.getElementById('filter-label').textContent = 'Destaques';
+function cats(){
+  var m={};
+  POSTS.forEach(function(p){ m[p.category]=(m[p.category]||0)+1; });
+  return Object.keys(m).sort().map(function(k){ return {name:k,count:m[k]}; });
+}
 
-      // Show all cards
-      document.querySelectorAll('#articles-grid .og-blog-card').forEach(function(card) {
-        card.style.display = 'flex';
-      });
+function renderCats(){
+  var g=document.getElementById("cat-grid"), cs=cats(), h="";
+  h+=catCard("__all__","Todos os Artigos",POSTS.length,FOTOS["__all__"]);
+  cs.forEach(function(c){ h+=catCard(c.name,c.name,c.count,FOTOS[c.name]||FOTOS["__all__"]); });
+  g.innerHTML=h;
+}
 
-      // Pills
-      document.querySelectorAll('.og-pill').forEach(function(p) { p.classList.remove('og-pill-active'); });
-      document.getElementById('pill-all').classList.add('og-pill-active');
-    }
-  </script>
+function catCard(key,label,count,photo){
+  var on=cat===key;
+  return '<button class="cat-btn'+(on?" on":"")+'" onclick="selCat(\''+key+'\')">' +
+    '<img src="'+photo+'" alt="'+label+'" loading="lazy"/>' +
+    '<div class="cat-ov"></div>' +
+    '<div class="cat-chk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' +
+    '<div class="cat-body">' +
+      '<p class="cat-name">'+label+'</p>' +
+      '<p class="cat-count">'+count+' '+(count===1?'artigo':'artigos')+'</p>' +
+      '<span class="cat-cta2">'+(on?'Mostrando ✓':(key==='__all__'?'Ver todos →':'Ver artigos →'))+'</span>' +
+    '</div>' +
+  '</button>';
+}
 
+function renderHL(dir){
+  var p=pool(), total=Math.ceil(p.length/PAGE_SIZE);
+  if(pg>=total) pg=0;
+  var slice=p.slice(pg*PAGE_SIZE, pg*PAGE_SIZE+PAGE_SIZE);
+
+  document.getElementById("hl-lbl").textContent=!cat?"Destaques":cat==="__all__"?"Todos os Artigos":cat;
+  var rst=document.getElementById("hl-rst");
+  rst.style.display=cat?"inline-flex":"none";
+
+  var pag=document.getElementById("hl-pag"), prog=document.getElementById("hl-prog");
+  pag.style.display=total>1?"flex":"none";
+  prog.style.display=total>1?"block":"none";
+
+  var dd=document.getElementById("hl-dots"),dh="";
+  for(var i=0;i<total;i++) dh+='<button class="hl-dot'+(i===pg?" on":"")+'" onclick="irPg('+i+')"></button>';
+  dd.innerHTML=dh;
+
+  document.getElementById("hl-fill").style.width=total>0?((pg+1)/total*100)+"%":"100%";
+
+  var g=document.getElementById("hl-grid");
+  g.classList.remove("slide-in");
+  void g.offsetWidth;
+  g.classList.add("slide-in");
+
+  var ch="";
+  slice.forEach(function(a){
+    ch+='<article class="art">' +
+      '<span class="art-badge">'+a.category+'</span>' +
+      '<h3 class="art-title">'+a.title+'</h3>' +
+      '<p class="art-ex">'+a.excerpt+'</p>' +
+      '<div class="art-ft"><span class="art-time">'+a.readingTime+'</span><a href="'+a.slug+'" class="art-link">Ler →</a></div>' +
+    '</article>';
+  });
+  g.innerHTML=ch;
+
+  clearInterval(timer);
+  if(total>1) timer=setInterval(function(){ pg=(pg+1)%total; renderHL(1); }, ROTATE_MS);
+}
+
+function selCat(key){
+  cat=cat===key?null:key; pg=0;
+  renderCats(); renderHL(1);
+  setTimeout(function(){ document.getElementById("destaques").scrollIntoView({behavior:"smooth",block:"start"}); },80);
+}
+
+function resetFiltro(){ cat=null; pg=0; renderCats(); renderHL(1); }
+
+function navegar(dir){
+  var t=Math.ceil(pool().length/PAGE_SIZE);
+  pg=(pg+dir+t)%t; renderHL(dir);
+}
+
+function irPg(idx){ var d=idx>pg?1:-1; pg=idx; renderHL(d); }
+
+renderCats(); renderHL(1);
+</script>
 </body>
 </html>
