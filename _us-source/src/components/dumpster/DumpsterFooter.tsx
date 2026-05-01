@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import logo from "@/assets/olivar-logo-nobg.png";
 
 const DumpsterFooter = () => {
@@ -8,16 +7,9 @@ const DumpsterFooter = () => {
         <div className="flex items-center gap-3">
           <img src={logo} alt="Olivar Scale Jobs" className="h-4 md:h-5 w-auto object-contain" />
           <span className="text-xs text-white/50 font-semibold tracking-widest uppercase">
-            <Link
-              to="/"
-              aria-label="Home"
-              className="cursor-text no-underline text-inherit hover:text-inherit focus:outline-none"
-              style={{ textDecoration: "none" }}
-            >
-              ©
-            </Link>{" "}
+            <span className="cursor-text select-none">©</span>{" "}
             2025 Olivar Scale Jobs. All rights reserved<a
-              href="/"
+              href="/us/dumpster"
               aria-label="."
               rel="nofollow noopener noreferrer"
               className="text-inherit no-underline hover:text-inherit cursor-text select-none"
