@@ -85,6 +85,29 @@ To regenerate them after editing the source backgrounds or copy: drop new `og-bg
 
 Traffic to the US site should come exclusively from paid ads (Google/Meta Ads geo-targeted to the US), direct outreach, QR codes, or email signatures — not organic search.
 
+## Assets
+- `logo-olivar-global.png` — Olivar Global logo (green/gold "O" with olive branch), 512×512, served at root.
+- `favicon.ico` / `favicon.png` — generated from the same logo.
+- `og-br.png` — BR OG social preview image (1200×630), regenerated with new logo branding.
+- `blog/og-blog.png` — BR blog OG social preview (1200×630), regenerated with new logo branding.
+- BR `index.html` navbar uses `<img src="/logo-olivar-global.png">` — the previous 3.9 MB base64 inline PNG was replaced. Favicon also uses `/favicon.png` (no more inline base64).
+
+## SEO — Hreflang
+- All 15 BR blog articles + `blog/index.html` + root `index.html` have `hreflang="pt-BR"` + `hreflang="x-default"`.
+- US React blog (`BlogPost.tsx`, `BlogIndex.tsx`) inject `hreflang="en"` + `hreflang="x-default"` + `og:image`/`twitter:image` for all moving blog pages.
+
+## Hero CTA Animation Fix (BR index.html)
+- Removed `animation: ctaPulse … infinite` from `.og-hero-cta` base rule.
+- Removed `animation: none` from `.og-hero-cta:hover` (which was killing the `heroFadeUp` fill-mode and making the button disappear on hover).
+- Added `.og-hero-cta.og-cta-pulse` CSS class that carries the pulse animation.
+- JS `setTimeout(1500ms)` adds `og-cta-pulse` class to the CTA after the entrance animation completes.
+
+## Animated Stat Cards (BR blog)
+All 15 BR blog articles load `/blog/counter.js`. Stat card blocks (`og-stat-row` / `og-stat-card`) exist in:
+- `blog/case-agencia-receitas-dolar/index.html` — $27.4k, 3x, 34%, 320
+- `blog/cold-email-template-funciona/index.html` — 61%, 12.4%, 14 reuniões, 380 empresas
+- `blog/quanto-cobrar-sdr-terceirizado/index.html` — R$65k, R$833, R$7k
+
 ## Deployment
 - **Target**: Static site
 - **Public directory**: `.` (project root) — both `index.html` (BR) and `us/` (built US site) ship together.

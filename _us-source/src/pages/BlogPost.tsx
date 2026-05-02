@@ -107,12 +107,19 @@ const BlogPost = ({ variant }: BlogPostProps) => {
         <title>{post.title} — {meta.siteName}</title>
         <meta name="description" content={post.excerpt} />
         <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang="en" href={canonicalUrl} />
+        <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:site_name" content={meta.siteName} />
+        <meta property="og:image" content={`${BASE_URL}/us/og-moving.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={`${BASE_URL}/us/og-moving.png`} />
         <meta property="article:published_time" content={isoDate} />
         <meta property="article:section" content={post.category} />
         <script type="application/ld+json">{articleSchema}</script>

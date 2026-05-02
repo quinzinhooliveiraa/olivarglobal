@@ -123,12 +123,19 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
         <title>{indexMeta.title}</title>
         <meta name="description" content={indexMeta.description} />
         <link rel="canonical" href={indexMeta.canonical} />
+        <link rel="alternate" hreflang="en" href={indexMeta.canonical} />
+        <link rel="alternate" hreflang="x-default" href={indexMeta.canonical} />
         <meta property="og:title" content={indexMeta.title} />
         <meta property="og:description" content={indexMeta.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={indexMeta.canonical} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:site_name" content={indexMeta.siteName} />
+        <meta property="og:image" content={`${BASE_URL}/us/og-moving.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={`${BASE_URL}/us/og-moving.png`} />
       </Helmet>
       <Nav />
       <main className="flex-1">
