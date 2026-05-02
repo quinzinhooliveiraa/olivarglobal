@@ -4,7 +4,7 @@ import heroImage from "@/assets/IMG_0680_1775702657750.jpeg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center section-padding pt-28 overflow-hidden">
+    <section className="relative lg:min-h-screen flex lg:items-center section-padding pt-20 lg:pt-28 overflow-hidden">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
