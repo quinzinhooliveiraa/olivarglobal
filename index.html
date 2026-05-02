@@ -1524,6 +1524,53 @@
         flex-wrap: wrap;
       }
     }
+    /* ── Mobile nav hamburger + drawer ── */
+    .og-nav-logo { display:flex;align-items:center;text-decoration:none; }
+    .og-nav { display:flex;align-items:center;gap:22px; }
+    .og-nav a { text-decoration:none;color:#374151;font-size:13px;font-weight:600; }
+    .og-nav a:hover { color:var(--primary); }
+    .og-nav-cta {
+      padding:8px 20px;border-radius:999px;border:2px solid #111;
+      font-size:13px;font-weight:700;color:#111 !important;
+      transition:background 0.15s,color 0.15s;white-space:nowrap;
+    }
+    .og-nav-cta:hover { background:#111;color:#fff !important; }
+    .og-hamburger {
+      display:none;flex-direction:column;justify-content:center;
+      gap:5px;background:none;border:none;cursor:pointer;padding:6px;
+    }
+    .og-hamburger span {
+      display:block;width:22px;height:2px;background:#111;border-radius:2px;
+      transition:transform 0.2s,opacity 0.2s;
+    }
+    .og-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .og-hamburger.open span:nth-child(2) { opacity:0; }
+    .og-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .og-nav-mobile-cta {
+      padding:7px 16px;border-radius:999px;background:var(--primary);
+      color:#fff;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;
+    }
+    .og-nav-drawer {
+      display:none;flex-direction:column;gap:0;
+      background:#fff;border-top:1px solid #e5e7eb;padding:8px 16px 16px;
+    }
+    .og-nav-drawer.open { display:flex; }
+    .og-nav-drawer a {
+      text-decoration:none;color:#111;font-size:15px;font-weight:600;
+      padding:12px 0;border-bottom:1px solid #f3f4f6;
+    }
+    .og-nav-drawer a:last-child { border-bottom:none; }
+    .og-nav-drawer a:hover { color:var(--primary); }
+    .og-nav-drawer-cta {
+      margin-top:8px;background:var(--primary);color:#fff !important;
+      text-align:center;border-radius:999px;padding:14px;font-weight:800;
+      font-size:15px;border-bottom:none !important;
+    }
+    .og-nav-mobile-group { display:none; }
+    @media (max-width:768px) {
+      .og-nav { display:none !important; }
+      .og-nav-mobile-group { display:flex !important;align-items:center;gap:10px; }
+    }
 </style>
 </head>
 <body>
@@ -1531,20 +1578,29 @@
   <!-- HEADER -->
   <header class="og-header">
     <div class="og-container og-header-inner">
-      <div style="display:flex;align-items:center;gap:10px;">
-        <img src="/logo-olivar-global.png" alt="Olivar Global" style="height:38px;width:auto;border-radius:6px;" />
-        <ul class="og-identificacao-list">
-          <li><span class="bullet"></span><span>Tem uma boa entrega, mas depende de volume pra escalar.</span></li>
-          <li><span class="bullet"></span><span>Quer ganhar em uma moeda mais forte que o real, com clientes melhores.</span></li>
-          <li><span class="bullet"></span><span>Já pensou em vender fora do Brasil, mas não sabe como estruturar o comercial.</span></li>
-          <li><span class="bullet"></span><span>Quer previsibilidade de vendas internacionais sem depender só de indicação.</span></li>
-        </ul>
-
-        <a href="#form"
-           style="display:inline-block;background:var(--primary);color:#fff;padding:14px 40px;border-radius:999px;font-size:14px;font-weight:800;text-decoration:none;box-shadow:0 0 16px rgba(22,163,74,0.4);">
-          PEGAR MEU PLANO GRATUITO
-        </a>
+      <a href="/" class="og-nav-logo">
+        <img src="/logo-olivar-global.png" alt="Olivar Global" style="height:34px;width:auto;border-radius:5px;" />
+      </a>
+      <nav class="og-nav">
+        <a href="/#servicos">O que fazemos</a>
+        <a href="/#prova-social">Resultados</a>
+        <a href="/#quem-somos">Quem somos</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#form" class="og-nav-cta">Agendar conversa</a>
+      </nav>
+      <div class="og-nav-mobile-group">
+        <a href="/#form" class="og-nav-mobile-cta">Agendar →</a>
+        <button class="og-hamburger" id="og-hamburger" onclick="_ogToggleNav()" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </div>
+    <div class="og-nav-drawer" id="og-nav-drawer">
+      <a href="/#servicos" onclick="_ogCloseNav()">O que fazemos</a>
+      <a href="/#prova-social" onclick="_ogCloseNav()">Resultados</a>
+      <a href="/#quem-somos" onclick="_ogCloseNav()">Quem somos</a>
+      <a href="/blog/" onclick="_ogCloseNav()">Blog</a>
+      <a href="/#form" class="og-nav-drawer-cta" onclick="_ogCloseNav()">Agendar conversa</a>
     </div>
   </header>
 
@@ -2513,6 +2569,25 @@ function validateField(field) {
 
     counters.forEach(function(el) { io.observe(el); });
   })();
-  </script>
+  
+  /* ── Hamburger nav BR ── */
+  function _ogToggleNav() {
+    var btn = document.getElementById('og-hamburger');
+    var drawer = document.getElementById('og-nav-drawer');
+    var isOpen = drawer.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+  function _ogCloseNav() {
+    document.getElementById('og-nav-drawer').classList.remove('open');
+    document.getElementById('og-hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  /* Close drawer on anchor navigation */
+  document.querySelectorAll('.og-nav-drawer a[href^="/#"]').forEach(function(a) {
+    a.addEventListener('click', _ogCloseNav);
+  });
+
+</script>
 </body>
 </html>
