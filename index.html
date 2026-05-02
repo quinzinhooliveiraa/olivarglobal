@@ -652,16 +652,7 @@
       gap: 8px;
     }
 
-    .og-phone-flag {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background-color: #022c22;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-    }
+    .og-phone-flag { width:20px; height:15px; border-radius:2px; object-fit:cover; display:inline-block; vertical-align:middle; }
 
     .og-form-button {
       margin-top: 8px;
@@ -1310,16 +1301,7 @@
       color: #e5e7eb;
     }
 
-    .og-phone-flag {
-      width: 24px;
-      height: 24px;
-      border-radius: 999px;
-      background-color: #022c22;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-    }
+    .og-phone-flag { width:20px; height:15px; border-radius:2px; object-fit:cover; display:inline-block; vertical-align:middle; }
 
     .og-phone-code {
       font-weight: 600;
@@ -1786,7 +1768,9 @@
 
             <div class="og-phone-wrap">
               <button type="button" class="og-phone-country-btn" id="og-phone-country-btn">
-                <span class="og-phone-flag" id="og-phone-flag">🇧🇷</span>
+                <img class="og-phone-flag" id="og-phone-flag"
+                     src="https://flagcdn.com/20x15/br.png" alt="Brasil"
+                     width="20" height="15" style="border-radius:2px;" />
                 <span class="og-phone-code" id="og-phone-code">+55</span>
               </button>
 
@@ -1795,128 +1779,127 @@
                   <input class="og-phone-search" id="og-phone-search" type="text" placeholder="Buscar país..." autocomplete="off" />
                 </div>
                 <div class="og-phone-list" id="og-phone-list">
-                <button type="button" data-code="+55" data-flag="🇧🇷" data-name="brasil">🇧🇷 +55 Brasil</button>
-                <button type="button" data-code="+1" data-flag="🇺🇸" data-name="estados unidos">🇺🇸 +1 Estados Unidos</button>
-                <button type="button" data-code="+351" data-flag="🇵🇹" data-name="portugal">🇵🇹 +351 Portugal</button>
-                <button type="button" data-code="+93" data-flag="🇦🇫" data-name="afeganistão">🇦🇫 +93 Afeganistão</button>
-                <button type="button" data-code="+27" data-flag="🇿🇦" data-name="áfrica do sul">🇿🇦 +27 África do Sul</button>
-                <button type="button" data-code="+355" data-flag="🇦🇱" data-name="albânia">🇦🇱 +355 Albânia</button>
-                <button type="button" data-code="+213" data-flag="🇩🇿" data-name="argélia">🇩🇿 +213 Argélia</button>
-                <button type="button" data-code="+49" data-flag="🇩🇪" data-name="alemanha">🇩🇪 +49 Alemanha</button>
-                <button type="button" data-code="+244" data-flag="🇦🇴" data-name="angola">🇦🇴 +244 Angola</button>
-                <button type="button" data-code="+54" data-flag="🇦🇷" data-name="argentina">🇦🇷 +54 Argentina</button>
-                <button type="button" data-code="+374" data-flag="🇦🇲" data-name="armênia">🇦🇲 +374 Armênia</button>
-                <button type="button" data-code="+61" data-flag="🇦🇺" data-name="austrália">🇦🇺 +61 Austrália</button>
-                <button type="button" data-code="+43" data-flag="🇦🇹" data-name="áustria">🇦🇹 +43 Áustria</button>
-                <button type="button" data-code="+994" data-flag="🇦🇿" data-name="azerbaijão">🇦🇿 +994 Azerbaijão</button>
-                <button type="button" data-code="+1242" data-flag="🇧🇸" data-name="bahamas">🇧🇸 +1242 Bahamas</button>
-                <button type="button" data-code="+880" data-flag="🇧🇩" data-name="bangladesh">🇧🇩 +880 Bangladesh</button>
-                <button type="button" data-code="+32" data-flag="🇧🇪" data-name="bélgica">🇧🇪 +32 Bélgica</button>
-                <button type="button" data-code="+591" data-flag="🇧🇴" data-name="bolívia">🇧🇴 +591 Bolívia</button>
-                <button type="button" data-code="+387" data-flag="🇧🇦" data-name="bósnia e herzegovina">🇧🇦 +387 Bósnia e Herzegovina</button>
-                <button type="button" data-code="+267" data-flag="🇧🇼" data-name="botsuana">🇧🇼 +267 Botsuana</button>
-                <button type="button" data-code="+673" data-flag="🇧🇳" data-name="brunei">🇧🇳 +673 Brunei</button>
-                <button type="button" data-code="+359" data-flag="🇧🇬" data-name="bulgária">🇧🇬 +359 Bulgária</button>
-                <button type="button" data-code="+237" data-flag="🇨🇲" data-name="camarões">🇨🇲 +237 Camarões</button>
-                <button type="button" data-code="+1" data-flag="🇨🇦" data-name="canadá">🇨🇦 +1 Canadá</button>
-                <button type="button" data-code="+7" data-flag="🇰🇿" data-name="cazaquistão">🇰🇿 +7 Cazaquistão</button>
-                <button type="button" data-code="+56" data-flag="🇨🇱" data-name="chile">🇨🇱 +56 Chile</button>
-                <button type="button" data-code="+86" data-flag="🇨🇳" data-name="china">🇨🇳 +86 China</button>
-                <button type="button" data-code="+357" data-flag="🇨🇾" data-name="chipre">🇨🇾 +357 Chipre</button>
-                <button type="button" data-code="+57" data-flag="🇨🇴" data-name="colômbia">🇨🇴 +57 Colômbia</button>
-                <button type="button" data-code="+243" data-flag="🇨🇩" data-name="congo (rdc)">🇨🇩 +243 Congo (RDC)</button>
-                <button type="button" data-code="+82" data-flag="🇰🇷" data-name="coreia do sul">🇰🇷 +82 Coreia do Sul</button>
-                <button type="button" data-code="+850" data-flag="🇰🇵" data-name="coreia do norte">🇰🇵 +850 Coreia do Norte</button>
-                <button type="button" data-code="+506" data-flag="🇨🇷" data-name="costa rica">🇨🇷 +506 Costa Rica</button>
-                <button type="button" data-code="+225" data-flag="🇨🇮" data-name="costa do marfim">🇨🇮 +225 Costa do Marfim</button>
-                <button type="button" data-code="+385" data-flag="🇭🇷" data-name="croácia">🇭🇷 +385 Croácia</button>
-                <button type="button" data-code="+53" data-flag="🇨🇺" data-name="cuba">🇨🇺 +53 Cuba</button>
-                <button type="button" data-code="+45" data-flag="🇩🇰" data-name="dinamarca">🇩🇰 +45 Dinamarca</button>
-                <button type="button" data-code="+593" data-flag="🇪🇨" data-name="equador">🇪🇨 +593 Equador</button>
-                <button type="button" data-code="+20" data-flag="🇪🇬" data-name="egito">🇪🇬 +20 Egito</button>
-                <button type="button" data-code="+503" data-flag="🇸🇻" data-name="el salvador">🇸🇻 +503 El Salvador</button>
-                <button type="button" data-code="+971" data-flag="🇦🇪" data-name="emirados árabes">🇦🇪 +971 Emirados Árabes</button>
-                <button type="button" data-code="+421" data-flag="🇸🇰" data-name="eslováquia">🇸🇰 +421 Eslováquia</button>
-                <button type="button" data-code="+386" data-flag="🇸🇮" data-name="eslovênia">🇸🇮 +386 Eslovênia</button>
-                <button type="button" data-code="+34" data-flag="🇪🇸" data-name="espanha">🇪🇸 +34 Espanha</button>
-                <button type="button" data-code="+1" data-flag="🇺🇸" data-name="eua">🇺🇸 +1 EUA</button>
-                <button type="button" data-code="+251" data-flag="🇪🇹" data-name="etiópia">🇪🇹 +251 Etiópia</button>
-                <button type="button" data-code="+63" data-flag="🇵🇭" data-name="filipinas">🇵🇭 +63 Filipinas</button>
-                <button type="button" data-code="+358" data-flag="🇫🇮" data-name="finlândia">🇫🇮 +358 Finlândia</button>
-                <button type="button" data-code="+33" data-flag="🇫🇷" data-name="frança">🇫🇷 +33 França</button>
-                <button type="button" data-code="+233" data-flag="🇬🇭" data-name="gana">🇬🇭 +233 Gana</button>
-                <button type="button" data-code="+995" data-flag="🇬🇪" data-name="geórgia">🇬🇪 +995 Geórgia</button>
-                <button type="button" data-code="+30" data-flag="🇬🇷" data-name="grécia">🇬🇷 +30 Grécia</button>
-                <button type="button" data-code="+502" data-flag="🇬🇹" data-name="guatemala">🇬🇹 +502 Guatemala</button>
-                <button type="button" data-code="+224" data-flag="🇬🇳" data-name="guiné">🇬🇳 +224 Guiné</button>
-                <button type="button" data-code="+509" data-flag="🇭🇹" data-name="haiti">🇭🇹 +509 Haiti</button>
-                <button type="button" data-code="+504" data-flag="🇭🇳" data-name="honduras">🇭🇳 +504 Honduras</button>
-                <button type="button" data-code="+852" data-flag="🇭🇰" data-name="hong kong">🇭🇰 +852 Hong Kong</button>
-                <button type="button" data-code="+36" data-flag="🇭🇺" data-name="hungria">🇭🇺 +36 Hungria</button>
-                <button type="button" data-code="+967" data-flag="🇾🇪" data-name="iêmen">🇾🇪 +967 Iêmen</button>
-                <button type="button" data-code="+91" data-flag="🇮🇳" data-name="índia">🇮🇳 +91 Índia</button>
-                <button type="button" data-code="+62" data-flag="🇮🇩" data-name="indonésia">🇮🇩 +62 Indonésia</button>
-                <button type="button" data-code="+964" data-flag="🇮🇶" data-name="iraque">🇮🇶 +964 Iraque</button>
-                <button type="button" data-code="+98" data-flag="🇮🇷" data-name="irã">🇮🇷 +98 Irã</button>
-                <button type="button" data-code="+353" data-flag="🇮🇪" data-name="irlanda">🇮🇪 +353 Irlanda</button>
-                <button type="button" data-code="+972" data-flag="🇮🇱" data-name="israel">🇮🇱 +972 Israel</button>
-                <button type="button" data-code="+39" data-flag="🇮🇹" data-name="itália">🇮🇹 +39 Itália</button>
-                <button type="button" data-code="+1876" data-flag="🇯🇲" data-name="jamaica">🇯🇲 +1876 Jamaica</button>
-                <button type="button" data-code="+81" data-flag="🇯🇵" data-name="japão">🇯🇵 +81 Japão</button>
-                <button type="button" data-code="+962" data-flag="🇯🇴" data-name="jordânia">🇯🇴 +962 Jordânia</button>
-                <button type="button" data-code="+254" data-flag="🇰🇪" data-name="quênia">🇰🇪 +254 Quênia</button>
-                <button type="button" data-code="+965" data-flag="🇰🇼" data-name="kuwait">🇰🇼 +965 Kuwait</button>
-                <button type="button" data-code="+856" data-flag="🇱🇦" data-name="laos">🇱🇦 +856 Laos</button>
-                <button type="button" data-code="+371" data-flag="🇱🇻" data-name="letônia">🇱🇻 +371 Letônia</button>
-                <button type="button" data-code="+961" data-flag="🇱🇧" data-name="líbano">🇱🇧 +961 Líbano</button>
-                <button type="button" data-code="+218" data-flag="🇱🇾" data-name="líbia">🇱🇾 +218 Líbia</button>
-                <button type="button" data-code="+370" data-flag="🇱🇹" data-name="lituânia">🇱🇹 +370 Lituânia</button>
-                <button type="button" data-code="+853" data-flag="🇲🇴" data-name="macau">🇲🇴 +853 Macau</button>
-                <button type="button" data-code="+60" data-flag="🇲🇾" data-name="malásia">🇲🇾 +60 Malásia</button>
-                <button type="button" data-code="+265" data-flag="🇲🇼" data-name="malawi">🇲🇼 +265 Malawi</button>
-                <button type="button" data-code="+223" data-flag="🇲🇱" data-name="mali">🇲🇱 +223 Mali</button>
-                <button type="button" data-code="+212" data-flag="🇲🇦" data-name="marrocos">🇲🇦 +212 Marrocos</button>
-                <button type="button" data-code="+52" data-flag="🇲🇽" data-name="méxico">🇲🇽 +52 México</button>
-                <button type="button" data-code="+258" data-flag="🇲🇿" data-name="moçambique">🇲🇿 +258 Moçambique</button>
-                <button type="button" data-code="+95" data-flag="🇲🇲" data-name="mianmar">🇲🇲 +95 Mianmar</button>
-                <button type="button" data-code="+264" data-flag="🇳🇦" data-name="namíbia">🇳🇦 +264 Namíbia</button>
-                <button type="button" data-code="+977" data-flag="🇳🇵" data-name="nepal">🇳🇵 +977 Nepal</button>
-                <button type="button" data-code="+505" data-flag="🇳🇮" data-name="nicarágua">🇳🇮 +505 Nicarágua</button>
-                <button type="button" data-code="+234" data-flag="🇳🇬" data-name="nigéria">🇳🇬 +234 Nigéria</button>
-                <button type="button" data-code="+47" data-flag="🇳🇴" data-name="noruega">🇳🇴 +47 Noruega</button>
-                <button type="button" data-code="+64" data-flag="🇳🇿" data-name="nova zelândia">🇳🇿 +64 Nova Zelândia</button>
-                <button type="button" data-code="+31" data-flag="🇳🇱" data-name="países baixos">🇳🇱 +31 Países Baixos</button>
-                <button type="button" data-code="+92" data-flag="🇵🇰" data-name="paquistão">🇵🇰 +92 Paquistão</button>
-                <button type="button" data-code="+507" data-flag="🇵🇦" data-name="panamá">🇵🇦 +507 Panamá</button>
-                <button type="button" data-code="+595" data-flag="🇵🇾" data-name="paraguai">🇵🇾 +595 Paraguai</button>
-                <button type="button" data-code="+51" data-flag="🇵🇪" data-name="peru">🇵🇪 +51 Peru</button>
-                <button type="button" data-code="+48" data-flag="🇵🇱" data-name="polônia">🇵🇱 +48 Polônia</button>
-                <button type="button" data-code="+1787" data-flag="🇵🇷" data-name="porto rico">🇵🇷 +1787 Porto Rico</button>
-                <button type="button" data-code="+974" data-flag="🇶🇦" data-name="qatar">🇶🇦 +974 Qatar</button>
-                <button type="button" data-code="+44" data-flag="🇬🇧" data-name="reino unido">🇬🇧 +44 Reino Unido</button>
-                <button type="button" data-code="+40" data-flag="🇷🇴" data-name="romênia">🇷🇴 +40 Romênia</button>
-                <button type="button" data-code="+250" data-flag="🇷🇼" data-name="ruanda">🇷🇼 +250 Ruanda</button>
-                <button type="button" data-code="+7" data-flag="🇷🇺" data-name="rússia">🇷🇺 +7 Rússia</button>
-                <button type="button" data-code="+966" data-flag="🇸🇦" data-name="arábia saudita">🇸🇦 +966 Arábia Saudita</button>
-                <button type="button" data-code="+221" data-flag="🇸🇳" data-name="senegal">🇸🇳 +221 Senegal</button>
-                <button type="button" data-code="+597" data-flag="🇸🇷" data-name="suriname">🇸🇷 +597 Suriname</button>
-                <button type="button" data-code="+46" data-flag="🇸🇪" data-name="suécia">🇸🇪 +46 Suécia</button>
-                <button type="button" data-code="+41" data-flag="🇨🇭" data-name="suíça">🇨🇭 +41 Suíça</button>
-                <button type="button" data-code="+255" data-flag="🇹🇿" data-name="tanzânia">🇹🇿 +255 Tanzânia</button>
-                <button type="button" data-code="+66" data-flag="🇹🇭" data-name="tailândia">🇹🇭 +66 Tailândia</button>
-                <button type="button" data-code="+886" data-flag="🇹🇼" data-name="taiwan">🇹🇼 +886 Taiwan</button>
-                <button type="button" data-code="+216" data-flag="🇹🇳" data-name="tunísia">🇹🇳 +216 Tunísia</button>
-                <button type="button" data-code="+90" data-flag="🇹🇷" data-name="turquia">🇹🇷 +90 Turquia</button>
-                <button type="button" data-code="+380" data-flag="🇺🇦" data-name="ucrânia">🇺🇦 +380 Ucrânia</button>
-                <button type="button" data-code="+256" data-flag="🇺🇬" data-name="uganda">🇺🇬 +256 Uganda</button>
-                <button type="button" data-code="+598" data-flag="🇺🇾" data-name="uruguai">🇺🇾 +598 Uruguai</button>
-                <button type="button" data-code="+998" data-flag="🇺🇿" data-name="uzbequistão">🇺🇿 +998 Uzbequistão</button>
-                <button type="button" data-code="+58" data-flag="🇻🇪" data-name="venezuela">🇻🇪 +58 Venezuela</button>
-                <button type="button" data-code="+84" data-flag="🇻🇳" data-name="vietnã">🇻🇳 +84 Vietnã</button>
-                <button type="button" data-code="+260" data-flag="🇿🇲" data-name="zâmbia">🇿🇲 +260 Zâmbia</button>
-                <button type="button" data-code="+263" data-flag="🇿🇼" data-name="zimbábue">🇿🇼 +263 Zimbábue</button>
+                <button type="button" data-code="+55" data-iso="br" data-name="brasil"><img src="https://flagcdn.com/20x15/br.png" alt="Brasil" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +55 Brasil</button>
+                <button type="button" data-code="+1" data-iso="us" data-name="estados unidos"><img src="https://flagcdn.com/20x15/us.png" alt="Estados Unidos" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +1 Estados Unidos</button>
+                <button type="button" data-code="+351" data-iso="pt" data-name="portugal"><img src="https://flagcdn.com/20x15/pt.png" alt="Portugal" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +351 Portugal</button>
+                <button type="button" data-code="+93" data-iso="af" data-name="afeganistão"><img src="https://flagcdn.com/20x15/af.png" alt="Afeganistão" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +93 Afeganistão</button>
+                <button type="button" data-code="+27" data-iso="za" data-name="áfrica do sul"><img src="https://flagcdn.com/20x15/za.png" alt="África do Sul" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +27 África do Sul</button>
+                <button type="button" data-code="+355" data-iso="al" data-name="albânia"><img src="https://flagcdn.com/20x15/al.png" alt="Albânia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +355 Albânia</button>
+                <button type="button" data-code="+213" data-iso="dz" data-name="argélia"><img src="https://flagcdn.com/20x15/dz.png" alt="Argélia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +213 Argélia</button>
+                <button type="button" data-code="+49" data-iso="de" data-name="alemanha"><img src="https://flagcdn.com/20x15/de.png" alt="Alemanha" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +49 Alemanha</button>
+                <button type="button" data-code="+244" data-iso="ao" data-name="angola"><img src="https://flagcdn.com/20x15/ao.png" alt="Angola" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +244 Angola</button>
+                <button type="button" data-code="+54" data-iso="ar" data-name="argentina"><img src="https://flagcdn.com/20x15/ar.png" alt="Argentina" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +54 Argentina</button>
+                <button type="button" data-code="+374" data-iso="am" data-name="armênia"><img src="https://flagcdn.com/20x15/am.png" alt="Armênia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +374 Armênia</button>
+                <button type="button" data-code="+61" data-iso="au" data-name="austrália"><img src="https://flagcdn.com/20x15/au.png" alt="Austrália" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +61 Austrália</button>
+                <button type="button" data-code="+43" data-iso="at" data-name="áustria"><img src="https://flagcdn.com/20x15/at.png" alt="Áustria" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +43 Áustria</button>
+                <button type="button" data-code="+994" data-iso="az" data-name="azerbaijão"><img src="https://flagcdn.com/20x15/az.png" alt="Azerbaijão" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +994 Azerbaijão</button>
+                <button type="button" data-code="+1242" data-iso="bs" data-name="bahamas"><img src="https://flagcdn.com/20x15/bs.png" alt="Bahamas" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +1242 Bahamas</button>
+                <button type="button" data-code="+880" data-iso="bd" data-name="bangladesh"><img src="https://flagcdn.com/20x15/bd.png" alt="Bangladesh" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +880 Bangladesh</button>
+                <button type="button" data-code="+32" data-iso="be" data-name="bélgica"><img src="https://flagcdn.com/20x15/be.png" alt="Bélgica" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +32 Bélgica</button>
+                <button type="button" data-code="+591" data-iso="bo" data-name="bolívia"><img src="https://flagcdn.com/20x15/bo.png" alt="Bolívia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +591 Bolívia</button>
+                <button type="button" data-code="+387" data-iso="ba" data-name="bósnia e herzegovina"><img src="https://flagcdn.com/20x15/ba.png" alt="Bósnia e Herzegovina" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +387 Bósnia e Herzegovina</button>
+                <button type="button" data-code="+267" data-iso="bw" data-name="botsuana"><img src="https://flagcdn.com/20x15/bw.png" alt="Botsuana" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +267 Botsuana</button>
+                <button type="button" data-code="+673" data-iso="bn" data-name="brunei"><img src="https://flagcdn.com/20x15/bn.png" alt="Brunei" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +673 Brunei</button>
+                <button type="button" data-code="+359" data-iso="bg" data-name="bulgária"><img src="https://flagcdn.com/20x15/bg.png" alt="Bulgária" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +359 Bulgária</button>
+                <button type="button" data-code="+237" data-iso="cm" data-name="camarões"><img src="https://flagcdn.com/20x15/cm.png" alt="Camarões" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +237 Camarões</button>
+                <button type="button" data-code="+1" data-iso="ca" data-name="canadá"><img src="https://flagcdn.com/20x15/ca.png" alt="Canadá" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +1 Canadá</button>
+                <button type="button" data-code="+7" data-iso="kz" data-name="cazaquistão"><img src="https://flagcdn.com/20x15/kz.png" alt="Cazaquistão" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +7 Cazaquistão</button>
+                <button type="button" data-code="+56" data-iso="cl" data-name="chile"><img src="https://flagcdn.com/20x15/cl.png" alt="Chile" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +56 Chile</button>
+                <button type="button" data-code="+86" data-iso="cn" data-name="china"><img src="https://flagcdn.com/20x15/cn.png" alt="China" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +86 China</button>
+                <button type="button" data-code="+357" data-iso="cy" data-name="chipre"><img src="https://flagcdn.com/20x15/cy.png" alt="Chipre" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +357 Chipre</button>
+                <button type="button" data-code="+57" data-iso="co" data-name="colômbia"><img src="https://flagcdn.com/20x15/co.png" alt="Colômbia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +57 Colômbia</button>
+                <button type="button" data-code="+243" data-iso="cd" data-name="congo (rdc)"><img src="https://flagcdn.com/20x15/cd.png" alt="Congo (RDC)" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +243 Congo (RDC)</button>
+                <button type="button" data-code="+82" data-iso="kr" data-name="coreia do sul"><img src="https://flagcdn.com/20x15/kr.png" alt="Coreia do Sul" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +82 Coreia do Sul</button>
+                <button type="button" data-code="+850" data-iso="kp" data-name="coreia do norte"><img src="https://flagcdn.com/20x15/kp.png" alt="Coreia do Norte" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +850 Coreia do Norte</button>
+                <button type="button" data-code="+506" data-iso="cr" data-name="costa rica"><img src="https://flagcdn.com/20x15/cr.png" alt="Costa Rica" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +506 Costa Rica</button>
+                <button type="button" data-code="+225" data-iso="ci" data-name="costa do marfim"><img src="https://flagcdn.com/20x15/ci.png" alt="Costa do Marfim" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +225 Costa do Marfim</button>
+                <button type="button" data-code="+385" data-iso="hr" data-name="croácia"><img src="https://flagcdn.com/20x15/hr.png" alt="Croácia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +385 Croácia</button>
+                <button type="button" data-code="+53" data-iso="cu" data-name="cuba"><img src="https://flagcdn.com/20x15/cu.png" alt="Cuba" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +53 Cuba</button>
+                <button type="button" data-code="+45" data-iso="dk" data-name="dinamarca"><img src="https://flagcdn.com/20x15/dk.png" alt="Dinamarca" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +45 Dinamarca</button>
+                <button type="button" data-code="+593" data-iso="ec" data-name="equador"><img src="https://flagcdn.com/20x15/ec.png" alt="Equador" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +593 Equador</button>
+                <button type="button" data-code="+20" data-iso="eg" data-name="egito"><img src="https://flagcdn.com/20x15/eg.png" alt="Egito" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +20 Egito</button>
+                <button type="button" data-code="+503" data-iso="sv" data-name="el salvador"><img src="https://flagcdn.com/20x15/sv.png" alt="El Salvador" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +503 El Salvador</button>
+                <button type="button" data-code="+971" data-iso="ae" data-name="emirados árabes"><img src="https://flagcdn.com/20x15/ae.png" alt="Emirados Árabes" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +971 Emirados Árabes</button>
+                <button type="button" data-code="+421" data-iso="sk" data-name="eslováquia"><img src="https://flagcdn.com/20x15/sk.png" alt="Eslováquia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +421 Eslováquia</button>
+                <button type="button" data-code="+386" data-iso="si" data-name="eslovênia"><img src="https://flagcdn.com/20x15/si.png" alt="Eslovênia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +386 Eslovênia</button>
+                <button type="button" data-code="+34" data-iso="es" data-name="espanha"><img src="https://flagcdn.com/20x15/es.png" alt="Espanha" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +34 Espanha</button>
+                <button type="button" data-code="+251" data-iso="et" data-name="etiópia"><img src="https://flagcdn.com/20x15/et.png" alt="Etiópia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +251 Etiópia</button>
+                <button type="button" data-code="+63" data-iso="ph" data-name="filipinas"><img src="https://flagcdn.com/20x15/ph.png" alt="Filipinas" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +63 Filipinas</button>
+                <button type="button" data-code="+358" data-iso="fi" data-name="finlândia"><img src="https://flagcdn.com/20x15/fi.png" alt="Finlândia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +358 Finlândia</button>
+                <button type="button" data-code="+33" data-iso="fr" data-name="frança"><img src="https://flagcdn.com/20x15/fr.png" alt="França" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +33 França</button>
+                <button type="button" data-code="+233" data-iso="gh" data-name="gana"><img src="https://flagcdn.com/20x15/gh.png" alt="Gana" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +233 Gana</button>
+                <button type="button" data-code="+995" data-iso="ge" data-name="geórgia"><img src="https://flagcdn.com/20x15/ge.png" alt="Geórgia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +995 Geórgia</button>
+                <button type="button" data-code="+30" data-iso="gr" data-name="grécia"><img src="https://flagcdn.com/20x15/gr.png" alt="Grécia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +30 Grécia</button>
+                <button type="button" data-code="+502" data-iso="gt" data-name="guatemala"><img src="https://flagcdn.com/20x15/gt.png" alt="Guatemala" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +502 Guatemala</button>
+                <button type="button" data-code="+224" data-iso="gn" data-name="guiné"><img src="https://flagcdn.com/20x15/gn.png" alt="Guiné" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +224 Guiné</button>
+                <button type="button" data-code="+509" data-iso="ht" data-name="haiti"><img src="https://flagcdn.com/20x15/ht.png" alt="Haiti" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +509 Haiti</button>
+                <button type="button" data-code="+504" data-iso="hn" data-name="honduras"><img src="https://flagcdn.com/20x15/hn.png" alt="Honduras" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +504 Honduras</button>
+                <button type="button" data-code="+852" data-iso="hk" data-name="hong kong"><img src="https://flagcdn.com/20x15/hk.png" alt="Hong Kong" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +852 Hong Kong</button>
+                <button type="button" data-code="+36" data-iso="hu" data-name="hungria"><img src="https://flagcdn.com/20x15/hu.png" alt="Hungria" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +36 Hungria</button>
+                <button type="button" data-code="+967" data-iso="ye" data-name="iêmen"><img src="https://flagcdn.com/20x15/ye.png" alt="Iêmen" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +967 Iêmen</button>
+                <button type="button" data-code="+91" data-iso="in" data-name="índia"><img src="https://flagcdn.com/20x15/in.png" alt="Índia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +91 Índia</button>
+                <button type="button" data-code="+62" data-iso="id" data-name="indonésia"><img src="https://flagcdn.com/20x15/id.png" alt="Indonésia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +62 Indonésia</button>
+                <button type="button" data-code="+964" data-iso="iq" data-name="iraque"><img src="https://flagcdn.com/20x15/iq.png" alt="Iraque" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +964 Iraque</button>
+                <button type="button" data-code="+98" data-iso="ir" data-name="irã"><img src="https://flagcdn.com/20x15/ir.png" alt="Irã" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +98 Irã</button>
+                <button type="button" data-code="+353" data-iso="ie" data-name="irlanda"><img src="https://flagcdn.com/20x15/ie.png" alt="Irlanda" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +353 Irlanda</button>
+                <button type="button" data-code="+972" data-iso="il" data-name="israel"><img src="https://flagcdn.com/20x15/il.png" alt="Israel" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +972 Israel</button>
+                <button type="button" data-code="+39" data-iso="it" data-name="itália"><img src="https://flagcdn.com/20x15/it.png" alt="Itália" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +39 Itália</button>
+                <button type="button" data-code="+1876" data-iso="jm" data-name="jamaica"><img src="https://flagcdn.com/20x15/jm.png" alt="Jamaica" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +1876 Jamaica</button>
+                <button type="button" data-code="+81" data-iso="jp" data-name="japão"><img src="https://flagcdn.com/20x15/jp.png" alt="Japão" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +81 Japão</button>
+                <button type="button" data-code="+962" data-iso="jo" data-name="jordânia"><img src="https://flagcdn.com/20x15/jo.png" alt="Jordânia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +962 Jordânia</button>
+                <button type="button" data-code="+254" data-iso="ke" data-name="quênia"><img src="https://flagcdn.com/20x15/ke.png" alt="Quênia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +254 Quênia</button>
+                <button type="button" data-code="+965" data-iso="kw" data-name="kuwait"><img src="https://flagcdn.com/20x15/kw.png" alt="Kuwait" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +965 Kuwait</button>
+                <button type="button" data-code="+856" data-iso="la" data-name="laos"><img src="https://flagcdn.com/20x15/la.png" alt="Laos" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +856 Laos</button>
+                <button type="button" data-code="+371" data-iso="lv" data-name="letônia"><img src="https://flagcdn.com/20x15/lv.png" alt="Letônia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +371 Letônia</button>
+                <button type="button" data-code="+961" data-iso="lb" data-name="líbano"><img src="https://flagcdn.com/20x15/lb.png" alt="Líbano" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +961 Líbano</button>
+                <button type="button" data-code="+218" data-iso="ly" data-name="líbia"><img src="https://flagcdn.com/20x15/ly.png" alt="Líbia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +218 Líbia</button>
+                <button type="button" data-code="+370" data-iso="lt" data-name="lituânia"><img src="https://flagcdn.com/20x15/lt.png" alt="Lituânia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +370 Lituânia</button>
+                <button type="button" data-code="+853" data-iso="mo" data-name="macau"><img src="https://flagcdn.com/20x15/mo.png" alt="Macau" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +853 Macau</button>
+                <button type="button" data-code="+60" data-iso="my" data-name="malásia"><img src="https://flagcdn.com/20x15/my.png" alt="Malásia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +60 Malásia</button>
+                <button type="button" data-code="+265" data-iso="mw" data-name="malawi"><img src="https://flagcdn.com/20x15/mw.png" alt="Malawi" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +265 Malawi</button>
+                <button type="button" data-code="+223" data-iso="ml" data-name="mali"><img src="https://flagcdn.com/20x15/ml.png" alt="Mali" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +223 Mali</button>
+                <button type="button" data-code="+212" data-iso="ma" data-name="marrocos"><img src="https://flagcdn.com/20x15/ma.png" alt="Marrocos" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +212 Marrocos</button>
+                <button type="button" data-code="+52" data-iso="mx" data-name="méxico"><img src="https://flagcdn.com/20x15/mx.png" alt="México" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +52 México</button>
+                <button type="button" data-code="+258" data-iso="mz" data-name="moçambique"><img src="https://flagcdn.com/20x15/mz.png" alt="Moçambique" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +258 Moçambique</button>
+                <button type="button" data-code="+95" data-iso="mm" data-name="mianmar"><img src="https://flagcdn.com/20x15/mm.png" alt="Mianmar" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +95 Mianmar</button>
+                <button type="button" data-code="+264" data-iso="na" data-name="namíbia"><img src="https://flagcdn.com/20x15/na.png" alt="Namíbia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +264 Namíbia</button>
+                <button type="button" data-code="+977" data-iso="np" data-name="nepal"><img src="https://flagcdn.com/20x15/np.png" alt="Nepal" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +977 Nepal</button>
+                <button type="button" data-code="+505" data-iso="ni" data-name="nicarágua"><img src="https://flagcdn.com/20x15/ni.png" alt="Nicarágua" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +505 Nicarágua</button>
+                <button type="button" data-code="+234" data-iso="ng" data-name="nigéria"><img src="https://flagcdn.com/20x15/ng.png" alt="Nigéria" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +234 Nigéria</button>
+                <button type="button" data-code="+47" data-iso="no" data-name="noruega"><img src="https://flagcdn.com/20x15/no.png" alt="Noruega" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +47 Noruega</button>
+                <button type="button" data-code="+64" data-iso="nz" data-name="nova zelândia"><img src="https://flagcdn.com/20x15/nz.png" alt="Nova Zelândia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +64 Nova Zelândia</button>
+                <button type="button" data-code="+31" data-iso="nl" data-name="países baixos"><img src="https://flagcdn.com/20x15/nl.png" alt="Países Baixos" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +31 Países Baixos</button>
+                <button type="button" data-code="+92" data-iso="pk" data-name="paquistão"><img src="https://flagcdn.com/20x15/pk.png" alt="Paquistão" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +92 Paquistão</button>
+                <button type="button" data-code="+507" data-iso="pa" data-name="panamá"><img src="https://flagcdn.com/20x15/pa.png" alt="Panamá" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +507 Panamá</button>
+                <button type="button" data-code="+595" data-iso="py" data-name="paraguai"><img src="https://flagcdn.com/20x15/py.png" alt="Paraguai" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +595 Paraguai</button>
+                <button type="button" data-code="+51" data-iso="pe" data-name="peru"><img src="https://flagcdn.com/20x15/pe.png" alt="Peru" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +51 Peru</button>
+                <button type="button" data-code="+48" data-iso="pl" data-name="polônia"><img src="https://flagcdn.com/20x15/pl.png" alt="Polônia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +48 Polônia</button>
+                <button type="button" data-code="+1787" data-iso="pr" data-name="porto rico"><img src="https://flagcdn.com/20x15/pr.png" alt="Porto Rico" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +1787 Porto Rico</button>
+                <button type="button" data-code="+974" data-iso="qa" data-name="qatar"><img src="https://flagcdn.com/20x15/qa.png" alt="Qatar" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +974 Qatar</button>
+                <button type="button" data-code="+44" data-iso="gb" data-name="reino unido"><img src="https://flagcdn.com/20x15/gb.png" alt="Reino Unido" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +44 Reino Unido</button>
+                <button type="button" data-code="+40" data-iso="ro" data-name="romênia"><img src="https://flagcdn.com/20x15/ro.png" alt="Romênia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +40 Romênia</button>
+                <button type="button" data-code="+250" data-iso="rw" data-name="ruanda"><img src="https://flagcdn.com/20x15/rw.png" alt="Ruanda" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +250 Ruanda</button>
+                <button type="button" data-code="+7" data-iso="ru" data-name="rússia"><img src="https://flagcdn.com/20x15/ru.png" alt="Rússia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +7 Rússia</button>
+                <button type="button" data-code="+966" data-iso="sa" data-name="arábia saudita"><img src="https://flagcdn.com/20x15/sa.png" alt="Arábia Saudita" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +966 Arábia Saudita</button>
+                <button type="button" data-code="+221" data-iso="sn" data-name="senegal"><img src="https://flagcdn.com/20x15/sn.png" alt="Senegal" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +221 Senegal</button>
+                <button type="button" data-code="+597" data-iso="sr" data-name="suriname"><img src="https://flagcdn.com/20x15/sr.png" alt="Suriname" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +597 Suriname</button>
+                <button type="button" data-code="+46" data-iso="se" data-name="suécia"><img src="https://flagcdn.com/20x15/se.png" alt="Suécia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +46 Suécia</button>
+                <button type="button" data-code="+41" data-iso="ch" data-name="suíça"><img src="https://flagcdn.com/20x15/ch.png" alt="Suíça" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +41 Suíça</button>
+                <button type="button" data-code="+255" data-iso="tz" data-name="tanzânia"><img src="https://flagcdn.com/20x15/tz.png" alt="Tanzânia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +255 Tanzânia</button>
+                <button type="button" data-code="+66" data-iso="th" data-name="tailândia"><img src="https://flagcdn.com/20x15/th.png" alt="Tailândia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +66 Tailândia</button>
+                <button type="button" data-code="+886" data-iso="tw" data-name="taiwan"><img src="https://flagcdn.com/20x15/tw.png" alt="Taiwan" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +886 Taiwan</button>
+                <button type="button" data-code="+216" data-iso="tn" data-name="tunísia"><img src="https://flagcdn.com/20x15/tn.png" alt="Tunísia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +216 Tunísia</button>
+                <button type="button" data-code="+90" data-iso="tr" data-name="turquia"><img src="https://flagcdn.com/20x15/tr.png" alt="Turquia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +90 Turquia</button>
+                <button type="button" data-code="+380" data-iso="ua" data-name="ucrânia"><img src="https://flagcdn.com/20x15/ua.png" alt="Ucrânia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +380 Ucrânia</button>
+                <button type="button" data-code="+256" data-iso="ug" data-name="uganda"><img src="https://flagcdn.com/20x15/ug.png" alt="Uganda" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +256 Uganda</button>
+                <button type="button" data-code="+598" data-iso="uy" data-name="uruguai"><img src="https://flagcdn.com/20x15/uy.png" alt="Uruguai" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +598 Uruguai</button>
+                <button type="button" data-code="+998" data-iso="uz" data-name="uzbequistão"><img src="https://flagcdn.com/20x15/uz.png" alt="Uzbequistão" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +998 Uzbequistão</button>
+                <button type="button" data-code="+58" data-iso="ve" data-name="venezuela"><img src="https://flagcdn.com/20x15/ve.png" alt="Venezuela" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +58 Venezuela</button>
+                <button type="button" data-code="+84" data-iso="vn" data-name="vietnã"><img src="https://flagcdn.com/20x15/vn.png" alt="Vietnã" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +84 Vietnã</button>
+                <button type="button" data-code="+260" data-iso="zm" data-name="zâmbia"><img src="https://flagcdn.com/20x15/zm.png" alt="Zâmbia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +260 Zâmbia</button>
+                <button type="button" data-code="+263" data-iso="zw" data-name="zimbábue"><img src="https://flagcdn.com/20x15/zw.png" alt="Zimbábue" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +263 Zimbábue</button>
                 </div>
-              </div>
+              </div></div>
 
               <input
                 class="og-form-field"
@@ -2364,34 +2347,35 @@
 
     /* Mapa ISO alpha-2 → { flag, code } — cobre todos os países do dropdown */
     var GEO_MAP = {
-      AF:"🇦🇫|+93",AO:"🇦🇴|+244",AL:"🇦🇱|+355",DZ:"🇩🇿|+213",DE:"🇩🇪|+49",
-      AR:"🇦🇷|+54",AM:"🇦🇲|+374",AU:"🇦🇺|+61",AT:"🇦🇹|+43",AZ:"🇦🇿|+994",
-      BS:"🇧🇸|+1242",BD:"🇧🇩|+880",BE:"🇧🇪|+32",BO:"🇧🇴|+591",BA:"🇧🇦|+387",
-      BW:"🇧🇼|+267",BR:"🇧🇷|+55",BN:"🇧🇳|+673",BG:"🇧🇬|+359",CM:"🇨🇲|+237",
-      CA:"🇨🇦|+1",KZ:"🇰🇿|+7",CL:"🇨🇱|+56",CN:"🇨🇳|+86",CY:"🇨🇾|+357",
-      CO:"🇨🇴|+57",CD:"🇨🇩|+243",KR:"🇰🇷|+82",KP:"🇰🇵|+850",CR:"🇨🇷|+506",
-      CI:"🇨🇮|+225",HR:"🇭🇷|+385",CU:"🇨🇺|+53",DK:"🇩🇰|+45",EC:"🇪🇨|+593",
-      EG:"🇪🇬|+20",SV:"🇸🇻|+503",AE:"🇦🇪|+971",SK:"🇸🇰|+421",SI:"🇸🇮|+386",
-      ES:"🇪🇸|+34",US:"🇺🇸|+1",ET:"🇪🇹|+251",PH:"🇵🇭|+63",FI:"🇫🇮|+358",
-      FR:"🇫🇷|+33",GH:"🇬🇭|+233",GE:"🇬🇪|+995",GR:"🇬🇷|+30",GT:"🇬🇹|+502",
-      GN:"🇬🇳|+224",HT:"🇭🇹|+509",HN:"🇭🇳|+504",HK:"🇭🇰|+852",HU:"🇭🇺|+36",
-      YE:"🇾🇪|+967",IN:"🇮🇳|+91",ID:"🇮🇩|+62",IQ:"🇮🇶|+964",IR:"🇮🇷|+98",
-      IE:"🇮🇪|+353",IL:"🇮🇱|+972",IT:"🇮🇹|+39",JM:"🇯🇲|+1876",JP:"🇯🇵|+81",
-      JO:"🇯🇴|+962",KE:"🇰🇪|+254",KW:"🇰🇼|+965",LA:"🇱🇦|+856",LV:"🇱🇻|+371",
-      LB:"🇱🇧|+961",LY:"🇱🇾|+218",LT:"🇱🇹|+370",MO:"🇲🇴|+853",MY:"🇲🇾|+60",
-      MW:"🇲🇼|+265",ML:"🇲🇱|+223",MA:"🇲🇦|+212",MX:"🇲🇽|+52",MZ:"🇲🇿|+258",
-      MM:"🇲🇲|+95",NA:"🇳🇦|+264",NP:"🇳🇵|+977",NI:"🇳🇮|+505",NG:"🇳🇬|+234",
-      NO:"🇳🇴|+47",NZ:"🇳🇿|+64",NL:"🇳🇱|+31",PK:"🇵🇰|+92",PA:"🇵🇦|+507",
-      PY:"🇵🇾|+595",PE:"🇵🇪|+51",PL:"🇵🇱|+48",PR:"🇵🇷|+1787",PT:"🇵🇹|+351",
-      QA:"🇶🇦|+974",GB:"🇬🇧|+44",RO:"🇷🇴|+40",RW:"🇷🇼|+250",RU:"🇷🇺|+7",
-      SA:"🇸🇦|+966",SN:"🇸🇳|+221",SR:"🇸🇷|+597",SE:"🇸🇪|+46",CH:"🇨🇭|+41",
-      TZ:"🇹🇿|+255",TH:"🇹🇭|+66",TW:"🇹🇼|+886",TN:"🇹🇳|+216",TR:"🇹🇷|+90",
-      UA:"🇺🇦|+380",UG:"🇺🇬|+256",UY:"🇺🇾|+598",UZ:"🇺🇿|+998",VE:"🇻🇪|+58",
-      VN:"🇻🇳|+84",ZM:"🇿🇲|+260",ZW:"🇿🇼|+263",ZA:"🇿🇦|+27"
+      AF:"af|+93",AO:"ao|+244",AL:"al|+355",DZ:"dz|+213",DE:"de|+49",
+      AR:"ar|+54",AM:"am|+374",AU:"au|+61",AT:"at|+43",AZ:"az|+994",
+      BS:"bs|+1242",BD:"bd|+880",BE:"be|+32",BO:"bo|+591",BA:"ba|+387",
+      BW:"bw|+267",BR:"br|+55",BN:"bn|+673",BG:"bg|+359",CM:"cm|+237",
+      CA:"ca|+1",KZ:"kz|+7",CL:"cl|+56",CN:"cn|+86",CY:"cy|+357",
+      CO:"co|+57",CD:"cd|+243",KR:"kr|+82",KP:"kp|+850",CR:"cr|+506",
+      CI:"ci|+225",HR:"hr|+385",CU:"cu|+53",DK:"dk|+45",EC:"ec|+593",
+      EG:"eg|+20",SV:"sv|+503",AE:"ae|+971",SK:"sk|+421",SI:"si|+386",
+      ES:"es|+34",US:"us|+1",ET:"et|+251",PH:"ph|+63",FI:"fi|+358",
+      FR:"fr|+33",GH:"gh|+233",GE:"ge|+995",GR:"gr|+30",GT:"gt|+502",
+      GN:"gn|+224",HT:"ht|+509",HN:"hn|+504",HK:"hk|+852",HU:"hu|+36",
+      YE:"ye|+967",IN:"in|+91",ID:"id|+62",IQ:"iq|+964",IR:"ir|+98",
+      IE:"ie|+353",IL:"il|+972",IT:"it|+39",JM:"jm|+1876",JP:"jp|+81",
+      JO:"jo|+962",KE:"ke|+254",KW:"kw|+965",LA:"la|+856",LV:"lv|+371",
+      LB:"lb|+961",LY:"ly|+218",LT:"lt|+370",MO:"mo|+853",MY:"my|+60",
+      MW:"mw|+265",ML:"ml|+223",MA:"ma|+212",MX:"mx|+52",MZ:"mz|+258",
+      MM:"mm|+95",NA:"na|+264",NP:"np|+977",NI:"ni|+505",NG:"ng|+234",
+      NO:"no|+47",NZ:"nz|+64",NL:"nl|+31",PK:"pk|+92",PA:"pa|+507",
+      PY:"py|+595",PE:"pe|+51",PL:"pl|+48",PR:"pr|+1787",PT:"pt|+351",
+      QA:"qa|+974",GB:"gb|+44",RO:"ro|+40",RW:"rw|+250",RU:"ru|+7",
+      SA:"sa|+966",SN:"sn|+221",SR:"sr|+597",SE:"se|+46",CH:"ch|+41",
+      TZ:"tz|+255",TH:"th|+66",TW:"tw|+886",TN:"tn|+216",TR:"tr|+90",
+      UA:"ua|+380",UG:"ug|+256",UY:"uy|+598",UZ:"uz|+998",VE:"ve|+58",
+      VN:"vn|+84",ZM:"zm|+260",ZW:"zw|+263",ZA:"za|+27"
     };
 
-    function applyCountry(flag, code) {
-      flagEl.textContent = flag;
+    function applyCountry(iso, code, label) {
+      flagEl.src = "https://flagcdn.com/20x15/" + iso + ".png";
+      flagEl.alt = label || iso;
       codeEl.textContent = code;
       hiddenCode.value = code;
     }
@@ -2424,7 +2408,7 @@
         var cached = sessionStorage.getItem("og_country_geo");
         if (cached) {
           var parts = cached.split("|");
-          if (parts.length === 2) { applyCountry(parts[0], parts[1]); return; }
+          if (parts.length >= 2) { applyCountry(parts[0], parts[1], parts[2] || parts[0]); return; }
         }
       } catch(e) {}
 
@@ -2435,8 +2419,8 @@
           var entry = GEO_MAP[iso];
           if (entry) {
             var parts = entry.split("|");
-            applyCountry(parts[0], parts[1]);
-            try { sessionStorage.setItem("og_country_geo", entry); } catch(e) {}
+            applyCountry(parts[0], parts[1], iso);
+            try { sessionStorage.setItem("og_country_geo", entry + "|" + iso); } catch(e) {}
           }
         })
         .catch(function() {}); /* falha silenciosa — mantém BR +55 */
@@ -2464,8 +2448,9 @@
           if (target.tagName === "BUTTON" && target.hasAttribute("data-code")) {
             var code = target.getAttribute("data-code") || "";
             var flag = target.getAttribute("data-flag") || "";
-            applyCountry(flag, code);
-            try { sessionStorage.setItem("og_country_geo", flag + "|" + code); } catch(e) {}
+            var iso2 = target.getAttribute("data-iso") || "br";
+            applyCountry(iso2, code);
+            try { sessionStorage.setItem("og_country_geo", iso2 + "|" + code + "|" + iso2); } catch(e) {}
             closeDropdown();
             return;
           }
