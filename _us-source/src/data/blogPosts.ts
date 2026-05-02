@@ -1577,7 +1577,7 @@ const dumpsterPosts: BlogPost[] = [
     title: "How to Start a Dumpster Rental Business in 2026: The Complete Guide",
     excerpt:
       "The end-to-end playbook for launching a dumpster rental operation in 2026 — market research, business setup, equipment, pricing, marketing, first customers, and the timeline to profitability.",
-    category: "Startup",
+    category: "Pricing",
     readingTime: "10 min read",
     publishedAt: "February 9, 2026",
     body: [
@@ -1673,7 +1673,7 @@ const dumpsterPosts: BlogPost[] = [
     title: "How Many Dumpsters Do You Actually Need to Start?",
     excerpt:
       "Three to five is the right answer for almost every new operator. Here is which sizes to prioritize, why bumper pull beats roll-off for fleet number one, and when to add the next batch.",
-    category: "Startup",
+    category: "Strategy",
     readingTime: "5 min read",
     publishedAt: "February 5, 2026",
     body: [
@@ -1732,7 +1732,7 @@ const dumpsterPosts: BlogPost[] = [
     title: "Dumpster Rental Startup Costs: Real Numbers From Real Owners",
     excerpt:
       "What it actually costs to launch — boxes, trucks, insurance, licenses, marketing — broken into a minimum viable budget and an ideal budget, with realistic ROI timelines.",
-    category: "Startup",
+    category: "Operations",
     readingTime: "6 min read",
     publishedAt: "February 1, 2026",
     body: [
@@ -1805,7 +1805,7 @@ const dumpsterPosts: BlogPost[] = [
     title: "How to Price Your Dumpster Rentals (Without Losing Money or Customers)",
     excerpt:
       "Build your price from the cost stack up, not the competitor down. Here is the formula, the published-rate structure that works, and how to handle overages without losing the customer.",
-    category: "Pricing",
+    category: "Marketing",
     readingTime: "6 min read",
     publishedAt: "January 28, 2026",
     body: [
@@ -1925,7 +1925,7 @@ const dumpsterPosts: BlogPost[] = [
     title: "Adding Dumpster Rental to Your Existing Business: A Side Hustle That Scales",
     excerpt:
       "If you already run landscaping, hauling, junk removal, or construction, dumpsters can go from side line to self-sufficient business inside 12 months. Here is the path most operators follow.",
-    category: "Strategy",
+    category: "Startup",
     readingTime: "6 min read",
     publishedAt: "January 20, 2026",
     body: [
@@ -1985,7 +1985,7 @@ const dumpsterPosts: BlogPost[] = [
     title: "I Just Got My First Dumpster Job — Now What? The Complete Delivery Guide",
     excerpt:
       "From the call to the pickup, every step in the operational chain. Confirmation, placement, the landfill, the invoice, the review request — all the details that decide whether you do it well or you do it twice.",
-    category: "Operations",
+    category: "Startup",
     readingTime: "7 min read",
     publishedAt: "January 16, 2026",
     body: [
@@ -2054,7 +2054,7 @@ const dumpsterPosts: BlogPost[] = [
     title: "SEO vs Google Ads vs Pay-Per-Job: What's Best When You're Just Starting?",
     excerpt:
       "When the budget is small and the timeline is short, the marketing math gets tight. Here is which channel produces booked work fastest, which one compounds, and the mix that fits a new operator.",
-    category: "Marketing",
+    category: "Startup",
     readingTime: "6 min read",
     publishedAt: "January 12, 2026",
     body: [
