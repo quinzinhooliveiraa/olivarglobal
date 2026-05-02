@@ -80,6 +80,7 @@ const BLOG_POST_SLUGS: Record<string, string[]> = {
 };
 
 function applyRouteMeta(html: string, meta: RouteMeta) {
+  const canonicalUrl = meta.url.endsWith("/") ? meta.url : `${meta.url}/`;
   return html
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${meta.title}</title>`)
     .replace(
@@ -96,7 +97,7 @@ function applyRouteMeta(html: string, meta: RouteMeta) {
     )
     .replace(
       /<meta\s+property="og:url"[^>]*>/i,
-      `<meta property="og:url" content="${meta.url}" />`,
+      `<meta property="og:url" content="${canonicalUrl}" />`,
     )
     .replace(
       /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i,
@@ -117,7 +118,23 @@ function applyRouteMeta(html: string, meta: RouteMeta) {
     .replace(
       /<meta\s+name="twitter:image"[^>]*>/i,
       `<meta name="twitter:image" content="${meta.image}" />`,
+    )
+    // Canonical
+    .replace(
+      /<link rel="canonical"[^>]*>/i,
+      `<link rel="canonical" href="${canonicalUrl}" />`,
+    )
+    // Hreflang self (en)
+    .replace(
+      /<link rel="alternate" hreflang="en"[^>]*>/i,
+      `<link rel="alternate" hreflang="en" href="${canonicalUrl}" />`,
+    )
+    // Hreflang x-default
+    .replace(
+      /<link rel="alternate" hreflang="x-default"[^>]*>/i,
+      `<link rel="alternate" hreflang="x-default" href="${canonicalUrl}" />`,
     );
+    // pt-BR always stays pointing to https://olivarglobal.com/ (set in base index.html)
 }
 
 const spaFallbackPlugin = {
