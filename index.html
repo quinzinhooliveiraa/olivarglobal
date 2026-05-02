@@ -1787,51 +1787,7 @@
           </p>
         </div>
         <div class="og-cta-dark-map" aria-hidden="true">
-          <svg viewBox="0 0 600 340" class="og-world-svg" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#22c55e" stop-opacity="0.18"/>
-                <stop offset="100%" stop-color="#16a34a" stop-opacity="0"/>
-              </radialGradient>
-              <filter id="blur-filter">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
-              </filter>
-            </defs>
-            <!-- Globe glow background -->
-            <ellipse cx="300" cy="170" rx="220" ry="145" fill="url(#glow)"/>
-            <!-- Continents (simplified shapes) -->
-            <!-- North America -->
-            <path d="M90 80 Q110 60 140 70 Q160 75 165 100 Q170 130 155 150 Q140 170 120 165 Q95 160 85 140 Q75 110 90 80Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
-            <!-- South America -->
-            <path d="M155 175 Q175 165 185 185 Q195 210 188 240 Q180 265 165 270 Q148 272 140 255 Q132 235 138 205 Q142 185 155 175Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
-            <!-- Europe -->
-            <path d="M265 70 Q285 60 305 68 Q320 75 315 95 Q310 115 295 120 Q275 122 262 108 Q255 90 265 70Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
-            <!-- Africa -->
-            <path d="M275 130 Q300 118 320 128 Q338 140 338 170 Q338 210 325 240 Q310 262 292 260 Q272 258 262 235 Q250 208 252 178 Q254 148 275 130Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
-            <!-- Asia -->
-            <path d="M330 65 Q380 50 430 60 Q475 70 490 100 Q500 125 480 145 Q455 162 420 155 Q380 148 355 130 Q330 112 325 90 Q322 75 330 65Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
-            <!-- Australia -->
-            <path d="M440 195 Q468 185 488 200 Q505 215 498 238 Q488 256 468 258 Q448 258 438 242 Q428 224 435 205Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
-            <!-- Connection lines -->
-            <line x1="155" y1="190" x2="295" y2="130" stroke="#22c55e" stroke-width="0.6" stroke-dasharray="4 3" opacity="0.5"/>
-            <line x1="155" y1="190" x2="420" y2="120" stroke="#22c55e" stroke-width="0.6" stroke-dasharray="4 3" opacity="0.4"/>
-            <line x1="290" y1="95" x2="420" y2="110" stroke="#22c55e" stroke-width="0.6" stroke-dasharray="4 3" opacity="0.5"/>
-            <line x1="290" y1="95" x2="155" y2="120" stroke="#22c55e" stroke-width="0.6" stroke-dasharray="4 3" opacity="0.45"/>
-            <line x1="420" y1="120" x2="468" y2="220" stroke="#22c55e" stroke-width="0.6" stroke-dasharray="4 3" opacity="0.4"/>
-            <!-- Glowing dots -->
-            <circle cx="155" cy="120" r="4" fill="#22c55e" opacity="0.9" filter="url(#blur-filter)"/>
-            <circle cx="155" cy="120" r="2.5" fill="#4ade80"/>
-            <circle cx="290" cy="95" r="4" fill="#22c55e" opacity="0.9" filter="url(#blur-filter)"/>
-            <circle cx="290" cy="95" r="2.5" fill="#4ade80"/>
-            <circle cx="420" cy="110" r="4" fill="#22c55e" opacity="0.9" filter="url(#blur-filter)"/>
-            <circle cx="420" cy="110" r="2.5" fill="#4ade80"/>
-            <circle cx="468" cy="218" r="3.5" fill="#22c55e" opacity="0.8" filter="url(#blur-filter)"/>
-            <circle cx="468" cy="218" r="2" fill="#4ade80"/>
-            <circle cx="165" cy="190" r="3.5" fill="#22c55e" opacity="0.8" filter="url(#blur-filter)"/>
-            <circle cx="165" cy="190" r="2" fill="#4ade80"/>
-            <circle cx="307" cy="175" r="3" fill="#22c55e" opacity="0.7" filter="url(#blur-filter)"/>
-            <circle cx="307" cy="175" r="2" fill="#4ade80"/>
-          </svg>
+          <img src="/world-map.svg" alt="Mapa mundial" class="og-world-svg" loading="lazy" />
         </div>
       </div>
     </section>
