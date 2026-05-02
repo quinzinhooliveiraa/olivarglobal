@@ -649,7 +649,14 @@
     .og-phone-wrap {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0;
+      position: relative;
+    }
+    .og-phone-tel-input {
+      flex: 1 1 auto;
+      border-radius: 0 12px 12px 0 !important;
+      border-left: none !important;
+      margin: 0 !important;
     }
 
     .og-phone-flag { width:20px; height:15px; border-radius:2px; object-fit:cover; display:inline-block; vertical-align:middle; }
@@ -2076,10 +2083,10 @@
                 <button type="button" data-code="+260" data-iso="zm" data-name="zâmbia"><img src="https://flagcdn.com/20x15/zm.png" alt="Zâmbia" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +260 Zâmbia</button>
                 <button type="button" data-code="+263" data-iso="zw" data-name="zimbábue"><img src="https://flagcdn.com/20x15/zw.png" alt="Zimbábue" width="20" height="15" style="border-radius:2px;vertical-align:middle;"> +263 Zimbábue</button>
                 </div>
-              </div></div>
+              </div>
 
               <input
-                class="og-form-field"
+                class="og-form-field og-phone-tel-input"
                 type="tel"
                 name="telefone"
                 autocomplete="tel"
