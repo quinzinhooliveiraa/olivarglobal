@@ -4,7 +4,9 @@ export type BlogBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
-  | { type: "quote"; text: string; author?: string };
+  | { type: "quote"; text: string; author?: string }
+  | { type: "ul"; items: string[] }
+  | { type: "table"; headers: string[]; rows: string[][] };
 
 export type BlogPost = {
   slug: string;
@@ -658,27 +660,30 @@ const dumpsterPosts: BlogPost[] = [
         text: "Pricing varies by size, region, and whether you're serving residential or commercial customers. Here's what we're seeing across the operators we partner with:",
       },
       { type: "h3", text: "Residential Rentals (weekly)" },
-      { type: "p", text: "10-14 yard dumpsters: $350 to $400" },
-      { type: "p", text: "15-16 yard dumpsters: $375 to $425" },
-      { type: "p", text: "20 yard dumpsters: $475 to $500" },
-      { type: "p", text: "25 yard dumpsters: $540 and up" },
+      {
+        type: "ul",
+        items: [
+          "**10-14 yard dumpsters:** $350 to $400",
+          "**15-16 yard dumpsters:** $375 to $425",
+          "**20 yard dumpsters:** $475 to $500",
+          "**25 yard dumpsters:** $540 and up",
+        ],
+      },
       { type: "h3", text: "Specialty Dumpsters" },
       {
-        type: "p",
-        text: "7 yard (dirt and concrete): $550 to $600 flat rate — these are heavy, and operators charge accordingly.",
-      },
-      {
-        type: "p",
-        text: "Some operators charge an extra $250 to $280 per additional dump if the customer fills it more than once during the rental.",
+        type: "ul",
+        items: [
+          "**7 yard (dirt and concrete):** $550 to $600 flat rate — these are heavy, and operators charge accordingly.",
+          "Some operators charge an **extra $250 to $280 per additional dump** if the customer fills it more than once during the rental.",
+        ],
       },
       { type: "h3", text: "Contractor Rates" },
       {
-        type: "p",
-        text: "Many operators offer discounted rates for contractors who rent for 30 days or more.",
-      },
-      {
-        type: "p",
-        text: "The tradeoff: lower per-day revenue, but guaranteed occupancy and zero marketing cost for that unit.",
+        type: "ul",
+        items: [
+          "Many operators offer discounted rates for contractors who rent for 30 days or more.",
+          "The tradeoff: lower per-day revenue, but guaranteed occupancy and zero marketing cost for that unit.",
+        ],
       },
       {
         type: "p",
@@ -691,11 +696,21 @@ const dumpsterPosts: BlogPost[] = [
       },
       { type: "p", text: "Here's what the math looks like:" },
       { type: "h3", text: "Conservative (weekly rotation)" },
-      { type: "p", text: "7 dumpsters × 1 job per week each = 7 jobs/week" },
-      { type: "p", text: "7 jobs × $400 = $2,800/week = roughly $11,200/month" },
+      {
+        type: "ul",
+        items: [
+          "7 dumpsters × 1 job per week each = **7 jobs/week**",
+          "7 jobs × $400 = $2,800/week = **roughly $11,200/month**",
+        ],
+      },
       { type: "h3", text: "Aggressive (3-day rotation)" },
-      { type: "p", text: "7 dumpsters × 2 jobs per week each = 14 jobs/week" },
-      { type: "p", text: "14 jobs × $400 = $5,600/week = roughly $22,400/month" },
+      {
+        type: "ul",
+        items: [
+          "7 dumpsters × 2 jobs per week each = **14 jobs/week**",
+          "14 jobs × $400 = $5,600/week = **roughly $22,400/month**",
+        ],
+      },
       {
         type: "p",
         text: "The difference between $11k and $22k per month isn't about having more dumpsters. It's about how fast you get them back, cleaned, and out again. Rotation speed is the single biggest lever in this business.",
@@ -714,16 +729,20 @@ const dumpsterPosts: BlogPost[] = [
         text: "One operator we work with has 21 dumpsters, two trucks, and a landscaping business on the side. Here's his situation:",
       },
       {
-        type: "p",
-        text: "5-6 dumpsters are locked up with contractors building houses — those won't rotate for months, but they're guaranteed revenue.",
+        type: "ul",
+        items: [
+          "**5-6 dumpsters** are locked up with contractors building houses — those won't rotate for months, but they're guaranteed revenue.",
+          "**About 7 dumpsters** sit available for residential and short-term jobs.",
+          "**9 more** are on order, arriving in 6 weeks.",
+        ],
       },
-      { type: "p", text: "About 7 dumpsters sit available for residential and short-term jobs." },
-      { type: "p", text: "9 more are on order, arriving in 6 weeks." },
       { type: "p", text: "His available inventory does roughly:" },
-      { type: "p", text: "7 available dumpsters × 1.5 jobs/week average = 10-11 jobs/week" },
       {
-        type: "p",
-        text: "At $475 average (he runs 20-yard and 25-yard sizes): roughly $4,750 to $5,225/week.",
+        type: "ul",
+        items: [
+          "7 available dumpsters × 1.5 jobs/week average = **10-11 jobs/week**",
+          "At $475 average (he runs 20-yard and 25-yard sizes): **roughly $4,750 to $5,225/week**.",
+        ],
       },
       {
         type: "p",
@@ -742,16 +761,21 @@ const dumpsterPosts: BlogPost[] = [
         type: "p",
         text: "One operator we work with runs 200 dumpsters across two locations — 130 in one city, 70 in another. Ten years in business. Here's what his numbers look like:",
       },
-      { type: "p", text: "Averaging 190 jobs per month." },
-      { type: "p", text: "Average price: $380 to $400 per job." },
-      { type: "p", text: "Monthly revenue: roughly $72,000 to $76,000." },
+      {
+        type: "ul",
+        items: [
+          "Averaging **190 jobs per month**.",
+          "Average price: **$380 to $400 per job**.",
+          "Monthly revenue: **roughly $72,000 to $76,000**.",
+        ],
+      },
       {
         type: "p",
         text: "He's got capacity for more. His goal: add 40 to 50 additional jobs per location per month. If he hits that:",
       },
       {
         type: "p",
-        text: "Additional 80 to 100 jobs/month × $400 = $32,000 to $40,000 in additional monthly revenue.",
+        text: "Additional 80 to 100 jobs/month × $400 = **$32,000 to $40,000 in additional monthly revenue**.",
       },
       {
         type: "p",
@@ -767,20 +791,13 @@ const dumpsterPosts: BlogPost[] = [
         text: "The per-job price isn't the only money coming in. Smart operators build in additional revenue streams:",
       },
       {
-        type: "p",
-        text: "Overage fees: When a customer goes over the weight limit or keeps the dumpster past the rental period. One operator charges $270 per extra dump — and most residential customers need at least two dumps before they're done.",
-      },
-      {
-        type: "p",
-        text: "Tonnage pass-through: Instead of including dump fees in the price, some operators charge the dumpster rental separately ($350/week) and pass the tonnage cost directly to the customer. This protects your margin on heavy loads.",
-      },
-      {
-        type: "p",
-        text: "Upsells: Customer booked a 14-yard but the job is clearly bigger? That's a natural upsell to a 20-yard at $100 more.",
-      },
-      {
-        type: "p",
-        text: "Multiple dumps per rental: A roofing contractor might fill a 20-yard dumpster three times during a week-long job. That's three dump fees at $270 each on top of the rental — over $800 in additional revenue from one customer.",
+        type: "ul",
+        items: [
+          "**Overage fees:** When a customer goes over the weight limit or keeps the dumpster past the rental period. One operator charges $270 per extra dump — and most residential customers need at least two dumps before they're done.",
+          "**Tonnage pass-through:** Instead of including dump fees in the price, some operators charge the dumpster rental separately ($350/week) and pass the tonnage cost directly to the customer. This protects your margin on heavy loads.",
+          "**Upsells:** Customer booked a 14-yard but the job is clearly bigger? That's a natural upsell to a 20-yard at $100 more.",
+          "**Multiple dumps per rental:** A roofing contractor might fill a 20-yard dumpster three times during a week-long job. That's three dump fees at $270 each on top of the rental — over $800 in additional revenue from one customer.",
+        ],
       },
       { type: "h2", text: "What's Actually Eating Your Profits" },
       {
@@ -788,28 +805,18 @@ const dumpsterPosts: BlogPost[] = [
         text: "Revenue is great, but what matters is what you keep. Here are the real costs:",
       },
       {
-        type: "p",
-        text: "Landfill fees: This is your biggest variable cost. Rates vary wildly — from $57 per load (for light loads under 800 pounds) to $105 per ton plus surcharges in some markets. Know your local rates before you price your services.",
+        type: "ul",
+        items: [
+          "**Landfill fees:** This is your biggest variable cost. Rates vary wildly — from $57 per load (for light loads under 800 pounds) to $105 per ton plus surcharges in some markets. Know your local rates before you price your services.",
+          "**Fuel:** A roll-off truck isn't exactly a Prius. Budget $800 to $1,500 per month per truck depending on how far your jobs are.",
+          "**Truck payment/maintenance:** If you're financing, $1,500 to $2,500 per month. If you own outright, budget $500 to $800 for maintenance.",
+          "**Insurance:** $200 to $500 per month depending on coverage and fleet size.",
+          "**Marketing:** This is where most operators either overspend or underspend. We'll get to that.",
+        ],
       },
       {
         type: "p",
-        text: "Fuel: A roll-off truck isn't exactly a Prius. Budget $800 to $1,500 per month per truck depending on how far your jobs are.",
-      },
-      {
-        type: "p",
-        text: "Truck payment/maintenance: If you're financing, $1,500 to $2,500 per month. If you own outright, budget $500 to $800 for maintenance.",
-      },
-      {
-        type: "p",
-        text: "Insurance: $200 to $500 per month depending on coverage and fleet size.",
-      },
-      {
-        type: "p",
-        text: "Marketing: This is where most operators either overspend or underspend. We'll get to that.",
-      },
-      {
-        type: "p",
-        text: "The bottom line: Most healthy dumpster rental operations run at 40-60% profit margins. On $20,000/month in revenue, you should be taking home $8,000 to $12,000 after all costs.",
+        text: "**The bottom line:** Most healthy dumpster rental operations run at 40-60% profit margins. On $20,000/month in revenue, you should be taking home $8,000 to $12,000 after all costs.",
       },
       { type: "h2", text: "The Real Question: Where Do the Jobs Come From?" },
       {
@@ -822,20 +829,13 @@ const dumpsterPosts: BlogPost[] = [
       },
       { type: "p", text: "We've seen operators try every approach:" },
       {
-        type: "p",
-        text: "SEO: Works great, but takes 3 to 6 months to gain traction. That's 3 to 6 months of dumpsters sitting in your yard.",
-      },
-      {
-        type: "p",
-        text: "Google Ads: Faster results, but $15 to $40 per click in competitive markets. At a 10% conversion rate, you're paying $150 to $400 per job in marketing costs.",
-      },
-      {
-        type: "p",
-        text: "Angi/Thumbtack: Shared leads that multiple operators are bidding on. The close rate is terrible, and you're paying whether the lead converts or not.",
-      },
-      {
-        type: "p",
-        text: "Word of mouth: The best leads, but impossible to scale or predict.",
+        type: "ul",
+        items: [
+          "**SEO:** Works great, but takes 3 to 6 months to gain traction. That's 3 to 6 months of dumpsters sitting in your yard.",
+          "**Google Ads:** Faster results, but $15 to $40 per click in competitive markets. At a 10% conversion rate, you're paying $150 to $400 per job in marketing costs.",
+          "**Angi/Thumbtack:** Shared leads that multiple operators are bidding on. The close rate is terrible, and you're paying whether the lead converts or not.",
+          "**Word of mouth:** The best leads, but impossible to scale or predict.",
+        ],
       },
       {
         type: "p",
@@ -848,9 +848,14 @@ const dumpsterPosts: BlogPost[] = [
         text: "Monthly Revenue = (Number of Available Dumpsters) × (Jobs per Dumpster per Month) × (Average Price per Job)",
       },
       { type: "p", text: "Plug in your numbers:" },
-      { type: "p", text: "7 dumpsters × 6 jobs/month × $400 = $16,800/month" },
-      { type: "p", text: "15 dumpsters × 6 jobs/month × $400 = $36,000/month" },
-      { type: "p", text: "30 dumpsters × 6 jobs/month × $400 = $72,000/month" },
+      {
+        type: "ul",
+        items: [
+          "7 dumpsters × 6 jobs/month × $400 = **$16,800/month**",
+          "15 dumpsters × 6 jobs/month × $400 = **$36,000/month**",
+          "30 dumpsters × 6 jobs/month × $400 = **$72,000/month**",
+        ],
+      },
       {
         type: "p",
         text: "Then subtract roughly 40-50% for costs to get your take-home.",
@@ -1856,19 +1861,29 @@ const dumpsterPosts: BlogPost[] = [
       { type: "h2", text: "The Minimum Viable Fleet" },
       {
         type: "p",
-        text: "The minimum number of dumpsters to start a viable rental business is 3. Three containers gives you:",
+        text: "The minimum number of dumpsters to start a viable rental business is **3**. Three containers gives you:",
       },
-      { type: "p", text: "2 units out on rental at peak times." },
-      { type: "p", text: "1 unit available for new bookings while others are in the field." },
-      { type: "p", text: "Enough inventory to build operational momentum without massive capital commitment." },
+      {
+        type: "ul",
+        items: [
+          "**2 units out on rental** at peak times.",
+          "**1 unit available** for new bookings while others are in the field.",
+          "Enough inventory to build operational momentum without massive capital commitment.",
+        ],
+      },
       {
         type: "p",
-        text: "The practical sweet spot for most new operators is 5 to 7 containers. This gives you:",
+        text: "The practical sweet spot for most new operators is **5 to 7 containers**. This gives you:",
       },
-      { type: "p", text: "3 to 4 units out simultaneously on a busy week." },
-      { type: "p", text: "1 to 2 units available for same-day or next-day requests." },
-      { type: "p", text: "Enough variety to serve different job sizes." },
-      { type: "p", text: "A realistic path to profitability within the first few months." },
+      {
+        type: "ul",
+        items: [
+          "**3 to 4 units out** simultaneously on a busy week.",
+          "**1 to 2 units available** for same-day or next-day requests.",
+          "Enough variety to serve different job sizes.",
+          "A realistic path to profitability within the first few months.",
+        ],
+      },
       {
         type: "p",
         text: "Below 3 containers, you're often unable to say yes to back-to-back bookings. Above 7 containers at launch, you risk carrying significant idle inventory before your marketing has generated consistent demand.",
@@ -1882,11 +1897,13 @@ const dumpsterPosts: BlogPost[] = [
         type: "p",
         text: "But dumpster containers sitting in your yard are not neutral. They represent:",
       },
-      { type: "p", text: "Capital you've deployed that isn't generating returns." },
-      { type: "p", text: "Monthly financing costs if you bought on credit." },
       {
-        type: "p",
-        text: "Pressure to cut prices to fill inventory rather than build a profitable business at the right pricing.",
+        type: "ul",
+        items: [
+          "Capital you've deployed that isn't generating returns.",
+          "Monthly financing costs if you bought on credit.",
+          "Pressure to cut prices to fill inventory rather than build a profitable business at the right pricing.",
+        ],
       },
       {
         type: "p",
@@ -1911,20 +1928,16 @@ const dumpsterPosts: BlogPost[] = [
         text: "For most markets, this is the ideal starter fleet of 5 to 7 units:",
       },
       {
-        type: "p",
-        text: "2 to 3 units of 14 or 15-yard containers — the most commonly requested residential size. Versatile enough for most jobs, easier to place in suburban driveways than larger units.",
+        type: "ul",
+        items: [
+          "**2 to 3 units of 14 or 15-yard containers** — the most commonly requested residential size. Versatile enough for most jobs, easier to place in suburban driveways than larger units.",
+          "**2 units of 20-yard containers** — for larger residential jobs, small renovation projects, and contractors doing moderate-volume work. The 20-yard is the workhorse of the industry.",
+          "**0 to 1 specialty units** — if your market research reveals strong demand for dirt/concrete disposal or large commercial work, consider one specialty unit. Otherwise wait until demand proves out.",
+        ],
       },
       {
         type: "p",
-        text: "2 units of 20-yard containers — for larger residential jobs, small renovation projects, and contractors doing moderate-volume work. The 20-yard is the workhorse of the industry.",
-      },
-      {
-        type: "p",
-        text: "0 to 1 specialty units — if your market research reveals strong demand for dirt/concrete disposal or large commercial work, consider one specialty unit. Otherwise wait until demand proves out.",
-      },
-      {
-        type: "p",
-        text: "This mix lets you serve 90%+ of inbound residential demand without overextending into sizes that sit idle in most markets.",
+        text: "This mix lets you serve **90%+ of inbound residential demand** without overextending into sizes that sit idle in most markets.",
       },
       { type: "h2", text: "Roll-Off vs. Bumper Pull: What It Means for Your Fleet" },
       { type: "p", text: "Your container choices are somewhat constrained by your truck setup." },
@@ -1942,21 +1955,26 @@ const dumpsterPosts: BlogPost[] = [
       },
       { type: "h2", text: "When to Buy More" },
       { type: "p", text: "The signal to expand your fleet is utilization, not aspiration." },
-      { type: "p", text: "Utilization rate = containers out on rental ÷ total containers owned" },
+      { type: "p", text: "**Utilization rate** = containers out on rental ÷ total containers owned" },
       {
         type: "p",
-        text: "When your utilization rate consistently exceeds 80% over a 4-week period, it's time to buy more containers. At that point:",
-      },
-      { type: "p", text: "You're turning away or delaying jobs regularly." },
-      { type: "p", text: "New inventory will generate revenue almost immediately." },
-      { type: "p", text: "The capital deployment risk is low because demand is proven." },
-      {
-        type: "p",
-        text: "When your utilization rate is below 60%, don't buy more containers. Your problem is marketing, not inventory. More containers sitting idle makes your unit economics worse, not better.",
+        text: "When your utilization rate consistently exceeds **80% over a 4-week period**, it's time to buy more containers. At that point:",
       },
       {
+        type: "ul",
+        items: [
+          "You're turning away or delaying jobs regularly.",
+          "New inventory will generate revenue almost immediately.",
+          "The capital deployment risk is low because demand is proven.",
+        ],
+      },
+      {
         type: "p",
-        text: "The practical rule: Buy containers when you're turning away or delaying 5+ jobs per month. Hold off when your yard is consistently more than 30% full.",
+        text: "When your utilization rate is **below 60%**, don't buy more containers. Your problem is marketing, not inventory. More containers sitting idle makes your unit economics worse, not better.",
+      },
+      {
+        type: "p",
+        text: "**The practical rule:** Buy containers when you're turning away or delaying 5+ jobs per month. Hold off when your yard is consistently more than 30% full.",
       },
       { type: "h2", text: "The Sizing Mistake That Kills Margins" },
       {
@@ -1973,24 +1991,18 @@ const dumpsterPosts: BlogPost[] = [
       },
       { type: "h2", text: "The Starter Fleet Summary" },
       {
-        type: "p",
-        text: "Testing the market, budget-constrained: 3 to 5 containers (2 × 14yd, 1-2 × 20yd).",
+        type: "table",
+        headers: ["Situation", "Recommended Fleet"],
+        rows: [
+          ["Testing the market, budget-constrained", "3 to 5 containers (2 × 14yd, 1-2 × 20yd)"],
+          ["Standard residential market entry", "5 to 7 containers (3 × 14yd, 2 × 20yd)"],
+          ["Existing business adding dumpsters", "5 to 7 containers matched to existing truck capacity"],
+          ["Already have proven demand", "7 to 10 containers (add based on utilization)"],
+        ],
       },
       {
         type: "p",
-        text: "Standard residential market entry: 5 to 7 containers (3 × 14yd, 2 × 20yd).",
-      },
-      {
-        type: "p",
-        text: "Existing business adding dumpsters: 5 to 7 containers matched to existing truck capacity.",
-      },
-      {
-        type: "p",
-        text: "Already have proven demand: 7 to 10 containers (add based on utilization).",
-      },
-      {
-        type: "p",
-        text: "The bottom line: Start with 5 to 7 containers, prove your marketing works, and scale equipment as a response to demand — not ahead of it.",
+        text: "**The bottom line:** Start with 5 to 7 containers, prove your marketing works, and scale equipment as a response to demand — not ahead of it.",
       },
       {
         type: "p",

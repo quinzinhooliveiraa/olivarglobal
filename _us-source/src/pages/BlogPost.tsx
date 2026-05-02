@@ -164,6 +164,56 @@ const BlogPost = ({ variant }: BlogPostProps) => {
 
               <div className="prose-blog">
                 {post.body.map((block, i) => {
+                  const renderInline = (text: string) => {
+                    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+                    return parts.map((part, idx) => {
+                      if (part.startsWith("**") && part.endsWith("**")) {
+                        return (
+                          <strong key={idx} className="font-bold text-[#0f2e23]">
+                            {part.slice(2, -2)}
+                          </strong>
+                        );
+                      }
+                      return <span key={idx}>{part}</span>;
+                    });
+                  };
+                  if (block.type === "ul") {
+                    return (
+                      <ul key={i} className="list-disc pl-6 mb-5 space-y-2 text-base md:text-[17px] text-[#0f2e23]/85 leading-[1.75]">
+                        {block.items.map((item, j) => (
+                          <li key={j} className="pl-1">{renderInline(item)}</li>
+                        ))}
+                      </ul>
+                    );
+                  }
+                  if (block.type === "table") {
+                    return (
+                      <div key={i} className="my-7 overflow-x-auto">
+                        <table className="w-full text-left text-sm md:text-base border-collapse">
+                          <thead>
+                            <tr className="border-b-2 border-[#0f2e23]/15">
+                              {block.headers.map((h, j) => (
+                                <th key={j} className="py-3 pr-4 font-bold text-[#0f2e23]">
+                                  {renderInline(h)}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {block.rows.map((row, j) => (
+                              <tr key={j} className="border-b border-[#0f2e23]/10">
+                                {row.map((cell, k) => (
+                                  <td key={k} className="py-3 pr-4 text-[#0f2e23]/85 align-top">
+                                    {renderInline(cell)}
+                                  </td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    );
+                  }
                   if (block.type === "h2") {
                     return (
                       <h2
@@ -210,7 +260,7 @@ const BlogPost = ({ variant }: BlogPostProps) => {
                       key={i}
                       className="text-base md:text-[17px] text-[#0f2e23]/85 leading-[1.75] mb-5"
                     >
-                      {block.text}
+                      {renderInline(block.text)}
                     </p>
                   );
                 })}
