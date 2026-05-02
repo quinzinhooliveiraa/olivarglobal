@@ -3107,37 +3107,38 @@ function validateField(field) {
     a.addEventListener('click', _ogCloseNav);
   });
 
-  // Gallery drag to scroll
+  // Gallery drag to scroll — para animação permanentemente ao arrastar
   (function() {
     var el = document.getElementById('og-prova-gallery');
     if (!el) return;
     var track = el.querySelector('.og-prova-gallery-track');
+    function stopAnim() {
+      if (track) { track.style.animation = 'none'; }
+    }
     var isDown = false, startX, scrollLeft;
     el.addEventListener('mousedown', function(e) {
       isDown = true; el.style.cursor = 'grabbing';
       startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft;
+      stopAnim();
     });
-    el.addEventListener('mouseleave', function() { isDown = false; el.style.cursor = ''; });
-    el.addEventListener('mouseup', function() { isDown = false; el.style.cursor = ''; });
+    el.addEventListener('mouseleave', function() { isDown = false; el.style.cursor = 'grab'; });
+    el.addEventListener('mouseup', function() { isDown = false; el.style.cursor = 'grab'; });
     el.addEventListener('mousemove', function(e) {
       if (!isDown) return; e.preventDefault();
       var x = e.pageX - el.offsetLeft;
       el.scrollLeft = scrollLeft - (x - startX) * 1.5;
     });
-    // Touch support
+    // Touch
     var touchStartX = 0, touchScrollLeft = 0;
     el.addEventListener('touchstart', function(e) {
       touchStartX = e.touches[0].pageX; touchScrollLeft = el.scrollLeft;
-      if (track) track.style.animationPlayState = 'paused';
+      stopAnim();
     }, { passive: true });
     el.addEventListener('touchmove', function(e) {
       var dx = touchStartX - e.touches[0].pageX;
       el.scrollLeft = touchScrollLeft + dx;
     }, { passive: true });
-    el.addEventListener('touchend', function() {
-      if (track) track.style.animationPlayState = 'running';
-    });
-    // Make gallery scrollable (override mask + overflow)
+    // Make gallery scrollable
     el.style.overflowX = 'auto';
     el.style.cursor = 'grab';
     el.style.scrollSnapType = 'x mandatory';
