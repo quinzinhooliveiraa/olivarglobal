@@ -1544,6 +1544,154 @@
       text-decoration:none;
     }
     .og-nav-cta:hover { background:#111 !important;background-color:#111 !important;color:#fff !important; }
+
+    /* ── IDENTIFICA SECTION ── */
+    .og-identifica-section {
+      position: relative;
+      background: #ffffff;
+      padding: 80px 20px;
+      overflow: hidden;
+    }
+    .og-identifica-bg-symbols {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .og-id-sym {
+      position: absolute;
+      color: #bbf7d0;
+      font-weight: 900;
+      line-height: 1;
+      user-select: none;
+    }
+    .og-identifica-inner {
+      position: relative;
+      text-align: center;
+    }
+    .og-identifica-title {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 900;
+      color: #0a1a0f;
+      margin-bottom: 36px;
+      line-height: 1.25;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .og-identifica-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 40px;
+      max-width: 600px;
+      text-align: left;
+    }
+    .og-identifica-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 18px;
+      font-size: 16px;
+      color: #1f2937;
+      line-height: 1.5;
+    }
+    .og-identifica-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary, #16a34a);
+    }
+    .og-identifica-cta {
+      display: inline-block;
+      background: var(--primary, #16a34a);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: .04em;
+      padding: 16px 40px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .og-identifica-cta:hover { background: #15803d; }
+
+    /* ── CTA DARK SECTION ── */
+    .og-cta-dark {
+      position: relative;
+      background: #070d0a;
+      padding: 80px 20px;
+      overflow: hidden;
+    }
+    .og-cta-dark-bg-symbols {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .og-ctad-sym {
+      position: absolute;
+      color: #166534;
+      font-weight: 900;
+      line-height: 1;
+      user-select: none;
+      opacity: 0.55;
+    }
+    .og-cta-dark-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+    }
+    .og-cta-dark-title {
+      font-size: clamp(26px, 3.5vw, 44px);
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .og-cta-dark-hl { color: #4ade80; }
+    .og-cta-dark-sub {
+      font-size: 15px;
+      color: #9ca3af;
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .og-cta-dark-btn {
+      display: inline-block;
+      background: var(--primary, #16a34a);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: .04em;
+      padding: 16px 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background .2s;
+      margin-bottom: 20px;
+    }
+    .og-cta-dark-btn:hover { background: #15803d; }
+    .og-cta-dark-social {
+      font-size: 14px;
+      color: #6b7280;
+    }
+    .og-cta-dark-social strong { color: #4ade80; }
+    .og-cta-dark-map {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .og-world-svg {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+    }
+    @media (max-width: 768px) {
+      .og-cta-dark-grid { grid-template-columns: 1fr; }
+      .og-cta-dark-map { display: none; }
+    }
+
     .og-hamburger {
       display:none;flex-direction:column;justify-content:center;
       gap:5px;background:none;border:none;cursor:pointer;padding:6px;
@@ -1690,6 +1838,33 @@
             ESTRUTURAR MINHA OPERAÇÃO COMERCIAL
           </a>
         </div>
+      </div>
+    </section>
+
+
+    <!-- IDENTIFICA -->
+    <section class="og-identifica-section og-animate">
+      <div class="og-identifica-bg-symbols" aria-hidden="true">
+        <span class="og-id-sym" style="top:8%;left:4%;font-size:38px;">$</span>
+        <span class="og-id-sym" style="top:20%;left:18%;font-size:28px;">€</span>
+        <span class="og-id-sym" style="top:55%;left:8%;font-size:32px;">€</span>
+        <span class="og-id-sym" style="top:80%;left:20%;font-size:24px;">$</span>
+        <span class="og-id-sym" style="top:10%;right:12%;font-size:30px;">€</span>
+        <span class="og-id-sym" style="top:40%;right:5%;font-size:36px;">$</span>
+        <span class="og-id-sym" style="top:70%;right:14%;font-size:26px;">€</span>
+        <span class="og-id-sym" style="top:88%;right:6%;font-size:30px;">$</span>
+      </div>
+      <div class="og-container og-identifica-inner">
+        <h2 class="og-identifica-title">
+          Se você se identifica com isso, essa estrutura é pra você!
+        </h2>
+        <ul class="og-identifica-list">
+          <li>Tem uma boa entrega, mas depende de volume pra escalar.</li>
+          <li>Quer ganhar em uma moeda mais forte que o real, com clientes melhores.</li>
+          <li>Já pensou em vender fora do Brasil, mas não sabe como estruturar o comercial.</li>
+          <li>Quer previsibilidade de vendas internacionais sem depender só de indicação.</li>
+        </ul>
+        <a href="#form" class="og-identifica-cta">PEGAR MEU PLANO GRATUITO</a>
       </div>
     </section>
 
@@ -2129,6 +2304,78 @@
           <a href="#form" class="og-quem-cta">
             Falar com o time
           </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CTA DARK -->
+    <section class="og-cta-dark og-animate">
+      <div class="og-cta-dark-bg-symbols" aria-hidden="true">
+        <span class="og-ctad-sym" style="top:15%;left:52%;font-size:32px;">$</span>
+        <span class="og-ctad-sym" style="top:60%;left:48%;font-size:26px;">€</span>
+        <span class="og-ctad-sym" style="top:80%;right:8%;font-size:30px;">€</span>
+        <span class="og-ctad-sym" style="top:20%;right:14%;font-size:28px;">$</span>
+      </div>
+      <div class="og-container og-cta-dark-grid">
+        <div class="og-cta-dark-text">
+          <h2 class="og-cta-dark-title">
+            Tenha um <span class="og-cta-dark-hl">time comercial sob medida</span> fechando contratos em dólar e euro com nativos
+          </h2>
+          <p class="og-cta-dark-sub">
+            Se você realmente deseja parar de competir em preços baixos e começar a fechar contratos internacionais, essa é sua chance de ter uma operação comercial estruturada e validada.
+          </p>
+          <a href="#form" class="og-cta-dark-btn">SIM, QUERO MEU PLANO EM EURO/DÓLAR!</a>
+          <p class="og-cta-dark-social">
+            + de <strong>15 empresas</strong> já tomaram essa decisão e estão escalando suas vendas.
+          </p>
+        </div>
+        <div class="og-cta-dark-map" aria-hidden="true">
+          <svg viewBox="0 0 600 340" class="og-world-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#22c55e" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#16a34a" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="blur-filter">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+              </filter>
+            </defs>
+            <!-- Globe glow background -->
+            <ellipse cx="300" cy="170" rx="220" ry="145" fill="url(#glow)"/>
+            <!-- Continents (simplified shapes) -->
+            <!-- North America -->
+            <path d="M90 80 Q110 60 140 70 Q160 75 165 100 Q170 130 155 150 Q140 170 120 165 Q95 160 85 140 Q75 110 90 80Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
+            <!-- South America -->
+            <path d="M155 175 Q175 165 185 185 Q195 210 188 240 Q180 265 165 270 Q148 272 140 255 Q132 235 138 205 Q142 185 155 175Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
+            <!-- Europe -->
+            <path d="M265 70 Q285 60 305 68 Q320 75 315 95 Q310 115 295 120 Q275 122 262 108 Q255 90 265 70Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
+            <!-- Africa -->
+            <path d="M275 130 Q300 118 320 128 Q338 140 338 170 Q338 210 325 240 Q310 262 292 260 Q272 258 262 235 Q250 208 252 178 Q254 148 275 130Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
+            <!-- Asia -->
+            <path d="M330 65 Q380 50 430 60 Q475 70 490 100 Q500 125 480 145 Q455 162 420 155 Q380 148 355 130 Q330 112 325 90 Q322 75 330 65Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
+            <!-- Australia -->
+            <path d="M440 195 Q468 185 488 200 Q505 215 498 238 Q488 256 468 258 Q448 258 438 242 Q428 224 435 205Z" fill="#1a4a2e" stroke="#22c55e" stroke-width="0.8" opacity="0.85"/>
+            <!-- Connection lines -->
+            <line x1="155" y1="190" x2="295" y2="130" stroke="#22c55e" stroke-width="0.6" stroke-dasharray="4 3" opacity="0.5"/>
+            <line x1="155" y1="190" x2="420" y2="120" stroke="#22c55e" stroke-width="0.6" stroke-dasharray="4 3" opacity="0.4"/>
+            <line x1="290" y1="95" x2="420" y2="110" stroke="#22c55e" stroke-width="0.6" stroke-dasharray="4 3" opacity="0.5"/>
+            <line x1="290" y1="95" x2="155" y2="120" stroke="#22c55e" stroke-width="0.6" stroke-dasharray="4 3" opacity="0.45"/>
+            <line x1="420" y1="120" x2="468" y2="220" stroke="#22c55e" stroke-width="0.6" stroke-dasharray="4 3" opacity="0.4"/>
+            <!-- Glowing dots -->
+            <circle cx="155" cy="120" r="4" fill="#22c55e" opacity="0.9" filter="url(#blur-filter)"/>
+            <circle cx="155" cy="120" r="2.5" fill="#4ade80"/>
+            <circle cx="290" cy="95" r="4" fill="#22c55e" opacity="0.9" filter="url(#blur-filter)"/>
+            <circle cx="290" cy="95" r="2.5" fill="#4ade80"/>
+            <circle cx="420" cy="110" r="4" fill="#22c55e" opacity="0.9" filter="url(#blur-filter)"/>
+            <circle cx="420" cy="110" r="2.5" fill="#4ade80"/>
+            <circle cx="468" cy="218" r="3.5" fill="#22c55e" opacity="0.8" filter="url(#blur-filter)"/>
+            <circle cx="468" cy="218" r="2" fill="#4ade80"/>
+            <circle cx="165" cy="190" r="3.5" fill="#22c55e" opacity="0.8" filter="url(#blur-filter)"/>
+            <circle cx="165" cy="190" r="2" fill="#4ade80"/>
+            <circle cx="307" cy="175" r="3" fill="#22c55e" opacity="0.7" filter="url(#blur-filter)"/>
+            <circle cx="307" cy="175" r="2" fill="#4ade80"/>
+          </svg>
         </div>
       </div>
     </section>
