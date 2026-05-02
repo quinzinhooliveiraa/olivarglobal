@@ -1336,8 +1336,33 @@
       padding: 6px;
       display: none;
       z-index: 40;
-      min-width: 190px;
+      min-width: 220px;
+      width: 240px;
     }
+    .og-phone-search-wrap {
+      padding: 4px 2px 6px;
+    }
+    .og-phone-search {
+      width: 100%;
+      box-sizing: border-box;
+      background: #111827;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      color: #e5e7eb;
+      font-size: 13px;
+      padding: 7px 10px;
+      outline: none;
+    }
+    .og-phone-search::placeholder { color: #6b7280; }
+    .og-phone-search:focus { border-color: #15803d; }
+    .og-phone-list {
+      max-height: 220px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #374151 transparent;
+    }
+    .og-phone-list::-webkit-scrollbar { width: 4px; }
+    .og-phone-list::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
 
     .og-phone-dropdown button {
       display: flex;
@@ -1766,9 +1791,131 @@
               </button>
 
               <div class="og-phone-dropdown" id="og-phone-dropdown">
-                <button type="button" data-code="+55" data-flag="🇧🇷">🇧🇷 +55 Brasil</button>
-                <button type="button" data-code="+1" data-flag="🇺🇸">🇺🇸 +1 EUA</button>
-                <button type="button" data-code="+351" data-flag="🇵🇹">🇵🇹 +351 Portugal</button>
+                <div class="og-phone-search-wrap">
+                  <input class="og-phone-search" id="og-phone-search" type="text" placeholder="Buscar país..." autocomplete="off" />
+                </div>
+                <div class="og-phone-list" id="og-phone-list">
+                <button type="button" data-code="+55" data-flag="🇧🇷" data-name="brasil">🇧🇷 +55 Brasil</button>
+                <button type="button" data-code="+1" data-flag="🇺🇸" data-name="estados unidos">🇺🇸 +1 Estados Unidos</button>
+                <button type="button" data-code="+351" data-flag="🇵🇹" data-name="portugal">🇵🇹 +351 Portugal</button>
+                <button type="button" data-code="+93" data-flag="🇦🇫" data-name="afeganistão">🇦🇫 +93 Afeganistão</button>
+                <button type="button" data-code="+27" data-flag="🇿🇦" data-name="áfrica do sul">🇿🇦 +27 África do Sul</button>
+                <button type="button" data-code="+355" data-flag="🇦🇱" data-name="albânia">🇦🇱 +355 Albânia</button>
+                <button type="button" data-code="+213" data-flag="🇩🇿" data-name="argélia">🇩🇿 +213 Argélia</button>
+                <button type="button" data-code="+49" data-flag="🇩🇪" data-name="alemanha">🇩🇪 +49 Alemanha</button>
+                <button type="button" data-code="+244" data-flag="🇦🇴" data-name="angola">🇦🇴 +244 Angola</button>
+                <button type="button" data-code="+54" data-flag="🇦🇷" data-name="argentina">🇦🇷 +54 Argentina</button>
+                <button type="button" data-code="+374" data-flag="🇦🇲" data-name="armênia">🇦🇲 +374 Armênia</button>
+                <button type="button" data-code="+61" data-flag="🇦🇺" data-name="austrália">🇦🇺 +61 Austrália</button>
+                <button type="button" data-code="+43" data-flag="🇦🇹" data-name="áustria">🇦🇹 +43 Áustria</button>
+                <button type="button" data-code="+994" data-flag="🇦🇿" data-name="azerbaijão">🇦🇿 +994 Azerbaijão</button>
+                <button type="button" data-code="+1242" data-flag="🇧🇸" data-name="bahamas">🇧🇸 +1242 Bahamas</button>
+                <button type="button" data-code="+880" data-flag="🇧🇩" data-name="bangladesh">🇧🇩 +880 Bangladesh</button>
+                <button type="button" data-code="+32" data-flag="🇧🇪" data-name="bélgica">🇧🇪 +32 Bélgica</button>
+                <button type="button" data-code="+591" data-flag="🇧🇴" data-name="bolívia">🇧🇴 +591 Bolívia</button>
+                <button type="button" data-code="+387" data-flag="🇧🇦" data-name="bósnia e herzegovina">🇧🇦 +387 Bósnia e Herzegovina</button>
+                <button type="button" data-code="+267" data-flag="🇧🇼" data-name="botsuana">🇧🇼 +267 Botsuana</button>
+                <button type="button" data-code="+673" data-flag="🇧🇳" data-name="brunei">🇧🇳 +673 Brunei</button>
+                <button type="button" data-code="+359" data-flag="🇧🇬" data-name="bulgária">🇧🇬 +359 Bulgária</button>
+                <button type="button" data-code="+237" data-flag="🇨🇲" data-name="camarões">🇨🇲 +237 Camarões</button>
+                <button type="button" data-code="+1" data-flag="🇨🇦" data-name="canadá">🇨🇦 +1 Canadá</button>
+                <button type="button" data-code="+7" data-flag="🇰🇿" data-name="cazaquistão">🇰🇿 +7 Cazaquistão</button>
+                <button type="button" data-code="+56" data-flag="🇨🇱" data-name="chile">🇨🇱 +56 Chile</button>
+                <button type="button" data-code="+86" data-flag="🇨🇳" data-name="china">🇨🇳 +86 China</button>
+                <button type="button" data-code="+357" data-flag="🇨🇾" data-name="chipre">🇨🇾 +357 Chipre</button>
+                <button type="button" data-code="+57" data-flag="🇨🇴" data-name="colômbia">🇨🇴 +57 Colômbia</button>
+                <button type="button" data-code="+243" data-flag="🇨🇩" data-name="congo (rdc)">🇨🇩 +243 Congo (RDC)</button>
+                <button type="button" data-code="+82" data-flag="🇰🇷" data-name="coreia do sul">🇰🇷 +82 Coreia do Sul</button>
+                <button type="button" data-code="+850" data-flag="🇰🇵" data-name="coreia do norte">🇰🇵 +850 Coreia do Norte</button>
+                <button type="button" data-code="+506" data-flag="🇨🇷" data-name="costa rica">🇨🇷 +506 Costa Rica</button>
+                <button type="button" data-code="+225" data-flag="🇨🇮" data-name="costa do marfim">🇨🇮 +225 Costa do Marfim</button>
+                <button type="button" data-code="+385" data-flag="🇭🇷" data-name="croácia">🇭🇷 +385 Croácia</button>
+                <button type="button" data-code="+53" data-flag="🇨🇺" data-name="cuba">🇨🇺 +53 Cuba</button>
+                <button type="button" data-code="+45" data-flag="🇩🇰" data-name="dinamarca">🇩🇰 +45 Dinamarca</button>
+                <button type="button" data-code="+593" data-flag="🇪🇨" data-name="equador">🇪🇨 +593 Equador</button>
+                <button type="button" data-code="+20" data-flag="🇪🇬" data-name="egito">🇪🇬 +20 Egito</button>
+                <button type="button" data-code="+503" data-flag="🇸🇻" data-name="el salvador">🇸🇻 +503 El Salvador</button>
+                <button type="button" data-code="+971" data-flag="🇦🇪" data-name="emirados árabes">🇦🇪 +971 Emirados Árabes</button>
+                <button type="button" data-code="+421" data-flag="🇸🇰" data-name="eslováquia">🇸🇰 +421 Eslováquia</button>
+                <button type="button" data-code="+386" data-flag="🇸🇮" data-name="eslovênia">🇸🇮 +386 Eslovênia</button>
+                <button type="button" data-code="+34" data-flag="🇪🇸" data-name="espanha">🇪🇸 +34 Espanha</button>
+                <button type="button" data-code="+1" data-flag="🇺🇸" data-name="eua">🇺🇸 +1 EUA</button>
+                <button type="button" data-code="+251" data-flag="🇪🇹" data-name="etiópia">🇪🇹 +251 Etiópia</button>
+                <button type="button" data-code="+63" data-flag="🇵🇭" data-name="filipinas">🇵🇭 +63 Filipinas</button>
+                <button type="button" data-code="+358" data-flag="🇫🇮" data-name="finlândia">🇫🇮 +358 Finlândia</button>
+                <button type="button" data-code="+33" data-flag="🇫🇷" data-name="frança">🇫🇷 +33 França</button>
+                <button type="button" data-code="+233" data-flag="🇬🇭" data-name="gana">🇬🇭 +233 Gana</button>
+                <button type="button" data-code="+995" data-flag="🇬🇪" data-name="geórgia">🇬🇪 +995 Geórgia</button>
+                <button type="button" data-code="+30" data-flag="🇬🇷" data-name="grécia">🇬🇷 +30 Grécia</button>
+                <button type="button" data-code="+502" data-flag="🇬🇹" data-name="guatemala">🇬🇹 +502 Guatemala</button>
+                <button type="button" data-code="+224" data-flag="🇬🇳" data-name="guiné">🇬🇳 +224 Guiné</button>
+                <button type="button" data-code="+509" data-flag="🇭🇹" data-name="haiti">🇭🇹 +509 Haiti</button>
+                <button type="button" data-code="+504" data-flag="🇭🇳" data-name="honduras">🇭🇳 +504 Honduras</button>
+                <button type="button" data-code="+852" data-flag="🇭🇰" data-name="hong kong">🇭🇰 +852 Hong Kong</button>
+                <button type="button" data-code="+36" data-flag="🇭🇺" data-name="hungria">🇭🇺 +36 Hungria</button>
+                <button type="button" data-code="+967" data-flag="🇾🇪" data-name="iêmen">🇾🇪 +967 Iêmen</button>
+                <button type="button" data-code="+91" data-flag="🇮🇳" data-name="índia">🇮🇳 +91 Índia</button>
+                <button type="button" data-code="+62" data-flag="🇮🇩" data-name="indonésia">🇮🇩 +62 Indonésia</button>
+                <button type="button" data-code="+964" data-flag="🇮🇶" data-name="iraque">🇮🇶 +964 Iraque</button>
+                <button type="button" data-code="+98" data-flag="🇮🇷" data-name="irã">🇮🇷 +98 Irã</button>
+                <button type="button" data-code="+353" data-flag="🇮🇪" data-name="irlanda">🇮🇪 +353 Irlanda</button>
+                <button type="button" data-code="+972" data-flag="🇮🇱" data-name="israel">🇮🇱 +972 Israel</button>
+                <button type="button" data-code="+39" data-flag="🇮🇹" data-name="itália">🇮🇹 +39 Itália</button>
+                <button type="button" data-code="+1876" data-flag="🇯🇲" data-name="jamaica">🇯🇲 +1876 Jamaica</button>
+                <button type="button" data-code="+81" data-flag="🇯🇵" data-name="japão">🇯🇵 +81 Japão</button>
+                <button type="button" data-code="+962" data-flag="🇯🇴" data-name="jordânia">🇯🇴 +962 Jordânia</button>
+                <button type="button" data-code="+254" data-flag="🇰🇪" data-name="quênia">🇰🇪 +254 Quênia</button>
+                <button type="button" data-code="+965" data-flag="🇰🇼" data-name="kuwait">🇰🇼 +965 Kuwait</button>
+                <button type="button" data-code="+856" data-flag="🇱🇦" data-name="laos">🇱🇦 +856 Laos</button>
+                <button type="button" data-code="+371" data-flag="🇱🇻" data-name="letônia">🇱🇻 +371 Letônia</button>
+                <button type="button" data-code="+961" data-flag="🇱🇧" data-name="líbano">🇱🇧 +961 Líbano</button>
+                <button type="button" data-code="+218" data-flag="🇱🇾" data-name="líbia">🇱🇾 +218 Líbia</button>
+                <button type="button" data-code="+370" data-flag="🇱🇹" data-name="lituânia">🇱🇹 +370 Lituânia</button>
+                <button type="button" data-code="+853" data-flag="🇲🇴" data-name="macau">🇲🇴 +853 Macau</button>
+                <button type="button" data-code="+60" data-flag="🇲🇾" data-name="malásia">🇲🇾 +60 Malásia</button>
+                <button type="button" data-code="+265" data-flag="🇲🇼" data-name="malawi">🇲🇼 +265 Malawi</button>
+                <button type="button" data-code="+223" data-flag="🇲🇱" data-name="mali">🇲🇱 +223 Mali</button>
+                <button type="button" data-code="+212" data-flag="🇲🇦" data-name="marrocos">🇲🇦 +212 Marrocos</button>
+                <button type="button" data-code="+52" data-flag="🇲🇽" data-name="méxico">🇲🇽 +52 México</button>
+                <button type="button" data-code="+258" data-flag="🇲🇿" data-name="moçambique">🇲🇿 +258 Moçambique</button>
+                <button type="button" data-code="+95" data-flag="🇲🇲" data-name="mianmar">🇲🇲 +95 Mianmar</button>
+                <button type="button" data-code="+264" data-flag="🇳🇦" data-name="namíbia">🇳🇦 +264 Namíbia</button>
+                <button type="button" data-code="+977" data-flag="🇳🇵" data-name="nepal">🇳🇵 +977 Nepal</button>
+                <button type="button" data-code="+505" data-flag="🇳🇮" data-name="nicarágua">🇳🇮 +505 Nicarágua</button>
+                <button type="button" data-code="+234" data-flag="🇳🇬" data-name="nigéria">🇳🇬 +234 Nigéria</button>
+                <button type="button" data-code="+47" data-flag="🇳🇴" data-name="noruega">🇳🇴 +47 Noruega</button>
+                <button type="button" data-code="+64" data-flag="🇳🇿" data-name="nova zelândia">🇳🇿 +64 Nova Zelândia</button>
+                <button type="button" data-code="+31" data-flag="🇳🇱" data-name="países baixos">🇳🇱 +31 Países Baixos</button>
+                <button type="button" data-code="+92" data-flag="🇵🇰" data-name="paquistão">🇵🇰 +92 Paquistão</button>
+                <button type="button" data-code="+507" data-flag="🇵🇦" data-name="panamá">🇵🇦 +507 Panamá</button>
+                <button type="button" data-code="+595" data-flag="🇵🇾" data-name="paraguai">🇵🇾 +595 Paraguai</button>
+                <button type="button" data-code="+51" data-flag="🇵🇪" data-name="peru">🇵🇪 +51 Peru</button>
+                <button type="button" data-code="+48" data-flag="🇵🇱" data-name="polônia">🇵🇱 +48 Polônia</button>
+                <button type="button" data-code="+1787" data-flag="🇵🇷" data-name="porto rico">🇵🇷 +1787 Porto Rico</button>
+                <button type="button" data-code="+974" data-flag="🇶🇦" data-name="qatar">🇶🇦 +974 Qatar</button>
+                <button type="button" data-code="+44" data-flag="🇬🇧" data-name="reino unido">🇬🇧 +44 Reino Unido</button>
+                <button type="button" data-code="+40" data-flag="🇷🇴" data-name="romênia">🇷🇴 +40 Romênia</button>
+                <button type="button" data-code="+250" data-flag="🇷🇼" data-name="ruanda">🇷🇼 +250 Ruanda</button>
+                <button type="button" data-code="+7" data-flag="🇷🇺" data-name="rússia">🇷🇺 +7 Rússia</button>
+                <button type="button" data-code="+966" data-flag="🇸🇦" data-name="arábia saudita">🇸🇦 +966 Arábia Saudita</button>
+                <button type="button" data-code="+221" data-flag="🇸🇳" data-name="senegal">🇸🇳 +221 Senegal</button>
+                <button type="button" data-code="+597" data-flag="🇸🇷" data-name="suriname">🇸🇷 +597 Suriname</button>
+                <button type="button" data-code="+46" data-flag="🇸🇪" data-name="suécia">🇸🇪 +46 Suécia</button>
+                <button type="button" data-code="+41" data-flag="🇨🇭" data-name="suíça">🇨🇭 +41 Suíça</button>
+                <button type="button" data-code="+255" data-flag="🇹🇿" data-name="tanzânia">🇹🇿 +255 Tanzânia</button>
+                <button type="button" data-code="+66" data-flag="🇹🇭" data-name="tailândia">🇹🇭 +66 Tailândia</button>
+                <button type="button" data-code="+886" data-flag="🇹🇼" data-name="taiwan">🇹🇼 +886 Taiwan</button>
+                <button type="button" data-code="+216" data-flag="🇹🇳" data-name="tunísia">🇹🇳 +216 Tunísia</button>
+                <button type="button" data-code="+90" data-flag="🇹🇷" data-name="turquia">🇹🇷 +90 Turquia</button>
+                <button type="button" data-code="+380" data-flag="🇺🇦" data-name="ucrânia">🇺🇦 +380 Ucrânia</button>
+                <button type="button" data-code="+256" data-flag="🇺🇬" data-name="uganda">🇺🇬 +256 Uganda</button>
+                <button type="button" data-code="+598" data-flag="🇺🇾" data-name="uruguai">🇺🇾 +598 Uruguai</button>
+                <button type="button" data-code="+998" data-flag="🇺🇿" data-name="uzbequistão">🇺🇿 +998 Uzbequistão</button>
+                <button type="button" data-code="+58" data-flag="🇻🇪" data-name="venezuela">🇻🇪 +58 Venezuela</button>
+                <button type="button" data-code="+84" data-flag="🇻🇳" data-name="vietnã">🇻🇳 +84 Vietnã</button>
+                <button type="button" data-code="+260" data-flag="🇿🇲" data-name="zâmbia">🇿🇲 +260 Zâmbia</button>
+                <button type="button" data-code="+263" data-flag="🇿🇼" data-name="zimbábue">🇿🇼 +263 Zimbábue</button>
+                </div>
               </div>
 
               <input
@@ -2210,36 +2357,68 @@
     var flagEl = document.getElementById("og-phone-flag");
     var codeEl = document.getElementById("og-phone-code");
     var hiddenCode = document.getElementById("og-phone-country-code");
+    var searchInput = document.getElementById("og-phone-search");
+    var list = document.getElementById("og-phone-list");
 
     if (!btn || !dropdown || !flagEl || !codeEl || !hiddenCode) return;
 
-    // Abre/fecha o dropdown
-    btn.addEventListener("click", function () {
-      if (dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-      } else {
-        dropdown.style.display = "block";
+    function openDropdown() {
+      dropdown.style.display = "block";
+      if (searchInput) { searchInput.value = ""; filterCountries(""); searchInput.focus(); }
+    }
+    function closeDropdown() {
+      dropdown.style.display = "none";
+      if (searchInput) searchInput.value = "";
+      if (list) filterCountries("");
+    }
+
+    function filterCountries(q) {
+      if (!list) return;
+      var term = q.toLowerCase().trim();
+      var btns = list.querySelectorAll("button[data-code]");
+      for (var i = 0; i < btns.length; i++) {
+        var name = btns[i].getAttribute("data-name") || "";
+        var code = btns[i].getAttribute("data-code") || "";
+        var visible = !term || name.indexOf(term) !== -1 || code.indexOf(term) !== -1;
+        btns[i].style.display = visible ? "" : "none";
       }
+    }
+
+    // Abre/fecha
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (dropdown.style.display === "block") { closeDropdown(); } else { openDropdown(); }
     });
 
-    // Seleciona país
-    var options = dropdown.querySelectorAll("button[data-code]");
-    for (var i = 0; i < options.length; i++) {
-      options[i].addEventListener("click", function () {
-        var code = this.getAttribute("data-code") || "";
-        var flag = this.getAttribute("data-flag") || "";
-        flagEl.textContent = flag;
-        codeEl.textContent = code;
-        hiddenCode.value = code;
-        dropdown.style.display = "none";
+    // Busca
+    if (searchInput) {
+      searchInput.addEventListener("input", function () { filterCountries(this.value); });
+      searchInput.addEventListener("click", function (e) { e.stopPropagation(); });
+    }
+
+    // Seleciona país (delegação no list)
+    if (list) {
+      list.addEventListener("click", function (e) {
+        var target = e.target;
+        while (target && target !== list) {
+          if (target.tagName === "BUTTON" && target.hasAttribute("data-code")) {
+            var code = target.getAttribute("data-code") || "";
+            var flag = target.getAttribute("data-flag") || "";
+            flagEl.textContent = flag;
+            codeEl.textContent = code;
+            hiddenCode.value = code;
+            closeDropdown();
+            return;
+          }
+          target = target.parentElement;
+        }
       });
     }
 
     // Fechar ao clicar fora
     document.addEventListener("click", function (e) {
-      var target = e.target;
-      if (!btn.contains(target) && !dropdown.contains(target)) {
-        dropdown.style.display = "none";
+      if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+        closeDropdown();
       }
     });
   }
