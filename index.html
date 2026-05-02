@@ -1826,6 +1826,17 @@
         margin-left:auto;
         margin-right:auto;
       }
+      .og-quem-cta, .og-prova-cta {
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+        width:fit-content;
+      }
+      .og-grid-quem { grid-template-columns:1fr; }
+      .og-quem-image-col { display:none; }
+      .og-quem-text-col { text-align:center; }
+      .og-prova-stats { grid-template-columns: repeat(2,1fr); }
     }
 </style>
 </head>
@@ -2355,7 +2366,7 @@
         </div>
 
         <!-- PRINTS REAIS -->
-        <div class="og-prova-gallery">
+        <div class="og-prova-gallery" id="og-prova-gallery">
           <div class="og-prova-gallery-track">
             <div class="og-prova-gallery-item"><img src="images/prova-social/prova-01.jpg" alt="Resultado real - venda fechada" loading="lazy" /></div>
             <div class="og-prova-gallery-item"><img src="images/prova-social/prova-02.jpg" alt="Resultado real - cliente fechado" loading="lazy" /></div>
@@ -3095,6 +3106,44 @@ function validateField(field) {
   document.querySelectorAll('.og-nav-drawer a[href^="/#"]').forEach(function(a) {
     a.addEventListener('click', _ogCloseNav);
   });
+
+  // Gallery drag to scroll
+  (function() {
+    var el = document.getElementById('og-prova-gallery');
+    if (!el) return;
+    var track = el.querySelector('.og-prova-gallery-track');
+    var isDown = false, startX, scrollLeft;
+    el.addEventListener('mousedown', function(e) {
+      isDown = true; el.style.cursor = 'grabbing';
+      startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft;
+    });
+    el.addEventListener('mouseleave', function() { isDown = false; el.style.cursor = ''; });
+    el.addEventListener('mouseup', function() { isDown = false; el.style.cursor = ''; });
+    el.addEventListener('mousemove', function(e) {
+      if (!isDown) return; e.preventDefault();
+      var x = e.pageX - el.offsetLeft;
+      el.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    });
+    // Touch support
+    var touchStartX = 0, touchScrollLeft = 0;
+    el.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].pageX; touchScrollLeft = el.scrollLeft;
+      if (track) track.style.animationPlayState = 'paused';
+    }, { passive: true });
+    el.addEventListener('touchmove', function(e) {
+      var dx = touchStartX - e.touches[0].pageX;
+      el.scrollLeft = touchScrollLeft + dx;
+    }, { passive: true });
+    el.addEventListener('touchend', function() {
+      if (track) track.style.animationPlayState = 'running';
+    });
+    // Make gallery scrollable (override mask + overflow)
+    el.style.overflowX = 'auto';
+    el.style.cursor = 'grab';
+    el.style.scrollSnapType = 'x mandatory';
+    el.style.webkitOverflowScrolling = 'touch';
+    if (track) track.style.scrollSnapAlign = 'start';
+  })();
 
 </script>
 </body>
