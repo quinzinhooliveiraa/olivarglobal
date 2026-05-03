@@ -186,6 +186,21 @@ const BlogPost = ({ variant }: BlogPostProps) => {
                       </ul>
                     );
                   }
+                  if (block.type === "checklist") {
+                    return (
+                      <ul key={i} className="mb-6 space-y-3 text-base md:text-[17px] text-[#0f2e23]/85 leading-[1.6]">
+                        {block.items.map((item, j) => (
+                          <li key={j} className="flex items-start gap-3">
+                            <span
+                              aria-hidden="true"
+                              className="mt-[3px] inline-block h-5 w-5 flex-shrink-0 rounded border-2 border-[#15803d] bg-white"
+                            />
+                            <span className="flex-1">{renderInline(item)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    );
+                  }
                   if (block.type === "table") {
                     return (
                       <div key={i} className="my-7 overflow-x-auto">

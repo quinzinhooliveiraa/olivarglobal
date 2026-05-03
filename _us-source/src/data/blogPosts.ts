@@ -6,6 +6,7 @@ export type BlogBlock =
   | { type: "h3"; text: string }
   | { type: "quote"; text: string; author?: string }
   | { type: "ul"; items: string[] }
+  | { type: "checklist"; items: string[] }
   | { type: "table"; headers: string[]; rows: string[][] };
 
 export type BlogPost = {
@@ -2613,7 +2614,7 @@ const dumpsterPosts: BlogPost[] = [
       { type: "h2", text: "Before Day 1: The Pre-Launch Checklist" },
       { type: "p", text: "Don't start taking jobs until these are in place:" },
       {
-        type: "ul",
+        type: "checklist",
         items: [
           "**LLC formed** and business bank account opened",
           "**Commercial auto and general liability insurance** bound",
