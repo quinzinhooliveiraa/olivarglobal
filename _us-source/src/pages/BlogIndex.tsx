@@ -80,6 +80,7 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
   }, [posts]);
 
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
   const [page, setPage] = useState(0);
   const [dir, setDir] = useState(1);
   const highlightsRef = useRef<HTMLElement>(null);
@@ -87,10 +88,16 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
   const featuredPosts = useMemo(() => posts.filter((p) => p.featured), [posts]);
 
   const highlightPool = useMemo(() => {
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      return posts.filter(
+        (p) => p.title.toLowerCase().includes(q) || p.excerpt?.toLowerCase().includes(q)
+      );
+    }
     if (!activeCategory) return featuredPosts;
     if (activeCategory === "__all__") return posts;
     return posts.filter((p) => p.category === activeCategory);
-  }, [posts, featuredPosts, activeCategory]);
+  }, [posts, featuredPosts, activeCategory, searchQuery]);
 
   const totalPages = Math.ceil(highlightPool.length / PAGE_SIZE);
   const visiblePosts = highlightPool.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
@@ -103,6 +110,10 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
   useEffect(() => {
     setPage(0);
   }, [activeCategory]);
+
+  useEffect(() => {
+    setPage(0);
+  }, [searchQuery]);
 
   const handleCategoryClick = (name: string) => {
     setActiveCategory((prev) => (prev === name ? null : name));
@@ -180,6 +191,57 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
             >
               {copy.subtitle}
             </motion.p>
+
+            {/* Search bar */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.15 }}
+              className="mt-7 relative max-w-md"
+            >
+              <svg
+                className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                style={{ color: "rgba(255,255,255,0.45)" }}
+                width="16" height="16" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" strokeWidth="2.2"
+              >
+                <circle cx="11" cy="11" r="7"/>
+                <path strokeLinecap="round" d="M21 21l-4.35-4.35"/>
+              </svg>
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  if (e.target.value.trim()) {
+                    setTimeout(() => highlightsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+                  }
+                }}
+                placeholder="Search articles…"
+                className="w-full py-3 pl-10 pr-10 rounded-full text-sm font-medium text-white placeholder-white/45 outline-none transition-all"
+                style={{
+                  background: "rgba(255,255,255,0.1)",
+                  border: "1px solid rgba(255,255,255,0.18)",
+                  backdropFilter: "blur(4px)",
+                }}
+                onFocus={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.45)"; e.target.style.background = "rgba(255,255,255,0.15)"; }}
+                onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.18)"; e.target.style.background = "rgba(255,255,255,0.1)"; }}
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/55 hover:text-white transition-colors text-base leading-none"
+                  aria-label="Clear search"
+                >
+                  ✕
+                </button>
+              )}
+              {searchQuery.trim() && (
+                <p className="mt-2 text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  {highlightPool.length} {highlightPool.length === 1 ? "article" : "articles"} found for "{searchQuery.trim()}"
+                </p>
+              )}
+            </motion.div>
           </div>
         </section>
 
@@ -314,15 +376,15 @@ const BlogIndex = ({ variant }: BlogIndexProps) => {
             <div className="flex items-center justify-between mb-7 flex-wrap gap-3">
               <div className="flex items-center gap-3">
                 <p className="text-xs font-bold uppercase tracking-widest text-[#0f2e23]/35">
-                  {!activeCategory ? "Highlights" : activeCategory === "__all__" ? "All Articles" : activeCategory}
+                  {searchQuery.trim() ? "Search Results" : !activeCategory ? "Highlights" : activeCategory === "__all__" ? "All Articles" : activeCategory}
                 </p>
-                {activeCategory && (
+                {(activeCategory || searchQuery.trim()) && (
                   <button
-                    onClick={() => setActiveCategory(null)}
+                    onClick={() => { setActiveCategory(null); setSearchQuery(""); }}
                     className="text-xs font-semibold px-3 py-1 rounded-full border transition-all"
                     style={{ color: "#0f2e23", borderColor: "rgba(15,46,35,0.2)" }}
                   >
-                    ✕ Highlights
+                    ✕ {searchQuery.trim() ? "Clear search" : "Highlights"}
                   </button>
                 )}
               </div>

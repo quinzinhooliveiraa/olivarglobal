@@ -118,6 +118,17 @@
     .ft-nav a{font-size:13px;color:#9ca3af;text-decoration:none;transition:color .2s}
     .ft-nav a:hover{color:#fff}
     .ft-copy{text-align:center;font-size:13px;color:#6b7280;margin-top:20px;max-width:1000px;margin-left:auto;margin-right:auto}
+
+    /* SEARCH */
+    .search-wrap{margin-top:28px;position:relative;max-width:480px}
+    .search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:rgba(255,255,255,.45)}
+    .search-inp{width:100%;padding:12px 16px 12px 42px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1);color:#fff;font-size:14px;font-family:inherit;outline:none;backdrop-filter:blur(4px);transition:border-color .2s,background .2s}
+    .search-inp::placeholder{color:rgba(255,255,255,.45)}
+    .search-inp:focus{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.15)}
+    .search-clear{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.55);cursor:pointer;font-size:16px;line-height:1;padding:2px;display:none}
+    .search-clear.vis{display:block}
+    .search-results-note{margin-top:10px;font-size:12px;color:rgba(255,255,255,.5);display:none}
+    .search-results-note.vis{display:block}
   </style>
 </head>
 <body>
@@ -145,6 +156,12 @@
     <p class="eyebrow">Blog · Olivar Global Sales</p>
     <h1>Insights para fechar mais contratos em dólar e euro</h1>
     <p>Playbooks táticos sobre prospecção B2B, SDR, processo comercial e como escalar vendas internacionais com consistência.</p>
+    <div class="search-wrap">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.35-4.35"/></svg>
+      <input class="search-inp" id="search-inp" type="search" placeholder="Buscar artigos..." oninput="onSearch(this.value)" autocomplete="off" />
+      <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Limpar busca">✕</button>
+    </div>
+    <p class="search-results-note" id="search-note"></p>
   </div>
 </section>
 
@@ -268,10 +285,40 @@ var FOTOS = {
 };
 
 var PAGE_SIZE = 3;
-var cat = null, pg = 0;
+var cat = null, pg = 0, query = "";
 var featured = POSTS.filter(function(p){ return p.featured; });
 
-function pool(){ return !cat ? featured : cat === "__all__" ? POSTS : POSTS.filter(function(p){ return p.category === cat; }); }
+function pool(){
+  var base = !cat ? featured : cat === "__all__" ? POSTS : POSTS.filter(function(p){ return p.category === cat; });
+  if(!query) return base;
+  var q = query.toLowerCase();
+  return POSTS.filter(function(p){ return p.title.toLowerCase().indexOf(q) !== -1 || p.excerpt.toLowerCase().indexOf(q) !== -1; });
+}
+
+function onSearch(val){
+  query = val.trim();
+  pg = 0;
+  document.getElementById("search-clear").classList.toggle("vis", query.length > 0);
+  var note = document.getElementById("search-note");
+  if(query){
+    cat = null;
+    var res = pool();
+    note.textContent = res.length + (res.length === 1 ? " artigo encontrado" : " artigos encontrados") + " para \"" + query + "\"";
+    note.classList.add("vis");
+  } else {
+    note.classList.remove("vis");
+  }
+  renderCats(); renderHL(1);
+  document.getElementById("destaques").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function clearSearch(){
+  query = "";
+  document.getElementById("search-inp").value = "";
+  document.getElementById("search-clear").classList.remove("vis");
+  document.getElementById("search-note").classList.remove("vis");
+  pg = 0; renderCats(); renderHL(1);
+}
 
 function cats(){
   var m={};
@@ -305,9 +352,9 @@ function renderHL(dir){
   if(pg>=total) pg=0;
   var slice=p.slice(pg*PAGE_SIZE, pg*PAGE_SIZE+PAGE_SIZE);
 
-  document.getElementById("hl-lbl").textContent=!cat?"Destaques":cat==="__all__"?"Todos os Artigos":cat;
+  document.getElementById("hl-lbl").textContent=query?"Resultados da busca":!cat?"Destaques":cat==="__all__"?"Todos os Artigos":cat;
   var rst=document.getElementById("hl-rst");
-  rst.style.display=cat?"inline-flex":"none";
+  rst.style.display=(cat||query)?"inline-flex":"none";
 
   var pag=document.getElementById("hl-pag"), prog=document.getElementById("hl-prog");
   pag.style.display=total>1?"flex":"none";
@@ -343,7 +390,7 @@ function selCat(key){
   setTimeout(function(){ document.getElementById("destaques").scrollIntoView({behavior:"smooth",block:"start"}); },80);
 }
 
-function resetFiltro(){ cat=null; pg=0; renderCats(); renderHL(1); }
+function resetFiltro(){ cat=null; query=""; pg=0; document.getElementById("search-inp").value=""; document.getElementById("search-clear").classList.remove("vis"); document.getElementById("search-note").classList.remove("vis"); renderCats(); renderHL(1); }
 
 function navegar(dir){
   var t=Math.ceil(pool().length/PAGE_SIZE);
