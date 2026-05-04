@@ -4,10 +4,10 @@ import icon from "@/assets/olivar-logo-nobg.png";
 const Footer = () => {
   return (
     <footer className="py-6 px-4" style={{ background: "linear-gradient(135deg, #0f2e23 0%, #0a2418 100%)" }}>
-      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div className="flex items-center gap-2 whitespace-nowrap">
-          <img src={icon} alt="Olivar Scale Jobs" className="h-9 w-auto shrink-0" />
-          <span className="text-xs text-white/70">
+      <div className="container mx-auto flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+        <div className="flex flex-col items-center gap-2 sm:flex-row sm:items-center sm:gap-2">
+          <img src={icon} alt="Olivar Scale Jobs" className="h-7 w-auto shrink-0" />
+          <span className="text-xs text-white/70 text-center sm:text-left">
             <Link
               to="/dumpster"
               aria-label="Owner access"
@@ -16,15 +16,7 @@ const Footer = () => {
             >
               ©
             </Link>{" "}
-            2022 Olivar Scale Jobs. All rights reserved<a
-              href="/"
-              aria-label="."
-              rel="nofollow noopener noreferrer"
-              className="text-inherit no-underline hover:text-inherit cursor-text select-none"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              .
-            </a>
+            2022 Olivar Scale Jobs. All rights reserved.
           </span>
         </div>
         <div className="flex gap-5 text-xs text-white/70">
