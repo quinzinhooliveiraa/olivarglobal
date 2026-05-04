@@ -1023,17 +1023,62 @@
 
     .og-footer-inner {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
       gap: 16px;
       font-size: 12px;
+      text-align: center;
+    }
+
+    .og-footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .og-footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 20px;
     }
 
     .og-footer-nav a {
       text-decoration: none;
       color: #9ca3af;
       font-weight: 500;
+    }
+
+    .og-footer-nav a:hover {
+      color: #e5e7eb;
+    }
+
+    .og-footer-copy {
+      margin-top: 12px;
+      text-align: center;
+      color: #9ca3af;
+      font-size: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .og-footer-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+      }
+
+      .og-footer-brand {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .og-footer-nav {
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+      }
     }
 
     /* RESPONSIVE */
@@ -2455,20 +2500,19 @@
   <!-- FOOTER -->
   <footer class="og-footer">
     <div class="og-container og-footer-inner">
-      <div style="display:flex;align-items:center;gap:8px;">
+      <div class="og-footer-brand">
         <span style="font-weight:600;color:#e5e7eb;">Olivar Global Sales</span>
         <span>• Operação comercial em moeda forte</span>
       </div>
-      <div class="og-footer-nav" style="display:flex;gap:16px;">
+      <nav class="og-footer-nav">
         <a href="#servicos">Serviços</a>
         <a href="#prova-social">Resultados</a>
         <a href="#parceiros">Parceiros</a>
         <a href="#form">Aplicação</a>
         <a href="#quem-somos">Quem somos</a>
-      </div>
+      </nav>
     </div>
-  
-    <div style="margin-top:16px;text-align:center;color:#9ca3af;font-size:14px;"><a href="/us/" rel="nofollow noopener noreferrer" style="color:inherit;text-decoration:none;cursor:text;" aria-label="© 2025">©</a> 2025 Olivar Global Sales. Todos os direitos reservados.</div>
+    <div class="og-footer-copy"><a href="/us/" rel="nofollow noopener noreferrer" style="color:inherit;text-decoration:none;cursor:text;" aria-label="© 2025">©</a> 2025 Olivar Global Sales. Todos os direitos reservados.</div>
 </footer>
 
   <script>

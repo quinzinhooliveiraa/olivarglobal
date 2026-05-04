@@ -3,11 +3,11 @@ import logo from "@/assets/olivar-icon-nobg.png";
 
 const DumpsterFooter = () => {
   return (
-    <footer id="contact" className="py-10 px-4 md:px-8 bg-[#0a2418] border-t border-white/5">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer id="contact" className="py-8 px-4 md:px-8 bg-[#0a2418] border-t border-white/5">
+      <div className="container mx-auto flex flex-col items-center gap-4 md:flex-row md:justify-between md:gap-6">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Scale Jobs" className="h-4 md:h-5 w-auto object-contain" />
-          <span className="text-xs text-white/50 font-semibold tracking-widest uppercase">
+          <img src={logo} alt="Scale Jobs" className="h-5 w-auto object-contain" />
+          <span className="text-xs text-white/50 font-semibold tracking-widest uppercase text-center md:text-left">
             <Link
               to="/"
               aria-label="Home"
@@ -27,10 +27,10 @@ const DumpsterFooter = () => {
             </a>
           </span>
         </div>
-        <div className="flex gap-6 text-sm text-white/70">
-          <a href="tel:+12132141162" className="hover:text-[#15803d] transition-colors whitespace-nowrap">(213) 214-1162</a>
-          <a href="mailto:contact@olivarscalejobs.com" className="hover:text-[#15803d] transition-colors whitespace-nowrap">Contact</a>
-          <Link to="/privacy-policy" className="hover:text-[#15803d] transition-colors whitespace-nowrap">Privacy Policy</Link>
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/70">
+          <a href="tel:+12132141162" className="hover:text-[#15803d] transition-colors">(213) 214-1162</a>
+          <a href="mailto:contact@olivarscalejobs.com" className="hover:text-[#15803d] transition-colors">Contact</a>
+          <Link to="/privacy-policy" className="hover:text-[#15803d] transition-colors">Privacy Policy</Link>
         </div>
       </div>
     </footer>
