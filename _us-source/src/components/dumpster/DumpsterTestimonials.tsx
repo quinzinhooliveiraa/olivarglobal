@@ -18,7 +18,7 @@ const testimonials = [
     role: "Owner",
     company: "Heartland Roll-Off Co.",
     story:
-      "James was running two dumpster rental businesses and growing, but lead generation was unpredictable. He relied on referrals and Facebook ads he tried to manage himself. In less than 15 days after partnering with Olivar, the first customers started coming in through Google Ads. It happened so fast he had to pause campaigns. His fleet was booked out before he expected.",
+      "James was running two dumpster rental businesses and growing, but lead generation was unpredictable. He relied on referrals and Facebook ads he tried to manage himself. In less than 15 days after partnering with Scale Jobs, the first customers started coming in through Google Ads. It happened so fast he had to pause campaigns. His fleet was booked out before he expected.",
     quote:
       "I had to pause the ads because my entire fleet was busy. That was the best problem I've ever had. I bought a third truck because of it.",
     metrics: [
@@ -58,7 +58,7 @@ const testimonials = [
     role: "Owner",
     company: "Sawtooth Waste Solutions",
     story:
-      "Nicole had a clear market differentiator: she only charged for what the customer actually used, with no hidden fees. The problem was almost nobody knew she existed. She was already paying for two marketing services with no results. After joining Olivar, the first lead arrived within the first week.",
+      "Nicole had a clear market differentiator: she only charged for what the customer actually used, with no hidden fees. The problem was almost nobody knew she existed. She was already paying for two marketing services with no results. After joining Scale Jobs, the first lead arrived within the first week.",
     quote:
       "The first call came in sooner than I expected. What surprised me wasn't the speed. It was knowing exactly where the customer came from and how much it cost to bring them in.",
     metrics: [
@@ -78,7 +78,7 @@ const testimonials = [
     role: "Owner",
     company: "Pacific Coast Dumpsters",
     story:
-      "Ryan signed on a Friday. By Monday, Olivar had the full setup ready: campaigns built, tracking live, everything configured. On Tuesday, the first lead arrived with name, phone, delivery address, and pickup date. He closed the client the same day. This is the shortest story because it's still being written.",
+      "Ryan signed on a Friday. By Monday, Scale Jobs had the full setup ready: campaigns built, tracking live, everything configured. On Tuesday, the first lead arrived with name, phone, delivery address, and pickup date. He closed the client the same day. This is the shortest story because it's still being written.",
     quote:
       "Friday I signed. Monday everything was live. Tuesday I closed my first client. I don't know yet what's going to happen, but clearly something is working.",
     metrics: [

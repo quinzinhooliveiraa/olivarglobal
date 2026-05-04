@@ -6,7 +6,7 @@ const DumpsterFooter = () => {
     <footer id="contact" className="py-10 px-4 md:px-8 bg-[#0a2418] border-t border-white/5">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Olivar Scale Jobs" className="h-4 md:h-5 w-auto object-contain" />
+          <img src={logo} alt="Scale Jobs" className="h-4 md:h-5 w-auto object-contain" />
           <span className="text-xs text-white/50 font-semibold tracking-widest uppercase">
             <Link
               to="/"

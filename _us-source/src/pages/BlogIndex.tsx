@@ -19,11 +19,11 @@ const VARIANT_META_INDEX = {
     siteName: "Olivar Scale Jobs",
   },
   dumpster: {
-    title: "Blog — Olivar Scale Jobs | Insights for Dumpster Rental Operators",
+    title: "Blog — Scale Jobs | Insights for Dumpster Rental Operators",
     description:
       "How the most profitable dumpster rental operators book more jobs, raise prices, and stop relying on broker leads.",
     canonical: `${BASE_URL}/us/dumpster/blog/`,
-    siteName: "Olivar Scale Jobs",
+    siteName: "Scale Jobs",
   },
 } as const;
 
@@ -39,7 +39,7 @@ const VARIANT_COPY = {
     indexPath: "/blog",
   },
   dumpster: {
-    eyebrow: "Olivar Scale Jobs Blog",
+    eyebrow: "Scale Jobs Blog",
     title: "Insights for dumpster rental operators",
     subtitle:
       "How the most profitable dumpster operators book more rentals, raise prices, and stop relying on broker leads.",
