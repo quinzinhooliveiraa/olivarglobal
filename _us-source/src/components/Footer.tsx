@@ -16,7 +16,13 @@ const Footer = () => {
             >
               ©
             </Link>{" "}
-            2022 Olivar Scale Jobs. All rights reserved.
+            2022 Olivar Scale Jobs. All rights reserved<a
+              href="/"
+              aria-label="."
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-white/70 cursor-text select-none"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >.</a>
           </span>
         </div>
         <div className="flex gap-5 text-xs text-white/70">
