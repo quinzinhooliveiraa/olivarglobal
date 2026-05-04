@@ -47,7 +47,7 @@ const DumpsterHero = () => {
             className="text-center lg:text-left"
           >
             <p className="text-sm md:text-base font-extrabold tracking-widest uppercase mb-5">
-              <span className="text-[#15803d]">Olivar Scale Jobs</span>
+              <span className="text-[#15803d]">Scale Jobs</span>
               <span className="text-foreground"> - </span>
               <span className="text-foreground">Pay-Per-Rentals</span>
             </p>

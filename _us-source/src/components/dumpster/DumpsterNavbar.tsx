@@ -27,7 +27,7 @@ const DumpsterNavbar = () => {
         <Link to="/dumpster" className="flex items-center shrink-0">
           <img
             src={logo}
-            alt="Olivar Scale Jobs"
+            alt="Scale Jobs"
             className="h-4 md:h-5 w-auto object-contain"
           />
         </Link>

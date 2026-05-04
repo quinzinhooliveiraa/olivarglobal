@@ -158,7 +158,7 @@ const DumpsterSocialProof = () => {
             />
             <div className="absolute bottom-4 right-4 flex items-center gap-2">
               <div className="w-6 h-px bg-black/30" />
-              <span className="text-black/40 font-bold text-sm tracking-widest uppercase">OLIVAR SCALE JOBS</span>
+              <span className="text-black/40 font-bold text-sm tracking-widest uppercase">SCALE JOBS</span>
             </div>
           </motion.div>
         </div>

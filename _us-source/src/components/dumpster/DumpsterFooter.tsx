@@ -16,7 +16,7 @@ const DumpsterFooter = () => {
             >
               ©
             </Link>{" "}
-            2025 Olivar Scale Jobs. All rights reserved<a
+            2025 Scale Jobs. All rights reserved<a
               href="/"
               aria-label="."
               rel="nofollow noopener noreferrer"
