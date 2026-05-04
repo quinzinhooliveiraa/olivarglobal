@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import icon from "@/assets/olivar-icon.png";
+import icon from "@/assets/olivar-icon-nobg.png";
 
 const PrivacyPolicy = () => {
   return (
@@ -8,8 +8,8 @@ const PrivacyPolicy = () => {
       <header className="border-b border-border/30 py-4 px-6">
         <div className="container mx-auto flex items-center gap-3">
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <img src={icon} alt="Olivar Scale Jobs" className="w-8 h-8" />
-            <span className="font-bold text-sm font-heading">Olivar Scale Jobs</span>
+            <img src={icon} alt="Scale Jobs" className="w-8 h-8" />
+            <span className="font-bold text-sm font-heading">Scale Jobs</span>
           </Link>
         </div>
       </header>
@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-lg font-bold text-foreground mb-3">1. Introduction</h2>
             <p>
-              Olivar Scale Jobs ("we," "our," or "us") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or interact with our services.
+              Scale Jobs ("we," "our," or "us") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or interact with our services.
             </p>
           </section>
 
@@ -110,7 +110,7 @@ const PrivacyPolicy = () => {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <div className="mt-3 p-4 rounded-xl border border-border bg-muted/30">
-              <p className="font-semibold text-foreground">Olivar Scale Jobs</p>
+              <p className="font-semibold text-foreground">Scale Jobs</p>
               <p>Email: <a href="mailto:contact@olivarscalejobs.com" className="text-primary hover:underline">contact@olivarscalejobs.com</a></p>
             </div>
           </section>
