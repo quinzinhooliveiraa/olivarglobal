@@ -1504,7 +1504,8 @@ const movingPosts: BlogPost[] = [
   {
     slug: "moving-services-side-hustle-scales",
     title: "How to Add Moving Services to Your Existing Business",
-    excerpt: "Learn how to add moving services to your existing business and grow your revenue.",
+    excerpt:
+      "This guide is coming soon.",
     category: "Startup",
     readingTime: "7 min read",
     publishedAt: "January 20, 2026",
