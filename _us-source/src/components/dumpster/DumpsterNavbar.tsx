@@ -28,7 +28,7 @@ const DumpsterNavbar = () => {
           <img
             src={logo}
             alt="Scale Jobs"
-            className="h-4 md:h-5 w-auto object-contain"
+            className="h-8 md:h-10 w-auto object-contain"
           />
         </Link>
 

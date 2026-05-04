@@ -24,7 +24,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <img src={icon} alt="Olivar Scale Jobs" className="h-10 md:h-12" />
+          <img src={icon} alt="Olivar Scale Jobs" className="h-12 md:h-14" />
           <span className="hidden md:block text-white font-bold text-sm md:text-base leading-tight tracking-widest uppercase">
             Olivar Scale Jobs
           </span>
