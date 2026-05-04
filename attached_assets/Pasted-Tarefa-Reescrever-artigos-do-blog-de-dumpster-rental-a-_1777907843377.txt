@@ -1,0 +1,58 @@
+Tarefa: Reescrever artigos do blog de dumpster rental a partir de links do Notion
+
+O usuário vai mandar links do Notion com artigos. Para cada link, você precisa:
+
+Buscar o conteúdo do Notion via webFetch({url: "..."}) no sandbox de code_execution
+Encontrar o slug correspondente no arquivo _us-source/src/data/blogPosts.ts usando grep -n "parte-do-slug" _us-source/src/data/blogPosts.ts
+Ler o artigo existente com awk 'NR>=INICIO && NR<=FIM' para pegar todo o bloco do artigo
+Substituir o conteúdo usando a tool edit, trocando todo o bloco { slug: "...", ... }, pelo novo conteúdo baseado no Notion
+Rebuildar o site: cd _us-source && npm run build 2>&1 | grep -E "built in|error" | tail -3 (~28s, outputs para us/)
+Arquivo principal: _us-source/src/data/blogPosts.ts (~3400 linhas)
+
+Tipos de blocos disponíveis (BlogBlock):
+
+| { type: "p"; text: string }
+| { type: "h2"; text: string }
+| { type: "h3"; text: string }
+| { type: "quote"; text: string; author?: string }
+| { type: "ul"; items: string[] }
+| { type: "checklist"; items: string[] }   // checkbox visual, usar para checklists explícitos
+| { type: "table"; headers: string[]; rows: string[][] }
+
+Formatação inline: Usar **texto** para negrito (renderizado como <strong>). Colocar negrito em números-chave, valores de dinheiro, e termos importantes.
+
+Regras importantes:
+
+Copiar o conteúdo do Notion verbatim — adaptar apenas a estrutura para os tipos de bloco acima
+NÃO usar as categorias do Notion (Converting, Authority, etc). Manter a categoria original do artigo no site. Categorias válidas: Operations, Pricing, Revenue, Scaling, Strategy, Marketing, Lead Generation, Google Ads, Startup, Case Study, Sales
+Listas com bullets do Notion → type: "ul"
+Tabelas do Notion → type: "table" com headers e rows
+Checklists explícitos (tipo "faça isso antes de começar") → type: "checklist"
+Citações/scripts de exemplo → type: "quote"
+Ajustar readingTime conforme o tamanho do novo conteúdo
+Reescrever o excerpt para refletir o novo conteúdo (1-2 frases)
+Manter slug, publishedAt e category iguais ao original
+Remover links do Notion para dumpsterflow.com ou calendly — substituir por texto genérico tipo "Book a free strategy call"
+Ignorar os metadados do Notion no topo (Baseado em, Cadência, Categoria, Keywords, Prioridade, Status)
+Exemplo de estrutura de um artigo:
+
+{
+  slug: "example-slug",
+  title: "Title Here",
+  excerpt: "Short description here.",
+  category: "Startup",
+  readingTime: "9 min read",
+  publishedAt: "March 17, 2026",
+  body: [
+    { type: "p", text: "Intro paragraph with **bold numbers**." },
+    { type: "h2", text: "Section Title" },
+    { type: "ul", items: ["**Item 1:** description", "**Item 2:** description"] },
+    { type: "table", headers: ["Col1", "Col2"], rows: [["val1", "val2"]] },
+    { type: "quote", text: "A quote or script example." },
+  ],
+},
+
+Processo para cada artigo:
+
+Fetch Notion → grep slug → awk para ler bloco existente → edit para substituir → npm run build
+Pode fazer vários artigos em sequência sem esperar confirmação do usuário
