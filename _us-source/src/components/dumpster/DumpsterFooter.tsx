@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/olivar-logo-nobg.png";
+import logo from "@/assets/olivar-icon-nobg.png";
 
 const DumpsterFooter = () => {
   return (

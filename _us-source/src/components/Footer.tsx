@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import icon from "@/assets/olivar-icon-nobg.png";
+import icon from "@/assets/olivar-logo-nobg.png";
 
 const Footer = () => {
   return (
