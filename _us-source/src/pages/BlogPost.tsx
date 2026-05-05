@@ -104,7 +104,7 @@ const BlogPost = ({ variant }: BlogPostProps) => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Helmet>
-        <title>{post.title} — {meta.siteName}</title>
+        <title>{post.title} | {meta.siteName}</title>
         <meta name="description" content={post.excerpt} />
         <link rel="canonical" href={canonicalUrl} />
         <link rel="alternate" hreflang="en" href={canonicalUrl} />
@@ -264,7 +264,7 @@ const BlogPost = ({ variant }: BlogPostProps) => {
                         </p>
                         {block.author && (
                           <footer className="mt-2 text-sm text-[#0f2e23]/60 not-italic">
-                            — {block.author}
+                            {block.author}
                           </footer>
                         )}
                       </blockquote>

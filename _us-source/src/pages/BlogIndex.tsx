@@ -12,14 +12,14 @@ const BASE_URL = "https://olivarglobal.com";
 
 const VARIANT_META_INDEX = {
   moving: {
-    title: "Blog — Olivar Scale Jobs | Insights for Moving Companies",
+    title: "Blog | Olivar Scale Jobs | Insights for Moving Companies",
     description:
       "Tactical playbooks on lead generation, sales process, and operations for moving company owners.",
     canonical: `${BASE_URL}/us/blog/`,
     siteName: "Olivar Scale Jobs",
   },
   dumpster: {
-    title: "Blog — Scale Jobs | Insights for Dumpster Rental Operators",
+    title: "Blog | Scale Jobs | Insights for Dumpster Rental Operators",
     description:
       "How the most profitable dumpster rental operators book more jobs, raise prices, and stop relying on broker leads.",
     canonical: `${BASE_URL}/us/dumpster/blog/`,
