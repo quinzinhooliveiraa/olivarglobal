@@ -1,0 +1,51 @@
+PROMPT PARA REPLIT/AI — CONVERSÃO DE ARTIGO DO NOTION PARA blogPosts.ts
+
+Você vai converter o conteúdo de um artigo do Notion para o formato TypeScript correto do array body de um BlogPost no arquivo _us-source/src/data/blogPosts.ts.
+
+Links do Notion para processar:
+
+[cole os links aqui, um por linha]
+
+BLOCOS DISPONÍVEIS:
+
+{ type: "h2", text: "..." }            // seção principal do artigo
+{ type: "h3", text: "..." }            // sub-item dentro de uma seção
+{ type: "p", text: "..." }             // parágrafo
+{ type: "ul", items: ["...", "..."] }  // lista com marcadores
+{ type: "table", headers: [...], rows: [[...], [...]] }
+{ type: "quote", text: "..." }         // citação em destaque
+
+REGRAS DE HIERARQUIA H2 vs H3:
+
+Use h2 para seções principais do artigo (equivalem a ### no Notion):
+
+Ex: "The Simple Math That Runs This Business", "Scenario 1: Just Starting Out, 7 Dumpsters", "Step 3: Handle the Business Fundamentals", "What Real Owners Are Actually Charging"
+Use h3 apenas para sub-itens dentro de uma seção principal:
+
+Sub-opções: "Option A: Flat weekly rate", "Option 1: Roll-off truck", "Option 3: DIY Google Ads"
+Sub-cenários curtos: "Scenario 1: Heavy load", "Scenario 2: Short rental"
+Sub-passos curtos: "Step 2: Start small", "Step 3: Price correctly"
+Itens de custo: "Insurance", "Labor", "Fuel", "The Truck", "Monthly Fixed Costs"
+Categorias de preço: "Residential Rentals (weekly)", "Specialty Dumpsters", "Contractor Rates", "Standard Roll-Off Containers"
+Canais de marketing: "Google Business Profile", "Google Ads", "SEO and Content", "Pay-Per-Move"
+Tipos de empresa: "Landscaping Companies", "Construction and Renovation Companies"
+Labels de mercado: "Residential markets (suburban, single-family neighborhoods)", "Commercial and contractor-heavy markets"
+REGRAS DE FORMATAÇÃO:
+
+Use **texto** dentro de strings para negrito: valores em dólar, porcentagens, números-chave, fórmulas
+Fórmulas completas em negrito no Notion → { type: "p", text: "**fórmula completa**" }
+Bullet points do Notion → ul com todos os itens agrupados
+Tabelas com linhas e colunas → bloco table
+Sub-seções que aparecem como texto dentro de uma lista (ex: "Residential Rentals (weekly)") → extrair como h3 separado, com seus itens em ul próprio abaixo
+REGRAS DE ESCRITA/VOZ:
+
+Não use -- como conector de frase. Substitua por vírgula, ponto, ou reescreva
+Não use "moreover", "furthermore", "it's worth noting", "in conclusion", "it is important to note"
+Não invente dados, operadores ou cenários que não estão no original
+Preserve números, preços e nomes de operadores exatamente como estão
+Voz direta, sem rodeios
+OUTPUT ESPERADO:
+
+Apenas o array body: [ ... ] completo, pronto para substituir o conteúdo do artigo correspondente no blogPosts.ts. Sem comentários, sem explicações, sem markdown extra ao redor do código.
+
+Use esse prompt colando os links do Notion no campo indicado. Para artigos que já estão no arquivo e precisam ser corrigidos, adicione também: "O conteúdo atual do artigo está abaixo para referência — mantenha os dados corretos e aplique as regras acima:" e cole o body existente depois.

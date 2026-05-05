@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "RfzKahjFNRGh_-TnuRXFf"
@@ -24,3 +23,9 @@ id = "D85qAddq5LTfxDVCJqoh2"
 uri = "file://_us-source/public/og-bg-dumpster.png"
 type = "image"
 title = "dumpster truck bg"
+
+[[outputs]]
+id = "y3bMGDLx9iUT5ZXTq5OKV"
+uri = "file://exports/prompt-notion-blogposts.pdf"
+type = "pdf"
+title = "Prompt — Conversão Notion → blogPosts.ts (PDF)"
