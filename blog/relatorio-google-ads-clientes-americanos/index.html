@@ -84,38 +84,68 @@
     <p>Esse guia cobre o que incluir, como estruturar e qual ferramenta usar.</p>
     <h3>O que o cliente americano espera ver num relatório</h3>
     <p>Clientes americanos são orientados a dados, mas querem dados com contexto, não dumps de planilha. O relatório precisa responder três perguntas rapidamente:</p>
-    <ul><li>O investimento está gerando retorno?</li><li>O que melhorou em relação ao período anterior?</li><li>Qual é o próximo passo?</li><li>Se o relatório não responde essas três perguntas em menos de dois minutos de leitura, ele vai ser ignorado.</li></ul>
+    <ul>
+      <li>O investimento está gerando retorno?</li>
+      <li>O que melhorou em relação ao período anterior?</li>
+      <li>Qual é o próximo passo?</li>
+    </ul>
+    <p>Se o relatório não responde essas três perguntas em menos de dois minutos de leitura, ele vai ser ignorado.</p>
     <h3>Estrutura recomendada</h3>
-    <p>1\. Resumo executivo (topo da página)</p>
-    <p>Um parágrafo com os números mais importantes do período: receita gerada, custo investido, ROI, número de conversões. Clientes que estão ocupados devem conseguir entender o resultado sem ler o resto.</p>
-    <p>2\. Métricas principais</p>
-    <p>Organizadas em cards visuais:</p>
-    <ul><li>Receita gerada (ou rentals/jobs fechados)</li><li>Investimento total em ads</li><li>ROI</li><li>Custo por conversão</li><li>Taxa de conversão de lead para cliente</li><li>3\. Comparativo com período anterior</li><li>Sempre mostrar variação percentual. "Cost per rental dropped from <strong>$58</strong> to <strong>$34</strong> (-<strong>41%</strong>)" é mais impactante do que apenas o número atual.</li><li>4\. O que foi feito no período</li></ul>
-    <p>Lista curta de otimizações: palavras-chave pausadas, novos anúncios testados, ajuste de lance, expansão de área geográfica. Isso prova que você está trabalhando ativamente, não apenas monitorando.</p>
-    <p>5\. Principais causas de perdas</p>
-    <p>Se você usa um CRM de leads, inclua os motivos pelos quais leads não fecharam: preço, não respondeu, interesse futuro. Isso orienta ação do cliente também.</p>
-    <p>6\. Próximos passos</p>
-    <p>Dois ou três pontos concretos: o que você vai fazer no próximo período e o que precisa do cliente (ex: aprovação de novo orçamento, gravação de vídeo de verificação).</p>
+    <ol>
+      <li><strong>Resumo executivo (topo da página)</strong><br>Um parágrafo com os números mais importantes do período: receita gerada, custo investido, ROI, número de conversões. Clientes que estão ocupados devem conseguir entender o resultado sem ler o resto.</li>
+      <li><strong>Métricas principais</strong><br>Organizadas em cards visuais:
+        <ul>
+          <li>Receita gerada (ou rentals/jobs fechados)</li>
+          <li>Investimento total em ads</li>
+          <li>ROI</li>
+          <li>Custo por conversão</li>
+          <li>Taxa de conversão de lead para cliente</li>
+        </ul>
+      </li>
+      <li><strong>Comparativo com período anterior</strong><br>Sempre mostrar variação percentual. "Cost per rental dropped from <strong>$58</strong> to <strong>$34</strong> (-<strong>41%</strong>)" é mais impactante do que apenas o número atual.</li>
+      <li><strong>O que foi feito no período</strong><br>Lista curta de otimizações: palavras-chave pausadas, novos anúncios testados, ajuste de lance, expansão de área geográfica. Isso prova que você está trabalhando ativamente, não apenas monitorando.</li>
+      <li><strong>Principais causas de perdas</strong><br>Se você usa um CRM de leads, inclua os motivos pelos quais leads não fecharam: preço, não respondeu, interesse futuro. Isso orienta ação do cliente também.</li>
+      <li><strong>Próximos passos</strong><br>Dois ou três pontos concretos: o que você vai fazer no próximo período e o que precisa do cliente (ex: aprovação de novo orçamento, gravação de vídeo de verificação).</li>
+    </ol>
     <h3>Ferramenta: Looker Studio (Google Data Studio)</h3>
     <p>A ferramenta mais utilizada para relatórios de Google Ads. É gratuita, conecta diretamente ao Google Ads e Analytics, e permite criar dashboards que atualizam em tempo real.</p>
     <p>Vantagens para clientes americanos:</p>
-    <ul><li>O cliente acessa pelo link, sem precisar de login especial</li><li>Os dados atualizam automaticamente, sem retrabalho toda semana</li><li>Dá para criar template e replicar para todos os clientes com pequenos ajustes</li></ul>
+    <ul>
+      <li>O cliente acessa pelo link, sem precisar de login especial</li>
+      <li>Os dados atualizam automaticamente — sem retrabalho toda semana</li>
+      <li>Dá para criar template e replicar para todos os clientes com pequenos ajustes</li>
+    </ul>
     <p>Setup básico no Looker Studio:</p>
-    <ul><li>Conecte a conta do Google Ads do cliente</li><li>Adicione scorecard de cada métrica principal</li><li>Adicione gráfico de linha mostrando evolução semanal</li><li>Adicione tabela com performance por campanha</li><li>Adicione filtro de data para o cliente poder ajustar o período</li></ul>
+    <ol>
+      <li>Conecte a conta do Google Ads do cliente</li>
+      <li>Adicione scorecard de cada métrica principal</li>
+      <li>Adicione gráfico de linha mostrando evolução semanal</li>
+      <li>Adicione tabela com performance por campanha</li>
+      <li>Adicione filtro de data para o cliente poder ajustar o período</li>
+    </ol>
     <h3>Frequência e formato de envio</h3>
-    <p>Relatório semanal: resumo rápido por e-mail ou mensagem, 3 a 5 linhas com os números da semana. Não precisa de dashboard completo.</p>
-    <p>Relatório mensal: dashboard completo no Looker Studio + parágrafo de análise + próximos passos. Este é o relatório principal.</p>
-    <p>Call de resultado: uma vez por mês, 30 minutos para revisar os números juntos. Clientes que entendem o resultado renovam mais.</p>
+    <ul>
+      <li><strong>Relatório semanal:</strong> resumo rápido por e-mail ou mensagem — 3 a 5 linhas com os números da semana. Não precisa de dashboard completo.</li>
+      <li><strong>Relatório mensal:</strong> dashboard completo no Looker Studio + parágrafo de análise + próximos passos. Este é o relatório principal.</li>
+      <li><strong>Call de resultado:</strong> uma vez por mês, 30 minutos para revisar os números juntos. Clientes que entendem o resultado renovam mais.</li>
+    </ul>
     <h3>Template de e-mail de envio de relatório</h3>
-    <p>Subject:\Client Name\, Monthly Results \|\Month\</p>
-    <p>Hi \Name\,</p>
-    <p>Here's your report for\Month\:</p>
-    <p>✅ Revenue: $XfromY rentals 📊 ROI: Xx 💵 Ad Spend: $X 📈 Conversion Rate:X%</p>
-    <p>Full report:\link Looker Studio\</p>
-    <p>Main highlights thismonth:, \insight 1\, \insight 2\</p>
-    <p>Next steps:, \ação 1\, \ação 2\</p>
-    <p>Let me know if you have any questions.\Seu nome\</p>
-    <p>​</p>
+    <p><strong>Subject:</strong> [Client Name] — Monthly Results | [Month]</p>
+    <p>Hi [Name],</p>
+    <p>Here's your report for [Month]:</p>
+    <p>✅ Revenue: $X from Y rentals<br>
+    📊 ROI: Xx<br>
+    💵 Ad Spend: $X<br>
+    📈 Conversion Rate: X%<br>
+    Full report: [link Looker Studio]</p>
+    <p>Main highlights this month:<br>
+    — [insight 1]<br>
+    — [insight 2]</p>
+    <p>Next steps:<br>
+    — [ação 1]<br>
+    — [ação 2]</p>
+    <p>Let me know if you have any questions.<br>
+    [Seu nome]</p>
     <p>Quer ver como estruturamos os relatórios para os nossos clientes? →</p>
     </div>
 
