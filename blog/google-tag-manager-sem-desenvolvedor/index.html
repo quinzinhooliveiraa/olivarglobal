@@ -82,31 +82,36 @@
     <div class="og-post-body">
       <p>O Google Tag Manager (GTM) é a ferramenta que permite instalar e gerenciar códigos de rastreamento em sites sem precisar mexer no código fonte. Para agências, isso significa independência total do desenvolvedor para configurar conversões, eventos e pixels.</p>
     <h3>Os três conceitos do GTM</h3>
-    <p>Tags: os códigos que você quer executar no site. Pode ser o código de conversão do Google Ads, o pixel do Facebook, o Google Analytics, CallRail, etc.</p>
-    <p>Triggers (gatilhos): as condições que ativam as tags. "Quando o formulário for submetido", "quando o usuário clicar no botão de ligação", "quando acessar a página /thank-you".</p>
-    <p>Variables (variáveis): valores dinâmicos usados em tags e triggers. O mais comum é a URL da página atual.</p>
+    <ul>
+      <li><strong>Tags:</strong> os códigos que você quer executar no site. Pode ser o código de conversão do Google Ads, o pixel do Facebook, o Google Analytics, CallRail, etc.</li>
+      <li><strong>Triggers (gatilhos):</strong> as condições que ativam as tags. "Quando o formulário for submetido", "quando o usuário clicar no botão de ligação", "quando acessar a página /thank-you".</li>
+      <li><strong>Variables (variáveis):</strong> valores dinâmicos usados em tags e triggers. O mais comum é a URL da página atual.</li>
+    </ul>
     <h3>Instalação no site: 2 minutos</h3>
-    <p>Acesse tagmanager.google.com → crie uma conta para o cliente</p>
-    <p>Copie os dois snippets de código fornecidos pelo GTM</p>
-    <p>Cole o primeiro snippet no</p>
-    <p>&lt;head&gt;</p>
-    <p>do site (o mais alto possível)</p>
-    <p>Cole o segundo snippet logo após a tag</p>
-    <p>&lt;body&gt;</p>
-    <p>Publique o container do GTM</p>
+    <ol>
+      <li>Acesse tagmanager.google.com → crie uma conta para o cliente</li>
+      <li>Copie os dois snippets de código fornecidos pelo GTM</li>
+      <li>Cole o primeiro snippet no <code>&lt;head&gt;</code> do site (o mais alto possível)</li>
+      <li>Cole o segundo snippet logo após a tag <code>&lt;body&gt;</code></li>
+      <li>Publique o container do GTM</li>
+    </ol>
     <p>Para sites em WordPress, use o plugin "Site Kit by Google" que instala o GTM automaticamente. Para sites em Wix, Webflow ou Squarespace, existe campo nativo para inserir scripts no header.</p>
     <h3>Configurando rastreamento de conversão do Google Ads</h3>
-    <p>No Google Ads, crie a conversão: Ferramentas → Conversões → + → Website</p>
-    <p>Selecione a ação (ex: "Book dumpster"), configure o valor e copie o Conversion ID e Conversion Label</p>
-    <p>No GTM, crie uma nova Tag → Google Ads Conversion Tracking → insira o ID e Label copiados</p>
-    <p>Configure o Trigger: selecione "Page View" e filtre para URL contém "/thank-you" (ou a URL da página de obrigado)</p>
-    <p>Nomeie a tag, salve e publique</p>
+    <ol>
+      <li>No Google Ads, crie a conversão: Ferramentas → Conversões → + → Website</li>
+      <li>Selecione a ação (ex: "Book dumpster"), configure o valor e copie o Conversion ID e Conversion Label</li>
+      <li>No GTM, crie uma nova Tag → Google Ads Conversion Tracking → insira o ID e Label copiados</li>
+      <li>Configure o Trigger: selecione "Page View" e filtre para URL contém "/thank-you" (ou a URL da página de obrigado)</li>
+      <li>Nomeie a tag, salve e publique</li>
+    </ol>
     <p>Em 5 minutos, conversões de formulário estão sendo rastreadas sem tocar no código.</p>
     <h3>Rastreando cliques no botão de telefone</h3>
     <p>Esse é o rastreamento mais importante para home services, muitos leads ligam diretamente sem preencher formulário.</p>
-    <p>No GTM, crie um Trigger → Tipo: "Click" → configure para links que começam com "tel:"</p>
-    <p>Crie uma Tag de conversão do Google Ads apontando para esse trigger</p>
-    <p>Publique</p>
+    <ol>
+      <li>No GTM, crie um Trigger → Tipo: "Click" → configure para links que começam com "tel:"</li>
+      <li>Crie uma Tag de conversão do Google Ads apontando para esse trigger</li>
+      <li>Publique</li>
+    </ol>
     <p>Agora cada clique no número de telefone no site é registrado como conversão no Google Ads.</p>
     <h3>Preview mode: como testar antes de publicar</h3>
     <p>Antes de qualquer publicação no GTM, ative o Preview Mode (botão no canto superior direito). Isso abre uma janela de debug que mostra em tempo real quais tags estão disparando em quais eventos.</p>
