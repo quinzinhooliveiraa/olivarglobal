@@ -57,6 +57,17 @@
     })();
   </script>
 
+  <!-- Primeira visita: aplicar classe antes do render para zero flash -->
+  <script>
+    (function () {
+      try {
+        if (!localStorage.getItem('olv_fv')) {
+          document.documentElement.classList.add('og-fv');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" href="/favicon.png" />
@@ -1906,6 +1917,29 @@
       .og-quem-text-col { text-align:center; }
       .og-prova-stats { grid-template-columns: repeat(2,1fr); }
     }
+
+    /* ── PRIMEIRA VISITA: sem menu, sem animações ── */
+    html.og-fv .og-nav a:not(.og-nav-cta) { display: none !important; }
+    html.og-fv .og-hamburger                { display: none !important; }
+    html.og-fv .og-nav-drawer               { display: none !important; }
+    html.og-fv .og-floating                 { display: none !important; }
+    html.og-fv .og-animate {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    html.og-fv .og-animate.og-visible {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    html.og-fv .og-hero-animate {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    html.og-fv .og-prova-gallery-track                          { animation: none !important; }
+    html.og-fv .og-hero-cta.og-cta-pulse                       { animation: none !important; }
+    html.og-fv .og-prova-stat.og-visible .og-prova-stat-number { animation: none !important; }
 </style>
 </head>
 <body>
@@ -3155,6 +3189,9 @@ function validateField(field) {
 
     counters.forEach(function(el) { io.observe(el); });
   })();
+
+  /* ── Marcar visita: próximo acesso mostra menu e animações completas ── */
+  try { localStorage.setItem('olv_fv', '1'); } catch(e) {}
   
   /* ── Hamburger nav BR ── */
   function _ogToggleNav() {
