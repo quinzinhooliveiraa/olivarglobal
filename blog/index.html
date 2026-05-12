@@ -45,6 +45,7 @@
     .nav-links a:hover,.nav-links a.cur{color:var(--dk);font-weight:700}
     .nav-cta{padding:9px 18px;border-radius:999px;background:#000;color:#fff!important;font-weight:700;font-size:13px;text-decoration:none;border:1px solid #000;white-space:nowrap}
     @media(max-width:750px){.nav-links{display:none}}
+    html.og-fv .nav-links a:not(.nav-cta){display:none!important}
 
     /* BANNER */
     .banner{background:var(--dk);padding:100px 20px 72px;position:relative;overflow:hidden}
@@ -130,6 +131,7 @@
     .search-results-note{margin-top:10px;font-size:12px;color:rgba(255,255,255,.5);display:none}
     .search-results-note.vis{display:block}
   </style>
+  <script>(function(){try{if(!localStorage.getItem('olv_fv'))document.documentElement.classList.add('og-fv');}catch(e){}})()</script>
 </head>
 <body>
 
@@ -389,5 +391,6 @@ function irPg(idx){ var d=idx>pg?1:-1; pg=idx; renderHL(d); }
 
 renderCats(); renderHL(1);
 </script>
+<script>try{localStorage.setItem('olv_fv','1');}catch(e){}</script>
 </body>
 </html>

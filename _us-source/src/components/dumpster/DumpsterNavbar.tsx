@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/olivar-icon-nobg.png";
 
@@ -14,12 +14,17 @@ const navLinks = [
 
 const DumpsterNavbar = () => {
   const [open, setOpen] = useState(false);
+  const isFirstVisit = typeof localStorage !== "undefined" && !localStorage.getItem("olv_fv");
+
+  useEffect(() => {
+    try { localStorage.setItem("olv_fv", "1"); } catch (e) {}
+  }, []);
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
+      initial={{ y: isFirstVisit ? 0 : -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: isFirstVisit ? 0 : 0.6 }}
       className="fixed top-0 left-0 right-0 z-50 border-b border-white/10"
       style={{ background: "#0f2e23" }}
     >
@@ -32,51 +37,62 @@ const DumpsterNavbar = () => {
           />
         </Link>
 
-        <div className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="text-sm font-semibold text-white/90 hover:text-[#16a34a] transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-
-        <div className="hidden md:flex items-center gap-2">
-          <Link
-            to="/dumpster#book"
-            className="bg-white text-[#0f2e23] px-5 py-2.5 rounded-md text-sm font-bold hover:brightness-95 transition-all whitespace-nowrap"
-          >
-            Schedule Your Free Audit
-          </Link>
+        {isFirstVisit ? (
           <Link
             to="/dumpster#book"
             className="bg-[#15803d] text-white px-5 py-2.5 rounded-md text-sm font-bold hover:brightness-95 transition-all whitespace-nowrap"
           >
             Book Now
           </Link>
-        </div>
+        ) : (
+          <>
+            <div className="hidden lg:flex items-center gap-7">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="text-sm font-semibold text-white/90 hover:text-[#16a34a] transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
 
-        <div className="md:hidden flex items-center gap-2">
-          <Link
-            to="/dumpster#book"
-            className="bg-[#15803d] text-white px-4 py-2 rounded-md text-xs font-bold hover:brightness-95 transition-all whitespace-nowrap"
-          >
-            Book Now
-          </Link>
-          <button
-            onClick={() => setOpen(!open)}
-            className="p-2 text-white"
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
+            <div className="hidden md:flex items-center gap-2">
+              <Link
+                to="/dumpster#book"
+                className="bg-white text-[#0f2e23] px-5 py-2.5 rounded-md text-sm font-bold hover:brightness-95 transition-all whitespace-nowrap"
+              >
+                Schedule Your Free Audit
+              </Link>
+              <Link
+                to="/dumpster#book"
+                className="bg-[#15803d] text-white px-5 py-2.5 rounded-md text-sm font-bold hover:brightness-95 transition-all whitespace-nowrap"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="md:hidden flex items-center gap-2">
+              <Link
+                to="/dumpster#book"
+                className="bg-[#15803d] text-white px-4 py-2 rounded-md text-xs font-bold hover:brightness-95 transition-all whitespace-nowrap"
+              >
+                Book Now
+              </Link>
+              <button
+                onClick={() => setOpen(!open)}
+                className="p-2 text-white"
+                aria-label="Toggle menu"
+              >
+                {open ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
+          </>
+        )}
       </div>
 
-      {open && (
+      {!isFirstVisit && open && (
         <div className="md:hidden border-t border-white/10 px-4 py-4 flex flex-col gap-3" style={{ background: "#0f2e23" }}>
           {navLinks.map((link) => (
             <Link

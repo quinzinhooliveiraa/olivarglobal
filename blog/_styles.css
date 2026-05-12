@@ -659,3 +659,6 @@ a { -webkit-tap-highlight-color: transparent; }
   font-weight: 500;
   line-height: 1.3;
 }
+
+/* ── PRIMEIRA VISITA: sem menu ── */
+html.og-fv .og-nav a:not(.og-nav-cta) { display: none !important; }

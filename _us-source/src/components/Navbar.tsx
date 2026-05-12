@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -13,12 +13,17 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const isFirstVisit = typeof localStorage !== "undefined" && !localStorage.getItem("olv_fv");
+
+  useEffect(() => {
+    try { localStorage.setItem("olv_fv", "1"); } catch (e) {}
+  }, []);
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
+      initial={{ y: isFirstVisit ? 0 : -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: isFirstVisit ? 0 : 0.6 }}
       style={{ background: "#0f2e23" }}
       className="fixed top-0 left-0 right-0 z-50"
     >
@@ -27,74 +32,84 @@ const Navbar = () => {
           <img src={icon} alt="Olivar Scale Jobs" className="h-8 md:h-10 w-auto object-contain" />
         </Link>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+        {isFirstVisit ? (
           <Link
             to="/#book"
             className="bg-white text-primary px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/90 transition-all"
           >
             Apply Now
           </Link>
-        </div>
+        ) : (
+          <>
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                to="/#book"
+                className="bg-white text-primary px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/90 transition-all"
+              >
+                Apply Now
+              </Link>
+            </div>
 
-        {/* Mobile: CTA + hamburger */}
-        <div className="flex md:hidden items-center gap-2">
-          <Link
-            to="/#book"
-            className="bg-white text-primary px-4 py-2 rounded-lg text-xs font-semibold hover:bg-white/90 transition-all"
-          >
-            Apply Now
-          </Link>
-          <button
-            onClick={() => setOpen(!open)}
-            className="p-2 text-white"
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
+            <div className="flex md:hidden items-center gap-2">
+              <Link
+                to="/#book"
+                className="bg-white text-primary px-4 py-2 rounded-lg text-xs font-semibold hover:bg-white/90 transition-all"
+              >
+                Apply Now
+              </Link>
+              <button
+                onClick={() => setOpen(!open)}
+                className="p-2 text-white"
+                aria-label="Toggle menu"
+              >
+                {open ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
+          </>
+        )}
       </div>
 
-      {/* Mobile drawer */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-white/10 px-4 py-4 flex flex-col gap-3 overflow-hidden"
-            style={{ background: "#0f2e23" }}
-          >
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setOpen(false)}
-                className="text-sm font-semibold text-white/90 py-1 border-b border-white/10 last:border-0"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              to="/#book"
-              onClick={() => setOpen(false)}
-              className="bg-white text-primary px-5 py-2.5 rounded-lg text-sm font-bold text-center mt-1"
+      {!isFirstVisit && (
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden border-t border-white/10 px-4 py-4 flex flex-col gap-3 overflow-hidden"
+              style={{ background: "#0f2e23" }}
             >
-              Apply Now
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setOpen(false)}
+                  className="text-sm font-semibold text-white/90 py-1 border-b border-white/10 last:border-0"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                to="/#book"
+                onClick={() => setOpen(false)}
+                className="bg-white text-primary px-5 py-2.5 rounded-lg text-sm font-bold text-center mt-1"
+              >
+                Apply Now
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
     </motion.nav>
   );
 };
