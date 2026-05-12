@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Truck, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const DumpsterBooking = () => {
   return (
@@ -62,6 +63,14 @@ const DumpsterBooking = () => {
             className="block w-full"
           />
         </motion.div>
+
+        <p className="text-xs text-center text-gray-500 mt-4">
+          By scheduling, you agree to our{" "}
+          <Link to="/privacy-policy" className="underline hover:text-gray-700 transition-colors">
+            Privacy Policy
+          </Link>
+          . Your information is used solely to conduct your free audit.
+        </p>
       </div>
     </section>
   );

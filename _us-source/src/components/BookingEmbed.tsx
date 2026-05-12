@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CALENDLY_URL = ""; // Cole aqui o seu link do Calendly ou outra ferramenta
 
@@ -47,6 +48,13 @@ const BookingEmbed = () => {
               <p className="text-xs">Cole o link do Calendly (ou outra ferramenta) no arquivo <span className="font-mono bg-muted px-1 rounded">BookingEmbed.tsx</span></p>
             </div>
           )}
+          <p className="text-xs text-muted-foreground mt-4">
+            By scheduling, you agree to our{" "}
+            <Link to="/privacy-policy" className="underline hover:text-foreground transition-colors">
+              Privacy Policy
+            </Link>
+            . Your information is used solely to conduct your free audit.
+          </p>
         </motion.div>
       </div>
     </section>

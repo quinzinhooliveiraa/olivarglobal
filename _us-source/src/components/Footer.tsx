@@ -1,12 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import icon from "@/assets/olivar-logo-nobg.png";
 
 const Footer = () => {
-  const [isFirstVisit] = useState(
-    () => typeof localStorage !== "undefined" && !localStorage.getItem("olv_fv")
-  );
-
   useEffect(() => {
     try { localStorage.setItem("olv_fv", "1"); } catch (e) {}
   }, []);
@@ -34,13 +30,11 @@ const Footer = () => {
             >.</a>
           </span>
         </div>
-        {!isFirstVisit && (
-          <div className="flex gap-5 text-xs text-white/70">
-            <Link to="/privacy-policy" className="hover:text-white transition-colors whitespace-nowrap">Privacy Policy</Link>
-            <a href="tel:+12132141162" className="hover:text-white transition-colors whitespace-nowrap">(213) 214-1162</a>
-            <a href="mailto:contact@olivarscalejobs.com" className="hover:text-white transition-colors whitespace-nowrap">Contact</a>
-          </div>
-        )}
+        <div className="flex gap-5 text-xs text-white/70">
+          <Link to="/privacy-policy" className="hover:text-white transition-colors whitespace-nowrap">Privacy Policy</Link>
+          <a href="tel:+12132141162" className="hover:text-white transition-colors whitespace-nowrap">(213) 214-1162</a>
+          <a href="mailto:contact@olivarscalejobs.com" className="hover:text-white transition-colors whitespace-nowrap">Contact</a>
+        </div>
       </div>
     </footer>
   );

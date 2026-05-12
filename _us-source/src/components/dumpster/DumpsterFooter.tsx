@@ -1,12 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/olivar-icon-nobg.png";
 
 const DumpsterFooter = () => {
-  const [isFirstVisit] = useState(
-    () => typeof localStorage !== "undefined" && !localStorage.getItem("olv_fv")
-  );
-
   useEffect(() => {
     try { localStorage.setItem("olv_fv", "1"); } catch (e) {}
   }, []);
@@ -36,13 +32,11 @@ const DumpsterFooter = () => {
             </a>
           </span>
         </div>
-        {!isFirstVisit && (
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/70">
-            <a href="tel:+12132141162" className="hover:text-[#15803d] transition-colors">(213) 214-1162</a>
-            <a href="mailto:contact@olivarscalejobs.com" className="hover:text-[#15803d] transition-colors">Contact</a>
-            <Link to="/privacy-policy" className="hover:text-[#15803d] transition-colors">Privacy Policy</Link>
-          </div>
-        )}
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/70">
+          <a href="tel:+12132141162" className="hover:text-[#15803d] transition-colors">(213) 214-1162</a>
+          <a href="mailto:contact@olivarscalejobs.com" className="hover:text-[#15803d] transition-colors">Contact</a>
+          <Link to="/privacy-policy" className="hover:text-[#15803d] transition-colors">Privacy Policy</Link>
+        </div>
       </div>
     </footer>
   );
