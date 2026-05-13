@@ -30,5 +30,6 @@ Allow: /us/blog/
 Disallow: /us/dumpster/
 Disallow: /us/dumpster
 
-# Sitemap
+# Sitemaps
 Sitemap: https://olivarglobal.com/sitemap.xml
+Sitemap: https://olivarglobal.com/sitemap-us.xml
