@@ -43,6 +43,8 @@ To add a BR post: copy any folder under `blog/` to a new slug, edit the content,
 - **Command**: `python3 -m http.server 5000 --bind 0.0.0.0`
 - **Port**: 5000
 
+> **Important:** The workflow must run the Python static server (not `cd _us-source && npm run dev`). The Python server serves BOTH sites — BR at `/` and built US at `/us/`. If the Vite dev server runs instead, clicking `href="/"` links (like the `.` escape hatch in the US footer) won't reach the BR site. After editing `_us-source/` files, run `cd _us-source && npm run build` to rebuild, then the Python server picks up the changes automatically.
+
 ## Rebuilding the US Site
 After editing anything in `_us-source/`:
 ```bash
