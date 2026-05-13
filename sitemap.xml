@@ -1,264 +1,307 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- ── Página principal BR ── -->
+  <!-- Página principal BR -->
   <url>
     <loc>https://olivarglobal.com/</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/"/>
   </url>
 
-  <!-- ── Blog BR — índice ── -->
+  <!-- Blog BR — índice -->
   <url>
     <loc>https://olivarglobal.com/blog/</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/"/>
   </url>
 
-  <!-- ── Blog BR — artigos ── -->
+  <!-- Blog BR — artigos -->
   <url>
-    <loc>https://olivarglobal.com/blog/como-vender-para-eua-sem-morar-la/</loc>
-    <lastmod>2026-04-24</lastmod>
+    <loc>https://olivarglobal.com/blog/agencia-brasileira-mercado-americano-vale-a-pena/</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://olivarglobal.com/blog/processo-comercial-vender-nos-eua/</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/agencia-brasileira-mercado-americano-vale-a-pena/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/agencia-brasileira-mercado-americano-vale-a-pena/"/>
   </url>
   <url>
     <loc>https://olivarglobal.com/blog/agencias-brasileiras-prospeccao-internacional/</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/agencias-brasileiras-prospeccao-internacional/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/agencias-brasileiras-prospeccao-internacional/"/>
   </url>
   <url>
-    <loc>https://olivarglobal.com/blog/diferenca-sdr-closer/</loc>
-    <lastmod>2026-04-16</lastmod>
+    <loc>https://olivarglobal.com/blog/anuncios-google-ads-home-services/</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://olivarglobal.com/blog/erros-taxa-conversao-propostas/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/anuncios-google-ads-home-services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/anuncios-google-ads-home-services/"/>
   </url>
   <url>
     <loc>https://olivarglobal.com/blog/case-agencia-receitas-dolar/</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/case-agencia-receitas-dolar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/case-agencia-receitas-dolar/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/checklist-prospectar-clientes-internacionais/</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/checklist-prospectar-clientes-internacionais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/checklist-prospectar-clientes-internacionais/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/closer-call-ingles-framework/</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/closer-call-ingles-framework/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/closer-call-ingles-framework/"/>
   </url>
   <url>
     <loc>https://olivarglobal.com/blog/cold-email-template-funciona/</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/cold-email-template-funciona/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/cold-email-template-funciona/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/como-vender-para-eua-sem-morar-la/</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/como-vender-para-eua-sem-morar-la/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/como-vender-para-eua-sem-morar-la/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/construir-confianca-cliente-americano/</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/construir-confianca-cliente-americano/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/construir-confianca-cliente-americano/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/crm-clientes-americanos/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/crm-clientes-americanos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/crm-clientes-americanos/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/diferencas-culturais-vendas-b2b/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/diferencas-culturais-vendas-b2b/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/diferencas-culturais-vendas-b2b/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/diferenca-sdr-closer/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/diferenca-sdr-closer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/diferenca-sdr-closer/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/erro-agencias-brasileiras-mercado-americano/</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/erro-agencias-brasileiras-mercado-americano/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/erro-agencias-brasileiras-mercado-americano/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/erros-taxa-conversao-propostas/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/erros-taxa-conversao-propostas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/erros-taxa-conversao-propostas/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/escalar-1-para-10-clientes/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/escalar-1-para-10-clientes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/escalar-1-para-10-clientes/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/escalar-agencia-faturar-dolar/</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/escalar-agencia-faturar-dolar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/escalar-agencia-faturar-dolar/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/estruturar-agencia-clientes-americanos/</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/estruturar-agencia-clientes-americanos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/estruturar-agencia-clientes-americanos/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/funil-vendas-b2b-americano/</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/funil-vendas-b2b-americano/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/funil-vendas-b2b-americano/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/google-ads-leads-b2b-internacionais/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/google-ads-leads-b2b-internacionais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/google-ads-leads-b2b-internacionais/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/google-ads-mcc-agencia/</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/google-ads-mcc-agencia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/google-ads-mcc-agencia/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/google-business-profile-clientes-americanos/</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/google-business-profile-clientes-americanos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/google-business-profile-clientes-americanos/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/google-tag-manager-sem-desenvolvedor/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/google-tag-manager-sem-desenvolvedor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/google-tag-manager-sem-desenvolvedor/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/landing-page-home-services/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/landing-page-home-services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/landing-page-home-services/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/linkedin-clientes-americanos/</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/linkedin-clientes-americanos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/linkedin-clientes-americanos/"/>
   </url>
   <url>
     <loc>https://olivarglobal.com/blog/linkedin-prospeccao-b2b/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/linkedin-prospeccao-b2b/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/linkedin-prospeccao-b2b/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/numero-telefone-americano-agencia/</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/numero-telefone-americano-agencia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/numero-telefone-americano-agencia/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/objecoes-vender-clientes-eua/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/objecoes-vender-clientes-eua/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/objecoes-vender-clientes-eua/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/operacao-comercial-sem-contratar-nos-eua/</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/operacao-comercial-sem-contratar-nos-eua/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/operacao-comercial-sem-contratar-nos-eua/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/operacao-vendas-internacionais-zero/</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/operacao-vendas-internacionais-zero/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/operacao-vendas-internacionais-zero/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/o-que-comprador-americano-pensa/</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/o-que-comprador-americano-pensa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/o-que-comprador-americano-pensa/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/portfolio-impressiona-brasil-nao-converte/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/portfolio-impressiona-brasil-nao-converte/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/portfolio-impressiona-brasil-nao-converte/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/processo-comercial-vender-nos-eua/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/processo-comercial-vender-nos-eua/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/processo-comercial-vender-nos-eua/"/>
+  </url>
+  <url>
+    <loc>https://olivarglobal.com/blog/receber-pagamentos-dolar-brasil/</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/receber-pagamentos-dolar-brasil/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/receber-pagamentos-dolar-brasil/"/>
   </url>
   <url>
     <loc>https://olivarglobal.com/blog/script-cold-call/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/script-cold-call/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/script-cold-call/"/>
   </url>
-
-  <!-- ── Blog US Moving — índice ── -->
   <url>
-    <loc>https://olivarglobal.com/us/blog/</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- ── Blog US Moving — artigos ── -->
-  <url>
-    <loc>https://olivarglobal.com/us/blog/fill-moving-calendar-without-brokers/</loc>
-    <lastmod>2026-04-22</lastmod>
+    <loc>https://olivarglobal.com/blog/vendas-b2b-internacionais-processo-diferente/</loc>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://olivarglobal.com/blog/vendas-b2b-internacionais-processo-diferente/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://olivarglobal.com/blog/vendas-b2b-internacionais-processo-diferente/"/>
   </url>
-  <url>
-    <loc>https://olivarglobal.com/us/blog/lead-gen-mistakes-killing-moving-companies/</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://olivarglobal.com/us/blog/moving-leads-convert-below-10-percent/</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-
-  <!-- ── Blog BR — 43 novos artigos ── -->
-  <url>
-      <loc>https://olivarglobal.com/blog/google-ads-mcc-agencia/</loc>
-      <lastmod>2026-04-10</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/escalar-1-para-10-clientes/</loc>
-      <lastmod>2026-04-16</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/anuncios-google-ads-home-services/</loc>
-      <lastmod>2026-04-17</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/google-business-profile-clientes-americanos/</loc>
-      <lastmod>2026-04-19</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/landing-page-home-services/</loc>
-      <lastmod>2026-04-20</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/receber-pagamentos-dolar-brasil/</loc>
-      <lastmod>2026-04-24</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/google-tag-manager-sem-desenvolvedor/</loc>
-      <lastmod>2026-04-29</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/crm-clientes-americanos/</loc>
-      <lastmod>2026-04-30</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/operacao-vendas-internacionais-zero/</loc>
-      <lastmod>2026-03-01</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/numero-telefone-americano-agencia/</loc>
-      <lastmod>2026-03-05</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/operacao-comercial-sem-contratar-nos-eua/</loc>
-      <lastmod>2026-03-12</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/erro-agencias-brasileiras-mercado-americano/</loc>
-      <lastmod>2026-03-15</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/o-que-comprador-americano-pensa/</loc>
-      <lastmod>2026-03-18</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/agencia-brasileira-mercado-americano-vale-a-pena/</loc>
-      <lastmod>2026-03-20</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/vendas-b2b-internacionais-processo-diferente/</loc>
-      <lastmod>2026-03-25</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/objecoes-vender-clientes-eua/</loc>
-      <lastmod>2026-03-28</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/diferencas-culturais-vendas-b2b/</loc>
-      <lastmod>2026-04-01</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/closer-call-ingles-framework/</loc>
-      <lastmod>2026-04-03</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/escalar-agencia-faturar-dolar/</loc>
-      <lastmod>2026-04-05</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/google-ads-leads-b2b-internacionais/</loc>
-      <lastmod>2026-04-07</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/funil-vendas-b2b-americano/</loc>
-      <lastmod>2026-04-08</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/portfolio-impressiona-brasil-nao-converte/</loc>
-      <lastmod>2026-04-09</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/estruturar-agencia-clientes-americanos/</loc>
-      <lastmod>2026-02-20</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/linkedin-clientes-americanos/</loc>
-      <lastmod>2026-02-25</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-  <url>
-      <loc>https://olivarglobal.com/blog/construir-confianca-cliente-americano/</loc>
-      <lastmod>2026-04-02</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-
-  <url>
-      <loc>https://olivarglobal.com/blog/checklist-prospectar-clientes-internacionais/</loc>
-      <lastmod>2026-05-03</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
 
 </urlset>
